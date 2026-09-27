@@ -1,0 +1,18 @@
+# Research Agent — Demo App Dependencies
+#
+# Install with: pip install -r requirements.txt
+#
+# These are separate from the plugin (langchain_serpapi_provider) which
+# has its own pyproject.toml. This file covers the Streamlit UI layer only.
+
+streamlit>=1.35.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+python-dotenv>=1.0.0
+faiss-cpu>=1.8.0
+spacy>=3.7.0
+
+# Install the plugin from the repo root:
+#   pip install -e ../../
+# or from PyPI once published:
+#   pip install langchain-serpapi-provider
