@@ -255,29 +255,25 @@ cp ../../.env.example ../../.env
 streamlit run app.py
 ```
 
+> 💡 **Demo Walkthrough Guide:** See [DEMO_SCRIPT.md](DEMO_SCRIPT.md) for a ready-to-present 3-minute hackathon pitch with pre-tested queries and anticipated Q&A.
+
 **What the demo does:**
 
-1. You enter a research question (e.g. *"Does intermittent fasting improve metabolic health?"*)
-2. The agent calls `SerpApiRetriever` (scholar engine) for the top N papers
-3. Each paper's title + abstract is embedded with **spaCy** (`en_core_web_md`)
-   or falls back to **TF-IDF + TruncatedSVD** if spaCy isn't available
+1. Enter or pick a pre-tested research question (e.g. *"Do large language models possess theory of mind?"*)
+2. The agent calls `SerpApiRetriever` (`google_scholar`) for the top N papers
+3. Paper titles + abstracts are embedded with **spaCy** (`en_core_web_md`) or dense **TF-IDF + TruncatedSVD**
 4. Papers are clustered by cosine similarity using **KMeans**
-5. Within each cluster, a heuristic keyword pass checks for papers with opposing
-   conclusion signals (e.g. "improves" vs "no significant effect")
-6. Clusters with such signals are labeled **"Possible divergent findings — needs
-   human review"** — deliberately conservative, not "detected contradictions"
-7. Results display as dark-mode cards: cluster → papers → citations → divergence badge
-
-> **Note on FAISS:** `faiss-cpu` is listed in `requirements.txt` for future
-> nearest-neighbour queries. The current pipeline uses KMeans directly on the
-> embedding matrix; FAISS would be the natural next step for large corpora
-> or retrieval-augmented expansion.
+5. Topic headers are dynamically generated from TF-IDF n-grams (e.g. `Cluster 1: Attention & Sequence Modeling`)
+6. Within each cluster, a heuristic keyword pass flags papers with opposing conclusion signals (e.g. "outperform" vs "no evidence")
+7. Results display as clustered cards with **"Possible divergent findings — needs human review"** and color-coded affirmative vs cautionary cues on individual cards
+8. Repeat runs complete in **0.2s** using disk-cached responses, consuming zero additional API credits.
 
 ---
 
-## Running tests
+## Running tests & smoke tests
 
-All tests mock the SerpApi SDK — no live API calls, no credits consumed.
+### Unit Tests (Mocked — Zero API Credits)
+All 46 unit tests mock the SerpApi SDK and diskcache:
 
 ```bash
 # From repo root
@@ -285,14 +281,23 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Test coverage:
-
-| File | What's tested |
+| Test File | What's tested |
 |---|---|
-| `test_retriever.py` | Construction validation, all 4 engines, `num_results` limiting, empty results, cache hit / miss / bypass |
-| `test_cache.py` | Key generation (case / whitespace normalization, SHA-256 length), disabled cache no-ops, enabled cache set/get/invalidate/clear/TTL, graceful degradation without `diskcache` |
-| `test_schema.py` | Normalization for scholar / news / jobs / google, field mapping, description truncation, unknown engine fallback |
-| `test_tool.py` | `select_engine` for all four engines, tie-breaking, empty query, case insensitivity |
+| `test_retriever.py` | Construction validation, error handling, all 4 engines, `num_results` limiting, cache hit / miss / bypass |
+| `test_cache.py` | SHA-256 key hashing (whitespace / case normalization), disabled cache no-ops, enabled cache set/get/invalidate/clear/TTL, graceful degradation without `diskcache` |
+| `test_schema.py` | Normalization for scholar / news / jobs / google, fallback link extraction, description truncation, author parsing |
+| `test_tool.py` | `select_engine` word-boundary and compound phrase matching (`"literature review"`, `"remote work"`, `"press release"`), tie-breaking, empty query, case insensitivity |
+
+### Integration Smoke Test (Dry-Run & Live)
+We provide [`scripts/smoke_test.py`](scripts/smoke_test.py) to audit the integration against real JSON wire formats:
+
+```bash
+# Dry-run audit (uses captured real-world payloads, 0 API calls)
+python scripts/smoke_test.py --dry-run
+
+# Live smoke test (issues exactly 1 minimal query per engine against SerpApi)
+python scripts/smoke_test.py
+```
 
 ---
 

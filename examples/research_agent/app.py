@@ -191,8 +191,9 @@ with st.sidebar:
     st.divider()
     st.markdown("### 📖 About")
     st.caption(
-        "Powered by **langchain-serpapi-provider** + **spaCy** / **FAISS** + **KMeans**.\n\n"
-        "Divergence flags are heuristic — always verify with the source papers."
+        "Powered by **langchain-serpapi-provider** + **spaCy / TF-IDF** + **KMeans**.\n\n"
+        "• **Indexed Year:** Reflects the canonical edition/year indexed by Google Scholar (which may aggregate preprints published earlier).\n\n"
+        "• **Divergence:** Flags clusters where abstracts exhibit both affirmative and cautionary conclusion keywords on the same sub-topic."
     )
 
 
@@ -438,7 +439,7 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
             if authors:
                 meta_parts.append(f"👤 {authors}")
             if year:
-                meta_parts.append(f"📅 {year}")
+                meta_parts.append(f"📅 Indexed: {year}")
             if cites is not None:
                 meta_parts.append(f"📚 {cites:,} citations")
             if pub_info:
@@ -477,13 +478,30 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
 
 
 # ---------------------------------------------------------------------------
-# Query input
+# Query input & quick examples
 # ---------------------------------------------------------------------------
+
+st.markdown("<p style='color: #8b949e; font-size: 0.85rem; margin-bottom: 6px;'><strong>Try a sample research question:</strong></p>", unsafe_allow_html=True)
+sample_cols = st.columns(3)
+sample_queries = [
+    "Do large language models possess theory of mind?",
+    "Does intermittent fasting improve insulin sensitivity in adults?",
+    "Impact of microplastics on human gut microbiome",
+]
+
+if "current_query" not in st.session_state:
+    st.session_state.current_query = "Do large language models possess theory of mind?"
+
+for col, sq in zip(sample_cols, sample_queries):
+    short_label = sq.split()[0:5]
+    if col.button(f"💡 {' '.join(short_label)}…", help=sq, use_container_width=True):
+        st.session_state.current_query = sq
+        st.rerun()
 
 query = st.text_area(
     "Research question",
-    placeholder="e.g. Does mindfulness meditation improve working memory in adults?",
-    height=100,
+    value=st.session_state.current_query,
+    height=80,
     label_visibility="collapsed",
 )
 
