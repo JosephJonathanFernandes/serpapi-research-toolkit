@@ -272,68 +272,69 @@ def cluster_papers(embeddings: np.ndarray, k: int) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Divergence detection (heuristic)
+# Divergence / mixed outcome signal detection (heuristic)
 # ---------------------------------------------------------------------------
 
-# Opposing sentiment keyword pairs — conservative, defensible academic cues
-_POSITIVE_CONCLUSIONS = frozenset(
-    [
-        "improve", "improves", "improved", "improving", "improvement", "improvements",
-        "outperform", "outperforms", "outperformed", "outperforming",
-        "effective", "effectiveness", "efficacy", "efficacious",
-        "superior", "better", "significant", "significantly",
-        "benefit", "benefits", "beneficial",
-        "enhance", "enhances", "enhanced", "enhancing", "enhancement",
-        "advance", "advances", "advancement",
-        "demonstrate", "demonstrates", "demonstrated",
-        "confirm", "confirms", "support", "supports",
-        "capable", "capability", "capabilities",
-        "robust", "robustness", "promising",
-    ]
-)
-_NEGATIVE_CONCLUSIONS = frozenset(
-    [
-        "fail", "fails", "failed", "failing", "failure", "failures",
-        "ineffective", "ineffectiveness", "inferior",
-        "no significant", "no evidence", "not significant", "not improve", "absence of",
-        "limited", "limitation", "limitations", "limiting", "limits",
-        "contradict", "contradicts", "contradictory", "contradiction",
-        "challenge", "challenges", "challenging",
-        "question", "questions", "questioning",
-        "inconsistent", "inconsistency", "inconsistencies",
-        "doubt", "doubts", "doubtful",
-        "lack of", "lacks", "lacking",
-        "inability", "incapable",
-        "adverse", "risk", "risks", "vulnerability", "vulnerabilities",
-    ]
-)
+# Directional academic outcome patterns — precise multi-word phrases and markers
+# to prevent shallow single-word false positives (e.g. matching "limiting" in "limiting calories")
+_AFFIRMATIVE_PATTERNS = [
+    r"\boutperform(?:s|ed|ing)?\b",
+    r"\benhance(?:s|d|ment)?\s+(?:cognitive|executive|memory|performance|health|function)\b",
+    r"\b(?:novel\s+)?evidence\s+in\s+support\s+of\b",
+    r"\bsignificant(?:ly)?\s+improv(?:e|ed|ement|ing)\b",
+    r"\bdemonstrated\s+advantage\b",
+    r"\bpositive\s+association\b",
+    r"\btherapeutic\s+efficacy\b",
+    r"\bclinically\s+(?:effective|meaningful)\b",
+    r"\bconfirms?\s+(?:an?\s+)?advantage\b",
+]
+
+_NULL_OR_CONTRARY_PATTERNS = [
+    r"\bno\s+(?:general\s+)?(?:cognitive|executive)?\s*advantages?\b",
+    r"\baffords\s+no\b",
+    r"\bfailed\s+to\s+replicate\b",
+    r"\bfailure\s+to\s+replicate\b",
+    r"\bdifficult\s+to\s+pin\s+down\b",
+    r"\bno\s+significant\s+(?:difference|effect|advantage|improvement)\b",
+    r"\black\s+of\s+evidence\b",
+    r"\bnull\s+(?:effect|findings?)\b",
+    r"\bconflicting\s+evidence\b",
+    r"\bdoes\s+not\s+support\b",
+    r"\bdid\s+not\s+support\b",
+    r"\bfails?\s+to\s+find\b",
+    r"\bineffective\b",
+    r"\bno\s+effect\b",
+]
 
 
 def _score_text(text: str) -> Tuple[List[str], List[str]]:
-    """Return matching (positive_cues, negative_cues) keyword lists."""
-    words = re.findall(r"[a-z0-9]+", text.lower())
-    if not words:
+    """Return matching (positive_cues, null_or_contrary_cues) keyword lists."""
+    if not text:
         return [], []
-    norm = " " + " ".join(words) + " "
+    pos_matches = []
+    for pat in _AFFIRMATIVE_PATTERNS:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            match_str = m.group(0).lower().strip()
+            if match_str not in pos_matches:
+                pos_matches.append(match_str)
 
-    def _find_matches(keywords: frozenset[str]) -> List[str]:
-        matched = []
-        for kw in keywords:
-            norm_kw = " ".join(re.findall(r"[a-z0-9]+", kw.lower()))
-            if f" {norm_kw} " in norm:
-                matched.append(kw)
-        return matched
+    neg_matches = []
+    for pat in _NULL_OR_CONTRARY_PATTERNS:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            match_str = m.group(0).lower().strip()
+            if match_str not in neg_matches:
+                neg_matches.append(match_str)
 
-    return _find_matches(_POSITIVE_CONCLUSIONS), _find_matches(_NEGATIVE_CONCLUSIONS)
+    return pos_matches, neg_matches
 
 
-def detect_divergence(snippets: List[str]) -> Tuple[bool, List[Tuple[List[str], List[str]]]]:
+def detect_divergence(texts: List[str]) -> Tuple[bool, List[Tuple[List[str], List[str]]]]:
     """
     Return (has_divergence, per_paper_cues).
     A cluster is flagged for human review if it contains papers with both
-    affirmative and cautionary / limitation cues on the topic.
+    affirmative and null/contrary outcome signals on the topic.
     """
-    per_paper = [_score_text(s) for s in snippets]
+    per_paper = [_score_text(t) for t in texts]
     has_pos = any(len(pos) > 0 for pos, _ in per_paper)
     has_neg = any(len(neg) > 0 for _, neg in per_paper)
     return (has_pos and has_neg), per_paper
@@ -427,8 +428,8 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
     CLUSTER_ICONS = ["🔵", "🟣", "🟢", "🟡", "🟠", "🔴"]
     for cluster_idx, (label, papers) in enumerate(sorted(clusters.items())):
         icon = CLUSTER_ICONS[cluster_idx % len(CLUSTER_ICONS)]
-        snippets = [p.page_content for p in papers]
-        divergent, paper_cues = detect_divergence(snippets)
+        paper_texts = [f"{p.metadata.get('title', '')} {p.page_content}" for p in papers]
+        divergent, paper_cues = detect_divergence(paper_texts)
         cluster_topic = extract_cluster_topics(texts, cluster_doc_indices[label])
 
         # Build cluster HTML
@@ -436,9 +437,9 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
         if divergent:
             divergence_html = (
                 '<div class="divergence-badge">'
-                '⚠️ <span><strong>Possible divergent findings — needs human review.</strong> '
-                "Some papers in this cluster appear to reach opposing or contrasting conclusions on related sub-topics. "
-                "This is a heuristic signal; please review the source papers before drawing any conclusions."
+                '⚠️ <span><strong>Mixed findings signal — human review recommended.</strong> '
+                "Papers in this cluster contain contrasting outcome cues (e.g. studies reporting advantages/enhancements alongside population or replication studies finding null effects or limitations). "
+                "This heuristic flags active scientific disputes for primary paper inspection."
                 "</span></div>"
             )
 
@@ -472,7 +473,7 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
                 if pos_cues:
                     cue_items.append(f'<span style="background: #1b4332; color: #74c69d; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Affirmative cue: {", ".join(pos_cues[:2])}</span>')
                 if neg_cues:
-                    cue_items.append(f'<span style="background: #4a154b; color: #e0aaff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Cautionary/Limitation cue: {", ".join(neg_cues[:2])}</span>')
+                    cue_items.append(f'<span style="background: #4a154b; color: #e0aaff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Cautionary / Null cue: {", ".join(neg_cues[:2])}</span>')
                 if cue_items:
                     cues_html = f'<div style="margin-top: 6px; display: flex; gap: 8px;">{"".join(cue_items)}</div>'
 
@@ -503,9 +504,9 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
 st.markdown("<p style='color: #8b949e; font-size: 0.85rem; margin-bottom: 6px;'><strong>Try a sample research question:</strong></p>", unsafe_allow_html=True)
 sample_cols = st.columns(3)
 sample_queries = [
-    ("LLM Theory of Mind", "large language models theory of mind reasoning"),
+    ("Bilingual Advantage", "bilingual advantage executive function cognitive control"),
     ("Intermittent Fasting", "intermittent fasting insulin sensitivity metabolic health"),
-    ("Microplastics Microbiome", "microplastics human gut microbiome health impacts"),
+    ("LLM Theory of Mind", "large language models theory of mind reasoning"),
 ]
 
 if "current_query" not in st.session_state:

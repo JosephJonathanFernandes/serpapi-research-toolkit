@@ -259,14 +259,14 @@ streamlit run app.py
 
 **What the demo does:**
 
-1. Enter or pick a pre-tested research question (e.g. *"Do large language models possess theory of mind?"*)
+1. Enter or pick a pre-tested research question (e.g. *"bilingual advantage executive function cognitive control"*)
 2. The agent calls `SerpApiRetriever` (`google_scholar`) for the top N papers
 3. Paper titles + abstracts are embedded with **spaCy** (`en_core_web_md`) or dense **TF-IDF + TruncatedSVD**
 4. Papers are clustered by cosine similarity using **KMeans**
-5. Topic headers are dynamically generated from TF-IDF n-grams (e.g. `Cluster 1: Attention & Sequence Modeling`)
-6. Within each cluster, a heuristic keyword pass flags papers with opposing conclusion signals (e.g. "outperform" vs "no evidence")
-7. Results display as clustered cards with **"Possible divergent findings — needs human review"** and color-coded affirmative vs cautionary cues on individual cards
-8. Repeat runs complete in **0.2s** using disk-cached responses, consuming zero additional API credits.
+5. Topic headers are dynamically generated from TF-IDF n-grams (e.g. `Cluster 2: Executive & Bilingual`)
+6. Within each cluster, a conservative heuristic pass flags papers with contrasting outcome signals (e.g. `"outperforming"` vs `"no general cognitive advantages"`)
+7. Results display as clustered cards with an amber **"Mixed findings signal — human review recommended"** badge and color-coded affirmative vs null/skeptical cues on individual paper cards
+8. Repeat runs complete in **< 1 ms** using disk-cached responses, consuming zero additional API credits.
 
 ---
 

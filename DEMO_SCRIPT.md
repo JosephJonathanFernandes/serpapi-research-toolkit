@@ -19,40 +19,40 @@ This guide provides a step-by-step walkthrough for demoing the **serpapi-researc
 
 ---
 
-## 🎯 Demo Flow (3–4 Minutes)
+## 🎯 Demo Flow (Timed Stopwatch: 2:15 Total — 45s Buffer Under 3:00 Cap)
 
-### Step 1: The Core Problem (30s)
-> *"When researchers or developers use search APIs in AI agents, they typically get raw JSON blobs with inconsistent schemas depending on whether they query Google Search, News, Jobs, or Scholar. Furthermore, during development, iterative agent loops burn expensive search credits rapidly on repeated calls.*
+### Step 1: The Core Problem (25s)
+> *"When building AI agents that search the web, developers face two immediate headaches:
+> 1. Inconsistent data shapes: Querying Google Scholar, Web, News, or Jobs returns completely different JSON schemas.
+> 2. Expensive credit burn: Iterative agent development loops re-query the same prompts and rapidly exhaust API quotas.
 >
-> *We built `langchain-serpapi-provider`: a lean, LangChain-native plugin that normalizes all four SerpApi engines into a unified Pydantic schema with built-in disk caching and heuristic engine routing."*
+> We built `langchain-serpapi-provider`: a lean, pip-installable LangChain plugin with normalized Pydantic schemas, automatic heuristic engine routing, and a built-in disk cache."*
 
-### Step 2: Live Query & Clustering (90s)
-Click the sample query button:
-> **💡 Intermittent Fasting**  
-*(Query: `intermittent fasting insulin sensitivity metabolic health`)*  
-*(Alternative: **💡 Microplastics Microbiome**)*
+### Step 2: Live Query & Clustering (50s)
+Click the first sample query button:
+> **💡 Bilingual Advantage**  
+*(Query: `bilingual advantage executive function cognitive control`)*  
 
 Click **🔬 Run Research Agent**.
 
-**What to point out as it runs:**
-1. **Live Retrieval:** Calls `SerpApiRetriever(engine="google_scholar")` to pull top academic papers with parsed citation counts and author metadata.
-2. **Topic Clustering:** Rather than a flat list of 10 links, the agent embeds each paper's title + abstract and runs **KMeans** clustering.
-3. **Cluster Labeling:** Point out the topic headers (e.g. `Cluster 1: Lipid & Lipid Metabolism`, `Cluster 3: Fasting & Insulin`), dynamically generated via TF-IDF n-grams to identify what sub-domain each group represents.
+**What to point out during the render (Measured UI latency: ~10 seconds total):**
+1. **Live Retrieval:** Calls `SerpApiRetriever(engine="google_scholar")` to pull top peer-reviewed papers with citation counts and author metadata.
+2. **Topic Clustering:** Rather than dumping a flat list of 10 links, the agent embeds each title + abstract and runs **KMeans** clustering.
+3. **Dynamic Cluster Labeling:** Point out the topic headers (e.g. `Cluster 1: Cognitive Control & Control`, `Cluster 2: Executive & Bilingual`), generated via TF-IDF n-grams to immediately explain what sub-domain each group represents.
 
-### Step 3: The Divergence Detection (60s)
-Point out the cluster with the **amber divergence badge**:
-> ⚠️ **Possible divergent findings — needs human review.**  
-> *(Notice Cluster 3: 'Fasting & Insulin' or Cluster 2 in Microplastics)*
+### Step 3: The Mixed Findings Signal (45s)
+Scroll down to **Cluster 2 ("Executive & Bilingual")** with the **amber warning badge**:
+> ⚠️ **Mixed findings signal — human review recommended.**  
 
-**Talking points:**
-- *"Notice our framing here: we deliberately do not claim 'detected contradictions'. Scientific nuance cannot be reduced to a binary contradiction detector without hallucinations.*
-- *Instead, we do a conservative heuristic pass looking for clusters where peer-reviewed abstracts contain both affirmative conclusion signals (e.g. 'improved glucose', 'benefits') and cautionary/limitation signals (e.g. 'limiting risks', 'adverse effects').*
-- *We surface the exact keyword cues directly on the paper cards (green pill for affirmative cues, purple pill for cautionary cues) so the human researcher can immediately click through to the source papers and evaluate the evidence for themselves."*
+**Talking points (Honest, Defensible Framing):**
+- *"Notice our framing here: we deliberately do NOT claim to have built an ML 'contradiction detector'. Scientific nuance cannot be reduced to a binary contradiction label without severe hallucination risk.*
+- *Instead, we provide a transparent heuristic filter: when a cluster contains abstracts reporting advantages/enhancements alongside papers reporting null findings or replication challenges, the agent flags it as a 'Mixed findings signal'.*
+- *Look at the actual papers in Cluster 2: we have Emily Nichols' landmark 2020 population study of 11,000 people titled **'Bilingualism affords no general cognitive advantages'** (flagged with null cue pills: `no general cognitive advantages`, `affords no`), right alongside Arizmendi et al. reporting bilingual children **'outperforming'** monolinguals.*
+- *This is a genuine, active debate in cognitive psychology. The agent immediately surfaces this tension so a researcher knows to inspect the methodologies rather than falsely assuming scientific consensus."*
 
-### Step 4: The Developer Experience & Caching (30s)
-Re-click **🔬 Run Research Agent** on the same query.
-- Notice how retrieval completes in **sub-millisecond (< 1 ms)** time.
-- Point to the terminal logs showing `Cache hit for query`.
+### Step 4: Developer Experience & Sub-Millisecond Caching (20s)
+Click **🔬 Run Research Agent** a second time on the same query.
+- Notice the retrieval finishes **instantly**: terminal logs show a cache hit with sub-millisecond retrieval (`< 1 ms`).
 - *"The built-in `SerpApiCache` uses SHA-256 query+engine hashing with configurable TTL, guaranteeing that developers testing agent workflows don't burn their 250 free monthly credits on repeat runs."*
 
 ---
