@@ -35,10 +35,13 @@ Click the first sample query button:
 
 Click **🔬 Run Research Agent**.
 
-**What to point out during the cold render (Measured stopwatch: ~12s total = ~2.5s live SerpApi Scholar fetch + ~9.5s embedding, clustering, and DOM paint):**
-1. **Live Retrieval:** Calls `SerpApiRetriever(engine="google_scholar")` to pull top peer-reviewed papers with citation counts and author metadata over the network.
-2. **Topic Clustering:** Rather than dumping a flat list of 10 links, the agent embeds each title + abstract and runs **KMeans** clustering.
-3. **Dynamic Cluster Labeling:** Point out the topic headers (e.g. `Cluster 1: Cognitive Control & Control`, `Cluster 2: Executive & Bilingual`), generated via TF-IDF n-grams to immediately explain what sub-domain each group represents.
+**🎙️ Spoken Narration During the ~12s Cold Spinner (Fill the gap — zero dead air):**
+> *"Right now, three pipeline stages are executing live:
+> 1. First, our `SerpApiRetriever` is hitting Google Scholar via SerpApi, pulling 10 peer-reviewed papers complete with author metadata, citation counts, and canonical URLs.
+> 2. Next, rather than dumping a raw flat list, the agent embeds each title and abstract into vector space and runs unsupervised KMeans clustering to group related studies.
+> 3. Finally, it uses TF-IDF n-grams to dynamically generate human-readable topic headers for each cluster — and here are the results."*
+
+*(At ~11–12 seconds, the cluster cards appear on screen. Transition directly to Step 3 without pause).*
 
 ### Step 3: The Mixed Findings Signal (45s)
 Scroll down to **Cluster 2 ("Executive & Bilingual")** with the **amber warning badge**:
