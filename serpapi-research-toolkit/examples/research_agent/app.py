@@ -275,37 +275,19 @@ def cluster_papers(embeddings: np.ndarray, k: int) -> np.ndarray:
 # Divergence detection (heuristic)
 # ---------------------------------------------------------------------------
 
-# Opposing sentiment keyword pairs — conservative, defensible academic cues
+# Opposing sentiment keyword pairs — deliberately conservative
 _POSITIVE_CONCLUSIONS = frozenset(
-    [
-        "improve", "improves", "improved", "improving", "improvement", "improvements",
-        "outperform", "outperforms", "outperformed", "outperforming",
-        "effective", "effectiveness", "efficacy", "efficacious",
-        "superior", "better", "significant", "significantly",
-        "benefit", "benefits", "beneficial",
-        "enhance", "enhances", "enhanced", "enhancing", "enhancement",
-        "advance", "advances", "advancement",
-        "demonstrate", "demonstrates", "demonstrated",
-        "confirm", "confirms", "support", "supports",
-        "capable", "capability", "capabilities",
-        "robust", "robustness", "promising",
-    ]
+    ["improve", "improves", "improved", "outperform", "outperforms", "effective",
+     "superior", "better", "significant", "significantly", "benefit", "benefits",
+     "enhance", "enhances", "increase", "increases", "advance", "advances",
+     "demonstrate", "demonstrates", "confirm", "confirms", "support", "supports"]
 )
 _NEGATIVE_CONCLUSIONS = frozenset(
-    [
-        "fail", "fails", "failed", "failing", "failure", "failures",
-        "ineffective", "ineffectiveness", "inferior",
-        "no significant", "no evidence", "not significant", "not improve", "absence of",
-        "limited", "limitation", "limitations", "limiting", "limits",
-        "contradict", "contradicts", "contradictory", "contradiction",
-        "challenge", "challenges", "challenging",
-        "question", "questions", "questioning",
-        "inconsistent", "inconsistency", "inconsistencies",
-        "doubt", "doubts", "doubtful",
-        "lack of", "lacks", "lacking",
-        "inability", "incapable",
-        "adverse", "risk", "risks", "vulnerability", "vulnerabilities",
-    ]
+    ["fail", "fails", "failed", "ineffective", "worse", "inferior", "no significant",
+     "no evidence", "not significant", "limited", "limitation", "contradict",
+     "contradicts", "challenge", "challenges", "question", "questions", "inconsistent",
+     "doubt", "doubts", "negative", "decrease", "decreases", "decline", "declines",
+     "reduced", "reduces", "absence of", "lack of"]
 )
 
 

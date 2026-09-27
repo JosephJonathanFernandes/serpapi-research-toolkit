@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain-serpapi-provider"
+version = "0.1.0"
+description = "A LangChain-compatible retriever and tool provider for SerpApi (Scholar, Web, News, Jobs)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10, <3.14"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["langchain", "serpapi", "retriever", "rag", "llm", "search"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "langchain-core>=0.2.0",
+    "google-search-results>=2.4.2",
+    "pydantic>=2.0.0",
+    "diskcache>=5.6.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+agent = [
+    "langchain>=0.2.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/serpapi-research-toolkit"
+Repository = "https://github.com/your-org/serpapi-research-toolkit"
+Issues = "https://github.com/your-org/serpapi-research-toolkit/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["langchain_serpapi_provider*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

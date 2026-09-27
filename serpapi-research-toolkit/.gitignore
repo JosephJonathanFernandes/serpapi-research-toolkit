@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+dist/
+build/
+*.egg-info/
+.eggs/
+.installed.cfg
+pip-selfcheck.json
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment secrets
+.env
+
+# Cache
+.serpapi_cache/
+~/.serpapi_cache/
+*.diskcache/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
