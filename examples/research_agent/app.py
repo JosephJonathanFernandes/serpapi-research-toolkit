@@ -177,12 +177,16 @@ st.markdown(
 with st.sidebar:
     st.markdown("### ⚙️ Configuration")
 
-    api_key = st.text_input(
-        "SerpApi API Key",
-        value=os.getenv("SERPAPI_API_KEY", ""),
-        type="password",
-        help="Get yours at serpapi.com",
-    )
+    api_key = os.getenv("SERPAPI_API_KEY", "")
+    if api_key:
+        st.success("🔑 API key loaded from environment", icon="✅")
+    else:
+        api_key = st.text_input(
+            "SerpApi API Key",
+            value="",
+            type="password",
+            help="Get yours at serpapi.com",
+        )
 
     num_results = st.slider("Papers to retrieve", min_value=5, max_value=20, value=10)
     num_clusters = st.slider("Topic clusters", min_value=2, max_value=6, value=3)
