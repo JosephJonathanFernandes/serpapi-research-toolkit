@@ -39,7 +39,7 @@ docs = retriever.invoke("bilingual advantage executive function cognitive contro
 
 "Let's try a real research question: does being bilingual improve executive function?
 I'll run it now, and this is a live call. Three things are happening.
-First, our retriever is querying Google Scholar through SerpApi. It pulls ten peer-reviewed papers with author details, citation counts and links.
+First, our retriever is querying Google Scholar through SerpApi. It pulls ten papers with author details, citation counts and links.
 Next, instead of returning a flat list, the agent embeds each title and abstract and groups related papers with K-means clustering.
 Finally, it uses T-F-I-D-F phrases to label each cluster, so you can see at a glance what each group is about.
 And here are the results."
@@ -53,8 +53,8 @@ And here are the results."
 
 "Look at Cluster 2. It has an amber badge: 'Mixed findings signal, human review recommended.'
 We were careful with this wording. We are not claiming to detect contradictions with machine learning. It's a simple, transparent heuristic. If a cluster has papers reporting an advantage and papers reporting no effect, it gets flagged.
-Here you can see it work. One paper is titled 'Bilingualism affords no general cognitive advantages'. It's a study of eleven thousand people. Right next to it is research reporting bilingual children outperforming monolinguals.
-That's a real, ongoing debate in the field. The tool doesn't settle it. It points the researcher to the papers they should read closely."
+Here you can see how it works. One paper is titled 'Bilingualism affords no general cognitive advantages', a study of eleven thousand people. Another paper in the same cluster has a snippet mentioning outperforming, which is actually from a definition of the bilingual advantage. The tool only matches phrases, so it can be fooled. It's a pointer, not a verdict.
+Whether bilingualism gives an executive-function advantage is widely discussed as contested. The tool doesn't settle that. It only points the researcher to papers worth reading closely."
 
 ---
 

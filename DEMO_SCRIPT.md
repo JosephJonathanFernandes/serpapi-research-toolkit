@@ -19,7 +19,7 @@ This guide provides a step-by-step walkthrough for demoing the **serpapi-researc
 
 ---
 
-## 🎯 Demo Flow (Timed Stopwatch: 2:15 Total — 45s Buffer Under 3:00 Cap)
+## 🎯 Demo Flow (Estimated about 2:30; time yourself with a stopwatch before recording. Cap is 3:00)
 
 ### Step 1: The Core Problem (25s)
 > *"When building AI agents that search the web, developers face two immediate headaches:
@@ -37,7 +37,7 @@ Click **🔬 Run Research Agent**.
 
 **🎙️ Spoken Narration During the ~12s Cold Spinner (Fill the gap — zero dead air):**
 > *"Right now, three pipeline stages are executing live:
-> 1. First, our `SerpApiRetriever` is hitting Google Scholar via SerpApi, pulling 10 peer-reviewed papers complete with author metadata, citation counts, and canonical URLs.
+> 1. First, our `SerpApiRetriever` is hitting Google Scholar via SerpApi, pulling 10 papers complete with author metadata, citation counts, and canonical URLs.
 > 2. Next, rather than dumping a raw flat list, the agent embeds each title and abstract into vector space and runs unsupervised KMeans clustering to group related studies.
 > 3. Finally, it uses TF-IDF n-grams to dynamically generate human-readable topic headers for each cluster — and here are the results."*
 
@@ -50,13 +50,13 @@ Scroll down to **Cluster 2 ("Executive & Bilingual")** with the **amber warning 
 **Talking points (Honest, Defensible Framing):**
 - *"Notice our framing here: we deliberately do NOT claim to have built an ML 'contradiction detector'. Scientific nuance cannot be reduced to a binary contradiction label without severe hallucination risk.*
 - *Instead, we provide a transparent heuristic filter: when a cluster contains abstracts reporting advantages/enhancements alongside papers reporting null findings or replication challenges, the agent flags it as a 'Mixed findings signal'.*
-- *Look at the actual papers in Cluster 2: we have Emily Nichols' landmark 2020 population study of 11,000 people titled **'Bilingualism affords no general cognitive advantages'** (flagged with null cue pills: `no general cognitive advantages`, `affords no`), right alongside Arizmendi et al. reporting bilingual children **'outperforming'** monolinguals.*
-- *This is a genuine, active debate in cognitive psychology. The agent immediately surfaces this tension so a researcher knows to inspect the methodologies rather than falsely assuming scientific consensus."*
+- *Look at Cluster 2. One paper is titled **'Bilingualism affords no general cognitive advantages'**, a 2020 study of 11,000 people, and it gets null-cue pills (`no general cognitive advantages`, `affords no`). Another paper in the same cluster has a snippet containing 'outperforming', which comes from a sentence defining the bilingual advantage, not from that paper's result. That is why the badge says human review: the tool matches phrases, it does not read conclusions.*
+- *Whether bilingualism gives an executive-function advantage is widely discussed as contested. We are not adjudicating that. The tool just points the researcher to papers worth reading closely."*
 
-### Step 4: Developer Experience & Sub-Millisecond Caching (20s)
+### Step 4: Developer Experience & Millisecond-Level Caching (20s)
 Click **🔬 Run Research Agent** a second time on the same query.
-- Notice the dramatic visible difference: the first live run took **~12s** while SerpApi queried Google Scholar. The second run completes in **2.8s** with sub-millisecond retrieval (`< 1.3 ms`).
-- Point out: *"The built-in `SerpApiCache` uses SHA-256 query+engine hashing with configurable TTL, guaranteeing that developers testing agent workflows don't burn their 250 free monthly credits on repeat runs (over 5,000x retrieval speedup)."*
+- Notice the dramatic visible difference: the first live run took **~12s** while SerpApi queried Google Scholar. The second run completes in **2.8s** with about 1 ms retrieval (`< 1.3 ms`).
+- Point out: *"The built-in `SerpApiCache` uses SHA-256 query+engine hashing with configurable TTL, guaranteeing that developers testing agent workflows don't burn their 250 free monthly credits on repeat runs (in our test, retrieval went from about 7s live to about 1ms cached)."*
 
 ---
 

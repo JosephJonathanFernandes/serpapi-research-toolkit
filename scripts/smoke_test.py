@@ -7,7 +7,7 @@ shapes across all 4 supported engines (google_scholar, google, google_news, goog
 
 Modes:
   1. Dry-run mode (--dry-run):
-     Uses recorded authentic SerpApi JSON payloads. Zero API credits consumed.
+     Uses hand-written fixtures modeled on SerpApi's JSON format (not recorded live responses). Zero API credits consumed.
      Verifies parsing of title, authors, citations, year, sources, and company fields.
 
   2. Live mode (default when SERPAPI_API_KEY is present):
@@ -38,7 +38,7 @@ try:
 except Exception:
     pass
 
-# Authentic SerpApi response fixtures (for --dry-run and fallback verification)
+# Hand-written SerpApi-style response fixtures (for --dry-run and fallback verification)
 FIXTURES: Dict[str, Dict[str, Any]] = {
     "google_scholar": {
         "organic_results": [
@@ -103,11 +103,11 @@ FIXTURES: Dict[str, Dict[str, Any]] = {
 
 
 def test_dry_run() -> bool:
-    """Run full schema normalization against authentic captured SerpApi payloads."""
+    """Run full schema normalization against hand-written SerpApi-style fixtures."""
     from langchain_serpapi_provider.schema import normalize_response
 
     print("\n" + "=" * 65)
-    print(" [*] DRY-RUN AUDIT: Schema Normalization Across Real JSON Shapes")
+    print(" [*] DRY-RUN AUDIT: Schema Normalization Across Fixture JSON Shapes")
     print("=" * 65)
 
     all_passed = True

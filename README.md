@@ -264,9 +264,9 @@ streamlit run app.py
 3. Paper titles + abstracts are embedded with **spaCy** (`en_core_web_md`) or dense **TF-IDF + TruncatedSVD**
 4. Papers are clustered by cosine similarity using **KMeans**
 5. Topic headers are dynamically generated from TF-IDF n-grams (e.g. `Cluster 2: Executive & Bilingual`)
-6. Within each cluster, a conservative heuristic pass flags papers with contrasting outcome signals (e.g. `"outperforming"` vs `"no general cognitive advantages"`)
+6. Within each cluster, a phrase-matching pass looks for affirmative phrases (e.g. `"outperformed"`) and null/contrary phrases (e.g. `"no general cognitive advantages"`). It matches text only and does not read a paper's conclusions, so a matched phrase can come from background or definition text. Always open the paper.
 7. Results display as clustered cards with an amber **"Mixed findings signal — human review recommended"** badge and color-coded affirmative vs null/skeptical cues on individual paper cards
-8. Repeat runs complete in **< 1 ms** using disk-cached responses, consuming zero additional API credits.
+8. Repeat runs read the response from the disk cache (about 1 ms in our measurement, versus about 7 s for the live fetch) and use no additional API credits. The full page re-render still takes a few seconds.
 
 ---
 
@@ -289,10 +289,10 @@ pytest
 | `test_tool.py` | `select_engine` word-boundary and compound phrase matching (`"literature review"`, `"remote work"`, `"press release"`), tie-breaking, empty query, case insensitivity |
 
 ### Integration Smoke Test (Dry-Run & Live)
-We provide [`scripts/smoke_test.py`](scripts/smoke_test.py) to audit the integration against real JSON wire formats:
+We provide [`scripts/smoke_test.py`](scripts/smoke_test.py) to check the integration:
 
 ```bash
-# Dry-run audit (uses captured real-world payloads, 0 API calls)
+# Dry-run audit (hand-written fixtures modeled on SerpApi's response format, 0 API calls; not recorded live responses)
 python scripts/smoke_test.py --dry-run
 
 # Live smoke test (issues exactly 1 minimal query per engine against SerpApi)
