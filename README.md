@@ -2,8 +2,8 @@
 
 A **LangChain-compatible provider for SerpApi** that lets you drop academic paper
 retrieval, news search, job search, and web search into any LangChain application
-with one import — plus a polished **Streamlit research agent** demo that clusters
-papers and flags possible divergent findings for human review.
+with one import — plus a **Streamlit research agent** demo that clusters papers and
+shows a heuristic "mixed findings signal" for human review.
 
 ---
 
@@ -60,7 +60,7 @@ serpapi-research-toolkit/
 ├── examples/
 │   └── research_agent/
 │       ├── app.py                # Streamlit demo app
-│       └── requirements.txt      # demo-only deps (Streamlit, spaCy, FAISS, …)
+│       └── requirements.txt      # demo-only deps (Streamlit, scikit-learn, spaCy)
 ├── tests/
 │   ├── test_retriever.py         # retriever unit tests (mocked SerpApi SDK)
 │   ├── test_cache.py             # cache unit tests (mocked diskcache)
@@ -81,10 +81,10 @@ serpapi-research-toolkit/
 pip install -e ".[dev]"
 ```
 
-**From PyPI (once published):**
+**Directly from GitHub (not yet published on PyPI):**
 
 ```bash
-pip install langchain-serpapi-provider
+pip install git+https://github.com/JosephJonathanFernandes/serpapi-research-toolkit.git
 ```
 
 **Minimum requirements:** Python 3.10+, `langchain-core>=0.2`, `pydantic>=2.0`
@@ -111,7 +111,7 @@ retriever = SerpApiRetriever(
     engine="google_scholar",
     num_results=5,
 )
-docs = retriever.invoke("transformer attention mechanism")
+docs = retriever.invoke("bilingual advantage executive function cognitive control")
 
 for doc in docs:
     print(doc.metadata["title"])
@@ -122,14 +122,14 @@ for doc in docs:
     print()
 ```
 
-**Expected output** (truncated):
+**Example output** (one of the results from a live run; ranking and counts change over time):
 
 ```
-Attention Is All You Need
-  Citations : 95241
-  Year      : 2017
-  URL       : https://arxiv.org/abs/1706.03762
-  Snippet   : We propose a new simple network architecture, the Transformer…
+Bilingualism affords no general cognitive advantages: A population study of executive function in 11,000 people
+  Citations : 241
+  Year      : 2020
+  URL       : https://journals.sagepub.com/doi/abs/10.1177/0956797620903113
+  Snippet   : … in executive function or protects against age-related cognitive …
 ```
 
 ---

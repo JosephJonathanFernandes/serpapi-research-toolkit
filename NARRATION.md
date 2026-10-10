@@ -1,6 +1,6 @@
 # Narration Script: serpapi-research-toolkit Demo
 
-**Total length:** about 2:15. Read at a calm, steady pace.
+**Total length:** about 2:30. Read at a calm, steady pace.
 **Format:** Read only the quoted lines. *Italic notes* are cues and are not spoken.
 
 ### Pronunciation
@@ -19,6 +19,18 @@
 First, every search engine returns a different data shape. Google Scholar, web search, news and jobs all use different formats.
 Second, agents re-run the same queries again and again while you develop them, and that burns through your API credits.
 So we built langchain-serpapi-provider. It's a lightweight, pip-installable LangChain plugin. It normalizes results into one schema, picks the right search engine automatically, and caches every response on disk."
+
+---
+
+## Scene 1b: The Plugin in Code (about 15s)
+*On screen: a code editor showing these two lines, then switch back to the app.*
+
+```python
+retriever = SerpApiRetriever(engine="google_scholar", num_results=10)
+docs = retriever.invoke("bilingual advantage executive function cognitive control")
+```
+
+"This is the whole integration. One retriever, one line to pick the engine, and you get back standard LangChain documents with citations and metadata already attached. The demo you're about to see is built entirely on this."
 
 ---
 
