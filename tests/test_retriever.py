@@ -78,9 +78,16 @@ JOBS_RAW = {
 }
 
 
-def _make_retriever(engine="google_scholar", num_results=10, cache=None):
-    """Create a retriever with a mocked-out SerpApi call."""
-    if cache is None:
+_DEFAULT = object()
+
+
+def _make_retriever(engine="google_scholar", num_results=10, cache=_DEFAULT):
+    """Create a retriever with a mocked-out SerpApi call.
+
+    ``cache`` defaults to a disabled cache; pass ``None`` to test the real
+    explicit-None path.
+    """
+    if cache is _DEFAULT:
         cache = SerpApiCache(enabled=False)
     return SerpApiRetriever(
         api_key="test_key_123",
@@ -217,7 +224,9 @@ class TestRetrieverCaching:
         retriever.invoke("transformers")
 
         mock_call.assert_called_once()
-        real_cache.set.assert_called_once_with("transformers", "google_scholar", SCHOLAR_RAW)
+        real_cache.set.assert_called_once_with(
+            "transformers", "google_scholar", SCHOLAR_RAW, params={"num": 10}
+        )
 
     @patch("langchain_serpapi_provider.retriever.SerpApiRetriever._call_serpapi")
     def test_no_cache_always_calls_api(self, mock_call):

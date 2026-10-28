@@ -21,23 +21,37 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
 ]
 
+# Core runtime needs only langchain-core (not the full `langchain` package).
 dependencies = [
     "langchain-core>=0.2.0",
     "google-search-results>=2.4.2",
     "pydantic>=2.0.0",
     "diskcache>=5.6.0",
-    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]
 agent = [
     "langchain>=0.2.0",
 ]
+# Streamlit research-agent demo in examples/research_agent
+demo = [
+    "streamlit>=1.35.0",
+    "scikit-learn>=1.4.0",
+    "numpy>=1.26.0",
+    "python-dotenv>=1.0.0",
+]
+# Optional NLI backend for the possible-disagreement detector
+nli = [
+    "transformers>=4.40",
+    "torch",
+]
 dev = [
     "pytest>=8.0.0",
     "pytest-mock>=3.12.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.urls]
@@ -48,6 +62,9 @@ Issues = "https://github.com/JosephJonathanFernandes/serpapi-research-toolkit/is
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["langchain_serpapi_provider*"]
+
+[tool.setuptools.package-data]
+langchain_serpapi_provider = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

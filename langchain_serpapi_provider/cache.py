@@ -2,7 +2,14 @@
 Disk-based cache for SerpApi responses.
 
 Uses ``diskcache`` as the backend. Each entry is keyed by a SHA-256 hash
-of (query, engine) so repeated calls during development don't burn API credits.
+of (query, engine, request params) so repeated calls during development don't
+burn API credits, while calls that differ in any result-changing parameter
+(``num``, ``start``, ``hl``, year range, ...) never share an entry.
+
+Environment variables
+---------------------
+``SERPAPI_CACHE_DIR``  cache directory (default ``~/.serpapi_cache``)
+``SERPAPI_CACHE_TTL``  TTL in seconds (default 86400); ``0`` disables the cache
 
 Usage::
 
@@ -28,12 +35,32 @@ logger = logging.getLogger(__name__)
 
 _DEFAULT_CACHE_DIR = str(Path.home() / ".serpapi_cache")
 _DEFAULT_TTL = 60 * 60 * 24  # 24 hours in seconds
+_UNSET: Any = object()
 
 
-def _cache_key(query: str, engine: str) -> str:
-    """Return a stable hex-digest key for (query, engine)."""
-    payload = json.dumps({"query": query.strip().lower(), "engine": engine}, sort_keys=True)
+def _cache_key(query: str, engine: str, params: Optional[Dict[str, Any]] = None) -> str:
+    """Return a stable hex-digest key for (query, engine, params).
+
+    ``params`` should hold every request parameter that can change the
+    response, except secrets such as the API key.
+    """
+    payload = json.dumps(
+        {"query": query.strip().lower(), "engine": engine, "params": params or {}},
+        sort_keys=True,
+        default=str,
+    )
     return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def _env_ttl() -> Optional[int]:
+    raw = os.getenv("SERPAPI_CACHE_TTL")
+    if raw is None or raw.strip() == "":
+        return _DEFAULT_TTL
+    try:
+        return int(raw)
+    except ValueError:
+        logger.warning("Ignoring invalid SERPAPI_CACHE_TTL=%r", raw)
+        return _DEFAULT_TTL
 
 
 class SerpApiCache:
@@ -42,10 +69,12 @@ class SerpApiCache:
     Parameters
     ----------
     cache_dir:
-        Directory where the cache is stored. Defaults to ``~/.serpapi_cache``.
+        Directory where the cache is stored. Defaults to the
+        ``SERPAPI_CACHE_DIR`` env var, else ``~/.serpapi_cache``.
     ttl:
-        Time-to-live in seconds. Defaults to 86400 (24 hours). Pass ``None``
-        to keep entries forever.
+        Time-to-live in seconds. Defaults to the ``SERPAPI_CACHE_TTL`` env
+        var, else 86400 (24 hours). Pass ``None`` to keep entries forever.
+        A TTL of ``0`` disables the cache.
     enabled:
         Set to ``False`` to disable the cache entirely (useful in tests or
         production runs where fresh data is critical).
@@ -53,10 +82,16 @@ class SerpApiCache:
 
     def __init__(
         self,
-        cache_dir: str = _DEFAULT_CACHE_DIR,
-        ttl: Optional[int] = _DEFAULT_TTL,
+        cache_dir: Optional[str] = None,
+        ttl: Optional[int] = _UNSET,
         enabled: bool = True,
     ) -> None:
+        if cache_dir is None:
+            cache_dir = os.getenv("SERPAPI_CACHE_DIR") or _DEFAULT_CACHE_DIR
+        if ttl is _UNSET:
+            ttl = _env_ttl()
+        if ttl == 0:
+            enabled = False
         self._ttl = ttl
         self._enabled = enabled
         self._cache = None
@@ -77,11 +112,13 @@ class SerpApiCache:
     # Public API
     # ------------------------------------------------------------------
 
-    def get(self, query: str, engine: str) -> Optional[Dict[str, Any]]:
+    def get(
+        self, query: str, engine: str, params: Optional[Dict[str, Any]] = None
+    ) -> Optional[Dict[str, Any]]:
         """Return cached raw SerpApi response dict, or ``None`` on miss."""
         if not self._enabled or self._cache is None:
             return None
-        key = _cache_key(query, engine)
+        key = _cache_key(query, engine, params)
         value = self._cache.get(key)
         if value is not None:
             logger.debug("SerpApiCache HIT  key=%s", key[:12])
@@ -89,19 +126,31 @@ class SerpApiCache:
             logger.debug("SerpApiCache MISS key=%s", key[:12])
         return value  # type: ignore[return-value]
 
-    def set(self, query: str, engine: str, data: Dict[str, Any]) -> None:
-        """Store ``data`` in the cache under (query, engine)."""
+    def set(
+        self,
+        query: str,
+        engine: str,
+        data: Dict[str, Any],
+        params: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        """Store ``data`` in the cache under (query, engine, params).
+
+        Callers must only store successful responses; the retriever never
+        passes error payloads here.
+        """
         if not self._enabled or self._cache is None:
             return
-        key = _cache_key(query, engine)
+        key = _cache_key(query, engine, params)
         self._cache.set(key, data, expire=self._ttl)
         logger.debug("SerpApiCache SET  key=%s", key[:12])
 
-    def invalidate(self, query: str, engine: str) -> None:
+    def invalidate(
+        self, query: str, engine: str, params: Optional[Dict[str, Any]] = None
+    ) -> None:
         """Remove a single entry from the cache."""
         if self._cache is None:
             return
-        key = _cache_key(query, engine)
+        key = _cache_key(query, engine, params)
         self._cache.delete(key)
 
     def clear(self) -> None:

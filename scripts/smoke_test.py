@@ -224,8 +224,8 @@ def test_live(api_key: str) -> bool:
                 status = "[PASS]" if val is not None else "[WARN]"
                 print(f"    {status} {field}: {val}")
 
-            # Verify cache intercept on 2nd query (no credit burned)
-            cached_val = cache.get(query, engine)
+            # Verify the response was stored under the exact key the retriever uses
+            cached_val = cache.get(query, engine, params=retriever._cache_params(query))
             if cached_val is not None:
                 print(f"  [PASS] Cache verified: entry stored for key ({query!r}, {engine})")
             else:

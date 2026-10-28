@@ -20,12 +20,16 @@ Usage::
 
 from __future__ import annotations
 
+import asyncio
+import logging
 import re
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from langchain_core.tools import Tool
 
-from .retriever import SerpApiRetriever
+from .retriever import SUPPORTED_ENGINES, SerpApiRetriever
+
+logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
@@ -175,11 +179,12 @@ def build_serpapi_tool(
         num_results=num_results,
         **retriever_kwargs,
     )
-    return Tool(
-        name=name,
-        description=description,
-        func=_make_retriever_fn(retriever),
-    )
+    run = _make_retriever_fn(retriever)
+
+    async def _arun(query: str) -> str:
+        return await asyncio.to_thread(run, query)
+
+    return Tool(name=name, description=description, func=run, coroutine=_arun)
 
 
 def build_auto_engine_tool(
@@ -191,22 +196,54 @@ def build_auto_engine_tool(
         "Automatically selects the best search engine for the query. "
         "Input should be a plain-English search query."
     ),
+    engine_selector: Optional[Callable[[str], str]] = None,
+    engine: Optional[str] = None,
     **retriever_kwargs: Any,
 ) -> Tool:
-    """Like ``build_serpapi_tool`` but auto-selects the engine per query."""
+    """Like ``build_serpapi_tool`` but picks the engine per query.
+
+    Parameters
+    ----------
+    engine_selector:
+        ``Callable[[str], str]`` mapping a query to an engine name. Defaults to
+        the keyword heuristic :func:`select_engine`. Pass your own function
+        (for example one that asks an LLM) when keywords misroute your queries.
+    engine:
+        Force one engine and skip selection entirely (an override).
+
+    The chosen engine is logged at INFO level on ``langchain_serpapi_provider.tool``.
+    """
     from .cache import SerpApiCache
 
-    cache = SerpApiCache()
+    if engine is not None and engine not in SUPPORTED_ENGINES:
+        raise ValueError(f"Unsupported engine '{engine}'. Choose from: {sorted(SUPPORTED_ENGINES)}")
+
+    selector = engine_selector or select_engine
+    # An explicit ``cache=None`` disables caching; otherwise share one cache.
+    if "cache" not in retriever_kwargs:
+        retriever_kwargs["cache"] = SerpApiCache()
+
+    def _choose(query: str) -> str:
+        if engine is not None:
+            chosen, how = engine, "override"
+        else:
+            chosen, how = selector(query), "selector"
+        if chosen not in SUPPORTED_ENGINES:
+            logger.warning("Selector returned unsupported engine %r; using 'google'", chosen)
+            chosen = "google"
+        logger.info("Engine %s chosen via %s for query=%r", chosen, how, query)
+        return chosen
 
     def _auto_run(query: str) -> str:
-        engine = select_engine(query)
         retriever = SerpApiRetriever(
             api_key=api_key,
-            engine=engine,
+            engine=_choose(query),
             num_results=num_results,
-            cache=cache,
             **retriever_kwargs,
         )
         return _make_retriever_fn(retriever)(query)
 
-    return Tool(name=name, description=description, func=_auto_run)
+    async def _auto_arun(query: str) -> str:
+        return await asyncio.to_thread(_auto_run, query)
+
+    return Tool(name=name, description=description, func=_auto_run, coroutine=_auto_arun)
