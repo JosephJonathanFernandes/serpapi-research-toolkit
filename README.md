@@ -291,10 +291,14 @@ The research agent flags clusters as a **possible disagreement for human review*
 Full dev and test table with counts: [`eval/results.md`](eval/results.md). Reproduce with `python eval/run_ablation.py`.
 
 ### What we found
-1. **Enriching with full abstracts made detection worse, not better,** for every detector on test (phrases V2 F1 0.40 to 0.19, NLI 0.33 to 0.00). The assumption that better input would help did not hold for these detectors.
-2. **Findings-only extraction recovers part of NLI (0.00 to 0.21) but not phrase matching (0.19 to 0.06),** and neither beats raw snippets. Whether the cause is cue co-occurrence in long text or crude sentence extraction is untested.
-3. **With 30 test positives, most differences here are within noise.** One extra true positive moves recall by 0.03. Do not read rankings between close rows as real.
-4. **Best recall is 0.27.** The detector is a triage hint at most, never evidence that a literature disagrees.
+1. **Full abstracts did not reliably help; the effect is mixed and within noise.** On test, phrases V2 F1 fell (0.40 to 0.19) and NLI fell (0.33 to 0.00), but phrases V1 rose (0.00 to 0.06, from a single true positive). On dev, V2 rose (0.15 to 0.25) and NLI was flat. We cannot say enrichment helps or hurts detection.
+2. **Findings-only extraction shows no consistent gain.** NLI findings-only (0.21) beats NLI full-abstract (0.00), but that rests on 4 true positives out of 30, so it is not evidence of anything. It does not help phrase matching (0.19 to 0.06).
+3. **The headline number is the contaminated one.** Phrases V2 on snippets (F1 0.40) uses a lexicon written after reading these same topics, so it is **tuned on the same topics** and is an upper bound, not a held-out result.
+4. **With 30 test positives, one extra true positive moves recall by 0.03.** Rankings between close rows are not meaningful.
+5. **Best recall is 0.27**, so the detector is at most a triage hint.
+6. **The labels themselves are unverified** (AI-written, not checked against the abstracts the detectors read), so a "miss" may be a wrong label. Until a human audit exists, none of these numbers support a conclusion about detector quality. See `eval/audit/`.
+
+"Disagreement detection works" is **not** supported by this evidence.
 
 The next experiment that matters is the LLM stance classifier, evaluated on a human-relabeled subset.
 

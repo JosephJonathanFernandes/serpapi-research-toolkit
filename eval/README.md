@@ -36,10 +36,12 @@ Counts and the dev split are in `results.md`. "Findings only" = structured Resul
 
 ## What the numbers say
 
-1. Full abstracts did not help any detector on test; they hurt all of them. Our earlier expectation that better input would improve detection is not supported here.
-2. Findings-only extraction recovers some NLI performance but not phrase matching, and no input beats raw snippets. The reason is untested; plausible causes are cue co-occurrence in long text and crude sentence extraction.
-3. Best recall is 0.27, so the detector misses roughly three of four labeled contradictions. It is a triage hint, not evidence of disagreement.
-4. NLI is the wrong task for this problem: two papers on different cohorts are "neutral" under an MNLI model even when they take opposing stances. The stance classifier (SUPPORTS vs NULL toward a shared claim) targets that, but is not yet measured.
+1. Full abstracts have a mixed effect: test F1 fell for phrases V2 (0.40 to 0.19) and NLI (0.33 to 0.00) but rose for phrases V1 (0.00 to 0.06, one true positive); on dev, V2 rose (0.15 to 0.25). The effect is within noise.
+2. Findings-only NLI (0.21) vs full-abstract NLI (0.00) rests on 4 true positives of 30. Not evidence of an effect. It does not help phrase matching.
+3. Phrases V2 on snippets (F1 0.40) is the best row, but its lexicon was **tuned on the same topics**, so it is an upper bound.
+4. Best recall is 0.27, so the detector misses roughly three of four labeled contradictions.
+5. The labels are unverified and were not checked against the abstracts the detectors read, so a miss may be a label error. These numbers do not support a claim about detector quality until the human audit (`eval/audit/`) is done.
+6. NLI is the wrong task: papers on different cohorts are "neutral" under an MNLI model. The stance classifier targets that but is not yet measured.
 
 ## Next steps
 
