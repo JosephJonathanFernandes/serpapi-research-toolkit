@@ -1,0 +1,501 @@
+{
+  "query": "bilingual advantage executive function cognitive control",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:09:37+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "… bilingualism and early age of second language acquisition as the underlying mechanisms of a bilingual executive control advantage: Why variations in bilingual …",
+        "result_id": "LIsvG-RvNLMJ",
+        "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.00164/full",
+        "snippet": "… evidence for a bilingual advantage in executive processing. … the lack of clarity in how executive functions (EFs) are defined … Effect of bilingualism on cognitive control in the Simon taks: …",
+        "publication_info": {
+          "summary": "WQ Yow, X Li - Frontiers in psychology, 2015 - frontiersin.org",
+          "authors": [
+            {
+              "name": "WQ Yow",
+              "link": "https://scholar.google.com/citations?user=bHtnEl0AAAAJ&hl=en&oi=sra",
+              "author_id": "bHtnEl0AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=bHtnEl0AAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "X Li",
+              "link": "https://scholar.google.com/citations?user=Z0qNsTsAAAAJ&hl=en&oi=sra",
+              "author_id": "Z0qNsTsAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Z0qNsTsAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "frontiersin.org",
+            "file_format": "PDF",
+            "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.00164/pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=LIsvG-RvNLMJ",
+          "cited_by": {
+            "total": 341,
+            "link": "https://scholar.google.com/scholar?cites=12913069057077381932&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "12913069057077381932",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=12913069057077381932&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:LIsvG-RvNLMJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ALIsvG-RvNLMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=12913069057077381932&hl=en&as_sdt=0,5",
+            "cluster_id": "12913069057077381932",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=12913069057077381932&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:LIsvG-RvNLMJ:scholar.google.com/+bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 2,
+        "title": "No evidence for a bilingual executive function advantage in the ABCD study",
+        "result_id": "KrRggpQSzEAJ",
+        "link": "https://www.nature.com/articles/s41562-019-0609-3",
+        "snippet": "… findings of a bilingual advantage for executive function, we did … Cognitive control in bilinguals: advantages in stimulus–… Bilingualism, aging, and cognitive control: evidence from the …",
+        "publication_info": {
+          "summary": "AS Dick, NL Garcia, SM Pruden, WK Thompson… - Nature human …, 2019 - nature.com",
+          "authors": [
+            {
+              "name": "AS Dick",
+              "link": "https://scholar.google.com/citations?user=c-M4lOcAAAAJ&hl=en&oi=sra",
+              "author_id": "c-M4lOcAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=c-M4lOcAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "NL Garcia",
+              "link": "https://scholar.google.com/citations?user=VhtuFpYAAAAJ&hl=en&oi=sra",
+              "author_id": "VhtuFpYAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=VhtuFpYAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "SM Pruden",
+              "link": "https://scholar.google.com/citations?user=bTpp8cUAAAAJ&hl=en&oi=sra",
+              "author_id": "bTpp8cUAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=bTpp8cUAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "WK Thompson",
+              "link": "https://scholar.google.com/citations?user=jsBDssUAAAAJ&hl=en&oi=sra",
+              "author_id": "jsBDssUAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=jsBDssUAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "nih.gov",
+            "file_format": "PDF",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7156280/pdf/nihms-1574345.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=KrRggpQSzEAJ",
+          "cited_by": {
+            "total": 289,
+            "link": "https://scholar.google.com/scholar?cites=4669127342728197162&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "4669127342728197162",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=4669127342728197162&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:KrRggpQSzEAJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AKrRggpQSzEAJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=4669127342728197162&hl=en&as_sdt=0,5",
+            "cluster_id": "4669127342728197162",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=4669127342728197162&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Bilingual advantage in executive control when task demands are considered",
+        "result_id": "CS5WMVbQqVYJ",
+        "link": "https://www.cambridge.org/core/journals/bilingualism-language-and-cognition/article/bilingual-advantage-in-executive-control-when-task-demands-are-considered/087A26C3B24329E80E9BFDBBAE3CB9E1",
+        "snippet": "… results on bilingual advantage in executive control. However, … bilingual advantage in executive control over monolinguals. … Hot and cool aspects of executive function: Relations in early …",
+        "publication_info": {
+          "summary": "LI Qu, JJW Low, T Zhang, H Li… - Bilingualism: Language …, 2016 - cambridge.org",
+          "authors": [
+            {
+              "name": "LI Qu",
+              "link": "https://scholar.google.com/citations?user=6poMuB0AAAAJ&hl=en&oi=sra",
+              "author_id": "6poMuB0AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=6poMuB0AAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "JJW Low"
+            },
+            {
+              "name": "T Zhang"
+            },
+            {
+              "name": "H Li",
+              "link": "https://scholar.google.com/citations?user=hUhQeoEAAAAJ&hl=en&oi=sra",
+              "author_id": "hUhQeoEAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=hUhQeoEAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Hong-Li-67/publication/273906257_Bilingual_advantage_in_executive_control_when_task_demands_are_considered/links/5538a9440cf247b8587d49cf/Bilingual-advantage-in-executive-control-when-task-demands-are-considered.pdf?_sg%5B0%5D=started_experiment_milestone&origin=journalDetail"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=CS5WMVbQqVYJ",
+          "cited_by": {
+            "total": 62,
+            "link": "https://scholar.google.com/scholar?cites=6244751426939399689&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "6244751426939399689",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=6244751426939399689&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:CS5WMVbQqVYJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ACS5WMVbQqVYJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=6244751426939399689&hl=en&as_sdt=0,5",
+            "cluster_id": "6244751426939399689",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=6244751426939399689&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Should the search for bilingual advantages in executive functioning continue?",
+        "result_id": "O_I6EB7EhJcJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S001094521500338X",
+        "snippet": "… be the key that unlocks the elusive relationship between bilingual language control and general cognitive control. Given that good cognitive models are required in order to design the …",
+        "publication_info": {
+          "summary": "KR Paap, HA Johnson, O Sawi - Cortex, 2016 - Elsevier",
+          "authors": [
+            {
+              "name": "KR Paap",
+              "link": "https://scholar.google.com/citations?user=4tOLwO0AAAAJ&hl=en&oi=sra",
+              "author_id": "4tOLwO0AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=4tOLwO0AAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "HA Johnson",
+              "link": "https://scholar.google.com/citations?user=g2HYjvAAAAAJ&hl=en&oi=sra",
+              "author_id": "g2HYjvAAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=g2HYjvAAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "O Sawi",
+              "link": "https://scholar.google.com/citations?user=eWp_TBkAAAAJ&hl=en&oi=sra",
+              "author_id": "eWp_TBkAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=eWp_TBkAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "DOC",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "DOC",
+            "link": "https://www.researchgate.net/profile/Kenneth-Paap/publication/284013651_Should_the_Search_for_Bilingual_Advantages_in_Executive_Functioning_Continue/links/5fa03d0f458515b7cfb3486e/Should-the-Search-for-Bilingual-Advantages-in-Executive-Functioning-Continue"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=O_I6EB7EhJcJ",
+          "cited_by": {
+            "total": 207,
+            "link": "https://scholar.google.com/scholar?cites=10918067030053286459&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "10918067030053286459",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=10918067030053286459&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:O_I6EB7EhJcJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AO_I6EB7EhJcJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 6,
+            "link": "https://scholar.google.com/scholar?cluster=10918067030053286459&hl=en&as_sdt=0,5",
+            "cluster_id": "10918067030053286459",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=10918067030053286459&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 5,
+        "title": "Bilingual effects on cognitive control: Are we looking in the right place?",
+        "result_id": "CDbqZOnYBdMJ",
+        "link": "https://www.cambridge.org/core/journals/bilingualism-language-and-cognition/article/bilingual-effects-on-cognitive-control-are-we-looking-in-the-right-place/F9B94ABA7EF2FBC155FE60B680E5D75E",
+        "snippet": "… between executive functioning and verbal and visual learning and memory. Archives of Clinical Neuropsychology, 20(1), 111–122. Durand López, EM (2021). A bilingual advantage in …",
+        "publication_info": {
+          "summary": "AJ Privitera - Bilingualism: Language and Cognition, 2026 - cambridge.org",
+          "authors": [
+            {
+              "name": "AJ Privitera"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "cambridge.org",
+            "file_format": "PDF",
+            "link": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F9B94ABA7EF2FBC155FE60B680E5D75E/S1366728925100576a.pdf/bilingual-effects-on-cognitive-control-are-we-looking-in-the-right-place.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=CDbqZOnYBdMJ",
+          "cited_by": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cites=15205798213818398216&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15205798213818398216",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15205798213818398216&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:CDbqZOnYBdMJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ACDbqZOnYBdMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 5,
+            "link": "https://scholar.google.com/scholar?cluster=15205798213818398216&hl=en&as_sdt=0,5",
+            "cluster_id": "15205798213818398216",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15205798213818398216&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 6,
+        "title": "Education shapes executive functions in aging: Revisiting the bilingual advantage hypothesis",
+        "result_id": "eEi6jZtkQqcJ",
+        "link": "https://www.tandfonline.com/doi/abs/10.1080/03601277.2026.2713645",
+        "snippet": "… First, the primary aim of the study was to examine potential group-level differences in cognitive control tasks within a relatively homogeneous socio-linguistic context in which Azerbaijani…",
+        "publication_info": {
+          "summary": "R Shahabi, D Davoudnejad, S Zandi - Educational Gerontology, 2026 - Taylor & Francis",
+          "authors": [
+            {
+              "name": "R Shahabi"
+            },
+            {
+              "name": "D Davoudnejad"
+            },
+            {
+              "name": "S Zandi"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "tandfonline.com",
+            "file_format": "PDF",
+            "link": "https://www.tandfonline.com/doi/pdf/10.1080/03601277.2026.2713645"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=eEi6jZtkQqcJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:eEi6jZtkQqcJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AeEi6jZtkQqcJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=12052306172057372792&hl=en&as_sdt=0,5",
+            "cluster_id": "12052306172057372792",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=12052306172057372792&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Effects of Bilingual Education on Executive Function Development in Children",
+        "result_id": "mOoq_Fj6G_sJ",
+        "type": "Pdf",
+        "link": "http://trpubonline.org/index.php/Cognita/article/download/346/285",
+        "snippet": "… advantages for executive function in children remains contested, with prior work divided between studies reporting bilingual advantages … assessing inhibitory control, cognitive flexibility, …",
+        "publication_info": {
+          "summary": "M Fischer, P Makela, A Pedersen - Cognita, 2026 - trpubonline.org",
+          "authors": [
+            {
+              "name": "M Fischer"
+            },
+            {
+              "name": "P Makela"
+            },
+            {
+              "name": "A Pedersen"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "trpubonline.org",
+            "file_format": "PDF",
+            "link": "http://trpubonline.org/index.php/Cognita/article/download/346/285"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=mOoq_Fj6G_sJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:mOoq_Fj6G_sJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AmOoq_Fj6G_sJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:mOoq_Fj6G_sJ:scholar.google.com/+bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 8,
+        "title": "Bilingual Education and Cognitive Control: An Educational Neuroscience Perspective",
+        "result_id": "XZWLDjaSnIoJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S2211949326000220",
+        "snippet": "… bilingual experience and executive function, leading to the proposal of a bilingual advantage… the relationship between bilingual experience and executive function may be influenced by …",
+        "publication_info": {
+          "summary": "H Fujitani - Trends in Neuroscience and Education, 2026 - Elsevier",
+          "authors": [
+            {
+              "name": "H Fujitani"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=XZWLDjaSnIoJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:XZWLDjaSnIoJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AXZWLDjaSnIoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=9988018834470835549&hl=en&as_sdt=0,5",
+            "cluster_id": "9988018834470835549",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=9988018834470835549&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "A theory-driven approach to understanding individual differences in bilingualism and executive functioning: Beyond a general advantage.",
+        "result_id": "hMHtmml5WIcJ",
+        "link": "https://psycnet.apa.org/fulltext/2027-66968-001.html",
+        "snippet": "… For over 2 decades, research on the cognitive effects of bilingualism has been mired in debates over the existence of a general “bilingual advantage” on executive function (EF). Despite …",
+        "publication_info": {
+          "summary": "E Navarro, M Pathare, E Rossi - Psychological Review, 2026 - psycnet.apa.org",
+          "authors": [
+            {
+              "name": "E Navarro"
+            },
+            {
+              "name": "M Pathare"
+            },
+            {
+              "name": "E Rossi"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=hMHtmml5WIcJ",
+          "cited_by": {
+            "total": 1,
+            "link": "https://scholar.google.com/scholar?cites=9752678487548608900&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "9752678487548608900",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=9752678487548608900&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:hMHtmml5WIcJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AhMHtmml5WIcJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=9752678487548608900&hl=en&as_sdt=0,5",
+            "cluster_id": "9752678487548608900",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=9752678487548608900&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 10,
+        "title": "Bilingualism as a potential strategy to improve executive function in preterm infants: a review",
+        "result_id": "bbm0DcofcxUJ",
+        "link": "https://www.jpedhc.org/article/S0891-5245(14)00281-8/abstract",
+        "snippet": "… bilingualism, prematurity, and executive functioning through the following aims: (a) review literature about preterm infants’ executive functioning… on the cognitive bilingual advantage has …",
+        "publication_info": {
+          "summary": "LM Head, M Baralt, AED Mahoney - Journal of Pediatric Health Care, 2015 - jpedhc.org",
+          "authors": [
+            {
+              "name": "LM Head"
+            },
+            {
+              "name": "M Baralt"
+            },
+            {
+              "name": "AED Mahoney"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Lauren-Zauche/publication/266574594_Bilingualism_as_a_Potential_Strategy_to_Improve_Executive_Function_in_Preterm_Infants_A_Review/links/56abd52f08ae19a385115781/Bilingualism-as-a-Potential-Strategy-to-Improve-Executive-Function-in-Preterm-Infants-A-Review.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=bbm0DcofcxUJ",
+          "cited_by": {
+            "total": 22,
+            "link": "https://scholar.google.com/scholar?cites=1545614049792014701&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "1545614049792014701",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=1545614049792014701&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:bbm0DcofcxUJ:scholar.google.com/&scioq=bilingual+advantage+executive+function+cognitive+control&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3Abbm0DcofcxUJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 6,
+            "link": "https://scholar.google.com/scholar?cluster=1545614049792014701&hl=en&as_sdt=0,5",
+            "cluster_id": "1545614049792014701",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=1545614049792014701&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 2460,
+      "time_taken_displayed": 0.4,
+      "query_displayed": "bilingual advantage executive function cognitive control"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "bilingual advantage executive function cognitive control",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

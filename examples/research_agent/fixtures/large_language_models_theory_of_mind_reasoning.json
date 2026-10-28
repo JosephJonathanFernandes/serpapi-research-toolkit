@@ -1,0 +1,455 @@
+{
+  "query": "large language models theory of mind reasoning",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:09:41+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Mindpower: Enabling theory-of-mind reasoning in vlm-based embodied agents",
+        "result_id": "Io9TPNniItIJ",
+        "link": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_MindPower_Enabling_Theory-of-Mind_Reasoning_in_VLM-based_Embodied_Agents_CVPR_2026_paper.html",
+        "snippet": "… Hi-tom: A benchmark for evaluating higher-order theory of mind reasoning in large language models. In The 2023 Conference on Empirical Methods in Natural Language Processing, …",
+        "publication_info": {
+          "summary": "R Zhang, Q Zheng, Z Zhou, Z Liao… - Proceedings of the …, 2026 - openaccess.thecvf.com",
+          "authors": [
+            {
+              "name": "R Zhang"
+            },
+            {
+              "name": "Q Zheng"
+            },
+            {
+              "name": "Z Zhou"
+            },
+            {
+              "name": "Z Liao"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "thecvf.com",
+            "file_format": "PDF",
+            "link": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_MindPower_Enabling_Theory-of-Mind_Reasoning_in_VLM-based_Embodied_Agents_CVPR_2026_paper.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=Io9TPNniItIJ",
+          "cited_by": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cites=15141914319820918562&as_sdt=5,47&sciodt=0,47&hl=en",
+            "cites_id": "15141914319820918562",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C47&cites=15141914319820918562&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:Io9TPNniItIJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3AIo9TPNniItIJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=15141914319820918562&hl=en&as_sdt=0,47",
+            "cluster_id": "15141914319820918562",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C47&cluster=15141914319820918562&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:Io9TPNniItIJ:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 2,
+        "title": "Evaluating Theory of Mind in Reasoning Models: Robustness over Reasoning",
+        "result_id": "r_wtEFUr3_oJ",
+        "link": "https://link.springer.com/chapter/10.1007/978-3-032-41086-3_24",
+        "snippet": "… This paper studies the role of reasoning in the performance of large language models on ToM tasks, and can be seen as a contribution of humanities and social sciences to AI, and vice …",
+        "publication_info": {
+          "summary": "IB de Haan, P van der Putten, M van Duijn - International Conference on …, 2026 - Springer",
+          "authors": [
+            {
+              "name": "IB de Haan"
+            },
+            {
+              "name": "P van der Putten",
+              "link": "https://scholar.google.com/citations?user=sCML1UAAAAAJ&hl=en&oi=sra",
+              "author_id": "sCML1UAAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=sCML1UAAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "M van Duijn",
+              "link": "https://scholar.google.com/citations?user=1jZcjYkAAAAJ&hl=en&oi=sra",
+              "author_id": "1jZcjYkAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=1jZcjYkAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "arxiv.org",
+            "file_format": "PDF",
+            "link": "https://arxiv.org/pdf/2608.04646"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=r_wtEFUr3_oJ",
+          "cited_by": {
+            "total": 1,
+            "link": "https://scholar.google.com/scholar?cites=18077215073632124079&as_sdt=5,47&sciodt=0,47&hl=en",
+            "cites_id": "18077215073632124079",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C47&cites=18077215073632124079&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:r_wtEFUr3_oJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3Ar_wtEFUr3_oJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=18077215073632124079&hl=en&as_sdt=0,47",
+            "cluster_id": "18077215073632124079",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C47&cluster=18077215073632124079&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Game of thoughts: Iterative reasoning in game-theoretic domains with large language models",
+        "result_id": "kW2g7DR8xMoJ",
+        "type": "Pdf",
+        "link": "https://ifaamas.csc.liv.ac.uk/Proceedings/aamas2025/pdfs/p1088.pdf",
+        "snippet": "… the strategic reasoning capabilities of large language models (… cognitive hierarchy models used to characterize human thought … -making models can enable us to improve the reasoning …",
+        "publication_info": {
+          "summary": "B Kempinski, I Gemp, K Larson… - Proceedings of the …, 2025 - ifaamas.csc.liv.ac.uk",
+          "authors": [
+            {
+              "name": "B Kempinski"
+            },
+            {
+              "name": "I Gemp"
+            },
+            {
+              "name": "K Larson"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "liv.ac.uk",
+            "file_format": "PDF",
+            "link": "https://ifaamas.csc.liv.ac.uk/Proceedings/aamas2025/pdfs/p1088.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=kW2g7DR8xMoJ",
+          "cited_by": {
+            "total": 14,
+            "link": "https://scholar.google.com/scholar?cites=14610939657846812049&as_sdt=5,47&sciodt=0,47&hl=en",
+            "cites_id": "14610939657846812049",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C47&cites=14610939657846812049&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:kW2g7DR8xMoJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3AkW2g7DR8xMoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=14610939657846812049&hl=en&as_sdt=0,47",
+            "cluster_id": "14610939657846812049",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C47&cluster=14610939657846812049&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:kW2g7DR8xMoJ:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 4,
+        "title": "Reasoning Well, Judging Poorly: Theory of Mind Scaffolding Exposes the Limits of LLM Persuasion Judges",
+        "result_id": "DCCiEw2m08IJ",
+        "link": "https://aclanthology.org/2026.findings-emnlp.529/",
+        "snippet": "… show that better reasoning does not lead to better verdicts. Although PAToM improves reasoning … Measuring and improving persuasiveness of large language models. In The Thirteenth …",
+        "publication_info": {
+          "summary": "B Ansari, M Dewan, A Mashhadi - Findings of the Association for …, 2026 - aclanthology.org",
+          "authors": [
+            {
+              "name": "B Ansari"
+            },
+            {
+              "name": "M Dewan"
+            },
+            {
+              "name": "A Mashhadi"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "aclanthology.org",
+            "file_format": "PDF",
+            "link": "https://aclanthology.org/2026.findings-emnlp.529.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=DCCiEw2m08IJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:DCCiEw2m08IJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3ADCCiEw2m08IJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:DCCiEw2m08IJ:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 5,
+        "title": "Learning Perception to Action Rules through Reinforcement Learning for Theory-of-Mind Reasoning",
+        "result_id": "LBg6jN3QrpYJ",
+        "link": "https://arxiv.org/abs/2610.19796",
+        "snippet": "… Hi-tom: A benchmark for evaluating higher-order theory of mind reasoning in large language models. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages …",
+        "publication_info": {
+          "summary": "S Oh, N Sagimbayeva, N Jennings, P Hussein… - arXiv preprint arXiv …, 2026 - arxiv.org",
+          "authors": [
+            {
+              "name": "S Oh"
+            },
+            {
+              "name": "N Sagimbayeva"
+            },
+            {
+              "name": "N Jennings"
+            },
+            {
+              "name": "P Hussein"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "arxiv.org",
+            "file_format": "PDF",
+            "link": "https://arxiv.org/pdf/2610.19796"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=LBg6jN3QrpYJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:LBg6jN3QrpYJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3ALBg6jN3QrpYJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:LBg6jN3QrpYJ:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 6,
+        "title": "Enhance LLM Agents Collaborative Reasoning by Theory-of-Mind-Based Intention Inference and Alignment",
+        "result_id": "KiDAAFVzhXgJ",
+        "link": "https://link.springer.com/chapter/10.1007/978-981-92-3444-8_39",
+        "snippet": "… Multi-agent collaboration with large language models (LLMs) … , a Theory-of-Mind-based collaborative reasoning framework … , a Theory-of-Mind inference module, and a reasoning and …",
+        "publication_info": {
+          "summary": "T Jiang, Q Dong, M Zhu - International Conference on Intelligent …, 2026 - Springer",
+          "authors": [
+            {
+              "name": "T Jiang"
+            },
+            {
+              "name": "Q Dong"
+            },
+            {
+              "name": "M Zhu"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=KiDAAFVzhXgJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:KiDAAFVzhXgJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3AKiDAAFVzhXgJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 2,
+            "link": "https://scholar.google.com/scholar?cluster=8684474265375875114&hl=en&as_sdt=0,47",
+            "cluster_id": "8684474265375875114",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C47&cluster=8684474265375875114&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Emergence of Social Reasoning through Adaptive Evolution of LLMs",
+        "result_id": "EZqM0KNygosJ",
+        "link": "https://direct.mit.edu/isal/proceedings-abstract/isal2026/38/54/138148",
+        "snippet": "… Large language models (LLMs) exhibit advanced social reasoning capabilities like Theory of Mind (ToM), yet the dynamic acquisition process remains underexplored. We propose a …",
+        "publication_info": {
+          "summary": "T Hara, T Arita, R Suzuki - Artificial Life Conference Proceedings 38, 2026 - direct.mit.edu",
+          "authors": [
+            {
+              "name": "T Hara"
+            },
+            {
+              "name": "T Arita"
+            },
+            {
+              "name": "R Suzuki"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "mit.edu",
+            "file_format": "PDF",
+            "link": "https://direct.mit.edu/isal/proceedings-pdf/isal2026/38/114/2620430/isal.a.1040.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=EZqM0KNygosJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:EZqM0KNygosJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3AEZqM0KNygosJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 2,
+            "link": "https://scholar.google.com/scholar?cluster=10052723366148479505&hl=en&as_sdt=0,47",
+            "cluster_id": "10052723366148479505",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C47&cluster=10052723366148479505&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Evaluating Theory-of-Mind Reasoning in LLMs with Temporal Causal Belief Graphs",
+        "result_id": "uf3zoxidBN0J",
+        "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7438399",
+        "snippet": "… Higher-order theory of mind (ToM), the ability to … in large language model reasoning. We introduce a benchmark of 1,000 multi-agent stories that probes higher-order theory of mind with …",
+        "publication_info": {
+          "summary": "D Tolic - Available at SSRN 7438399, 2026 - papers.ssrn.com",
+          "authors": [
+            {
+              "name": "D Tolic"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "ssrn.com",
+            "file_format": "PDF",
+            "link": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=7438399"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=uf3zoxidBN0J",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:uf3zoxidBN0J:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3Auf3zoxidBN0J%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:uf3zoxidBN0J:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 9,
+        "title": "SocialMaze: A Benchmark for Evaluating and Enhancing Social Reasoning in Large Language Models in Complex Social Environments",
+        "result_id": "nLYt5Q6R4z8J",
+        "link": "https://aclanthology.org/2026.findings-emnlp.1213/",
+        "snippet": "… Large language models (LLMs) are increasingly deployed in socially grounded applications, … task challenges large language models along three critical dimensions of social reasoning. …",
+        "publication_info": {
+          "summary": "Z Xu, Y Wang, Y Huang, H Zhuang… - Findings of the …, 2026 - aclanthology.org",
+          "authors": [
+            {
+              "name": "Z Xu"
+            },
+            {
+              "name": "Y Wang"
+            },
+            {
+              "name": "Y Huang"
+            },
+            {
+              "name": "H Zhuang"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "aclanthology.org",
+            "file_format": "PDF",
+            "link": "https://aclanthology.org/2026.findings-emnlp.1213.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=nLYt5Q6R4z8J",
+          "cited_by": {
+            "total": 1,
+            "link": "https://scholar.google.com/scholar?cites=4603682737263326876&as_sdt=5,47&sciodt=0,47&hl=en",
+            "cites_id": "4603682737263326876",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C47&cites=4603682737263326876&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:nLYt5Q6R4z8J:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3AnLYt5Q6R4z8J%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:nLYt5Q6R4z8J:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      },
+      {
+        "position": 10,
+        "title": "Assessment of the State-of-the-art Benchmarks Used to Evaluate Social Reasoning and Theory of Mind in LLMs",
+        "result_id": "4vHa465ZicoJ",
+        "link": "https://is.muni.cz/th/f0evs",
+        "snippet": "… Large language models have demonstrated impressive performance on various downstream tasks, hinting at possible reasoning capabilities. To assess whether these models can …",
+        "publication_info": {
+          "summary": "L Horníková - 2026 - is.muni.cz",
+          "authors": [
+            {
+              "name": "L Horníková"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "muni.cz",
+            "file_format": "PDF",
+            "link": "https://is.muni.cz/th/f0evs/Assessment_of_the_State-of-the-art_Benchmarks_Used_to_Evaluate_Social_Reasoning_and_Theory_of_Mind_in_LLMs.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=4vHa465ZicoJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:4vHa465ZicoJ:scholar.google.com/&scioq=large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C47&engine=google_scholar&hl=en&num=10&q=related%3A4vHa465ZicoJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:4vHa465ZicoJ:scholar.google.com/+large+language+models+theory+of+mind+reasoning&hl=en&as_sdt=0,47"
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 339000,
+      "time_taken_displayed": 0.33,
+      "query_displayed": "large language models theory of mind reasoning"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "large language models theory of mind reasoning",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

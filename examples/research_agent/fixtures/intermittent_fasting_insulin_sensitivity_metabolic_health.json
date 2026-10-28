@@ -1,0 +1,552 @@
+{
+  "query": "intermittent fasting insulin sensitivity metabolic health",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:09:39+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Intermittent fasting and human metabolic health",
+        "result_id": "JBn-o5DKfCkJ",
+        "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4516560/",
+        "snippet": "… The authors also reported that these two weight loss strategies yielded comparable reductions in visceral fat mass, fasting insulin, and insulin resistance and no meaningful reductions …",
+        "publication_info": {
+          "summary": "RE Patterson, GA Laughlin, DD Sears… - Journal of the …, 2015 - pmc.ncbi.nlm.nih.gov",
+          "authors": [
+            {
+              "name": "RE Patterson"
+            },
+            {
+              "name": "GA Laughlin",
+              "link": "https://scholar.google.com/citations?user=5N4XadwAAAAJ&hl=en&oi=sra",
+              "author_id": "5N4XadwAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=5N4XadwAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "DD Sears",
+              "link": "https://scholar.google.com/citations?user=JOUL4VwAAAAJ&hl=en&oi=sra",
+              "author_id": "JOUL4VwAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=JOUL4VwAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "nih.gov",
+            "file_format": "PDF",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4516560/pdf/nihms663671.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=JBn-o5DKfCkJ",
+          "cited_by": {
+            "total": 754,
+            "link": "https://scholar.google.com/scholar?cites=2989486975242606884&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "2989486975242606884",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=2989486975242606884&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:JBn-o5DKfCkJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AJBn-o5DKfCkJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=2989486975242606884&hl=en&as_sdt=0,26",
+            "cluster_id": "2989486975242606884",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=2989486975242606884&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "Intermittent fasting and metabolic health: from religious fast to time‐restricted feeding",
+        "result_id": "upE9tu3qwwwJ",
+        "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/oby.22829",
+        "snippet": "… intermittent fasting (IF) strategies used to date for weight management and to improve cardiometabolic health… ), while others report an increase in insulin and insulin resistance (25,26) …",
+        "publication_info": {
+          "summary": "KK Hoddy, KL Marlatt, H Çetinkaya, E Ravussin - Obesity, 2020 - Wiley Online Library",
+          "authors": [
+            {
+              "name": "KK Hoddy",
+              "link": "https://scholar.google.com/citations?user=QYbS3mAAAAAJ&hl=en&oi=sra",
+              "author_id": "QYbS3mAAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=QYbS3mAAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "KL Marlatt",
+              "link": "https://scholar.google.com/citations?user=G-DAfGgAAAAJ&hl=en&oi=sra",
+              "author_id": "G-DAfGgAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=G-DAfGgAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "H Çetinkaya",
+              "link": "https://scholar.google.com/citations?user=v7jdNecAAAAJ&hl=en&oi=sra",
+              "author_id": "v7jdNecAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=v7jdNecAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "E Ravussin",
+              "link": "https://scholar.google.com/citations?user=racTv_AAAAAJ&hl=en&oi=sra",
+              "author_id": "racTv_AAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=racTv_AAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "wiley.com",
+            "file_format": "PDF",
+            "link": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oby.22829"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=upE9tu3qwwwJ",
+          "cited_by": {
+            "total": 189,
+            "link": "https://scholar.google.com/scholar?cites=919837055599350202&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "919837055599350202",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=919837055599350202&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:upE9tu3qwwwJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AupE9tu3qwwwJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cluster=919837055599350202&hl=en&as_sdt=0,26",
+            "cluster_id": "919837055599350202",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=919837055599350202&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Intermittent fasting and obesity-related health outcomes: an umbrella review of meta-analyses of randomized clinical trials",
+        "result_id": "8UhJMFKVJVkJ",
+        "link": "https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2787246",
+        "snippet": "… lipoprotein cholesterol, total cholesterol, triglycerides, fasting plasma glucose, fasting insulin, homeostatic model assessment of insulin resistance, and blood pressure. IF was found to …",
+        "publication_info": {
+          "summary": "C Patikorn, K Roubal, SK Veettil, V Chandran… - JAMA network …, 2021 - jamanetwork.com",
+          "authors": [
+            {
+              "name": "C Patikorn"
+            },
+            {
+              "name": "K Roubal"
+            },
+            {
+              "name": "SK Veettil"
+            },
+            {
+              "name": "V Chandran"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "jamanetwork.com",
+            "file_format": "PDF",
+            "link": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2787246/patikorn_2021_oi_211110_1639148511.03732.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=8UhJMFKVJVkJ",
+          "cited_by": {
+            "total": 395,
+            "link": "https://scholar.google.com/scholar?cites=6423704623743846641&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "6423704623743846641",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=6423704623743846641&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:8UhJMFKVJVkJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3A8UhJMFKVJVkJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cluster=6423704623743846641&hl=en&as_sdt=0,26",
+            "cluster_id": "6423704623743846641",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=6423704623743846641&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "The effectiveness of intermittent fasting to reduce body mass index and glucose metabolism: a systematic review and meta-analysis",
+        "result_id": "ghBHu-krdPEJ",
+        "type": "Html",
+        "link": "https://www.mdpi.com/2077-0383/8/10/1645",
+        "snippet": "… effect on improvement of glucose metabolism by lowering insulin resistance [11], improvement of … In a recent study, an IF diet (IFD) improved insulin sensitivity even when the supplied …",
+        "publication_info": {
+          "summary": "Y Cho, N Hong, K Kim, S Cho, M Lee, Y Lee… - Journal of clinical …, 2019 - mdpi.com",
+          "authors": [
+            {
+              "name": "Y Cho"
+            },
+            {
+              "name": "N Hong"
+            },
+            {
+              "name": "K Kim"
+            },
+            {
+              "name": "S Cho"
+            },
+            {
+              "name": "M Lee"
+            },
+            {
+              "name": "Y Lee"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "mdpi.com",
+            "file_format": "HTML",
+            "link": "https://www.mdpi.com/2077-0383/8/10/1645"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=ghBHu-krdPEJ",
+          "html_version": "https://www.mdpi.com/2077-0383/8/10/1645",
+          "cited_by": {
+            "total": 298,
+            "link": "https://scholar.google.com/scholar?cites=17398579543308439682&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "17398579543308439682",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=17398579543308439682&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:ghBHu-krdPEJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AghBHu-krdPEJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=17398579543308439682&hl=en&as_sdt=0,26",
+            "cluster_id": "17398579543308439682",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=17398579543308439682&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:ghBHu-krdPEJ:scholar.google.com/+intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26"
+        }
+      },
+      {
+        "position": 5,
+        "title": "Effects of intermittent versus continuous energy intakes on insulin sensitivity and metabolic risk in women with overweight",
+        "result_id": "7GBHR5nPxZoJ",
+        "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/oby.22345",
+        "snippet": "… Intermittent fasting (IF) involves alternating periods of eating with fasting periods of up to 24 … fasts improve metabolic health when in energy deficit but not when in energy balance.O …",
+        "publication_info": {
+          "summary": "AT Hutchison, B Liu, RE Wood, AD Vincent… - …, 2019 - Wiley Online Library",
+          "authors": [
+            {
+              "name": "AT Hutchison"
+            },
+            {
+              "name": "B Liu"
+            },
+            {
+              "name": "RE Wood"
+            },
+            {
+              "name": "AD Vincent"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "wiley.com",
+            "file_format": "PDF",
+            "link": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oby.22345"
+          },
+          {
+            "title": "Full View",
+            "link": "https://scholar.google.com/scholar?output=instlink&q=info:7GBHR5nPxZoJ:scholar.google.com/&hl=en&as_sdt=0,26&scillfp=5787395015095007253&oi=lle"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=7GBHR5nPxZoJ",
+          "cited_by": {
+            "total": 182,
+            "link": "https://scholar.google.com/scholar?cites=11152548309485707500&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "11152548309485707500",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=11152548309485707500&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:7GBHR5nPxZoJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3A7GBHR5nPxZoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 12,
+            "link": "https://scholar.google.com/scholar?cluster=11152548309485707500&hl=en&as_sdt=0,26",
+            "cluster_id": "11152548309485707500",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=11152548309485707500&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 6,
+        "title": "Effects of intermittent fasting on metabolism in men",
+        "result_id": "dUwwDcWqzt8J",
+        "type": "Html",
+        "link": "https://www.scielo.br/j/ramb/a/t4WdR3Hf36jwhLdtywQ77vf/?format=html&lang=en",
+        "snippet": "… effects on inflammation, insulin sensitivity, coagulation, vascular … , leading to insulin resistance and cardiovascular disease. … for its ability to promote insulin sensitivity by suppressing …",
+        "publication_info": {
+          "summary": "FR Azevedo, D Ikeoka, B Caramelli - Revista da Associação Médica …, 2013 - SciELO Brasil",
+          "authors": [
+            {
+              "name": "FR Azevedo"
+            },
+            {
+              "name": "D Ikeoka"
+            },
+            {
+              "name": "B Caramelli"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "scielo.br",
+            "file_format": "HTML",
+            "link": "https://www.scielo.br/j/ramb/a/t4WdR3Hf36jwhLdtywQ77vf/?format=html&lang=en"
+          },
+          {
+            "title": "Full View",
+            "link": "https://scholar.google.com/scholar?output=instlink&q=info:dUwwDcWqzt8J:scholar.google.com/&hl=en&as_sdt=0,26&scillfp=12266083772702783738&oi=lle"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=dUwwDcWqzt8J",
+          "html_version": "https://www.scielo.br/j/ramb/a/t4WdR3Hf36jwhLdtywQ77vf/?format=html&lang=en",
+          "cited_by": {
+            "total": 128,
+            "link": "https://scholar.google.com/scholar?cites=16127015078966873205&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "16127015078966873205",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=16127015078966873205&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:dUwwDcWqzt8J:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AdUwwDcWqzt8J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 18,
+            "link": "https://scholar.google.com/scholar?cluster=16127015078966873205&hl=en&as_sdt=0,26",
+            "cluster_id": "16127015078966873205",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=16127015078966873205&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:dUwwDcWqzt8J:scholar.google.com/+intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26"
+        }
+      },
+      {
+        "position": 7,
+        "title": "Hepatic-metabolite-based intermittent fasting enables a sustained reduction in insulin resistance in type 2 diabetes and metabolic syndrome",
+        "result_id": "n0gMoyzN9xwJ",
+        "link": "https://www.thieme-connect.com/products/ejournals/html/10.1055/a-1510-8896",
+        "snippet": "… insulin resistance; insulin resistance drives BMI … , metabolic health has a greater impact on diabetes than overweight/obesity. Eckel et al. [27] reported that the quality of metabolic health …",
+        "publication_info": {
+          "summary": "M Rohner, R Heiz, S Feldhaus… - … and Metabolic …, 2021 - thieme-connect.com",
+          "authors": [
+            {
+              "name": "M Rohner"
+            },
+            {
+              "name": "R Heiz"
+            },
+            {
+              "name": "S Feldhaus"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "thieme-connect.com",
+            "file_format": "PDF",
+            "link": "https://www.thieme-connect.com/products/ejournals/pdf/10.1055/a-1510-8896.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=n0gMoyzN9xwJ",
+          "cited_by": {
+            "total": 20,
+            "link": "https://scholar.google.com/scholar?cites=2087362543907260575&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "2087362543907260575",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=2087362543907260575&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:n0gMoyzN9xwJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3An0gMoyzN9xwJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cluster=2087362543907260575&hl=en&as_sdt=0,26",
+            "cluster_id": "2087362543907260575",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=2087362543907260575&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Effect of intermittent fasting and refeeding on insulin action in healthy men",
+        "result_id": "YTq-xyilZAUJ",
+        "link": "https://journals.physiology.org/doi/full/10.1152/japplphysiol.00683.2005?wptouch_preview_theme=enabled",
+        "snippet": "… In conclusion, the findings that intermittent fasting increases insulin sensitivity on the whole … to improvements in metabolic function (6). We suggest that a fasting-induced increase in …",
+        "publication_info": {
+          "summary": "N Halberg, M Henriksen… - Journal of applied …, 2005 - journals.physiology.org",
+          "authors": [
+            {
+              "name": "N Halberg"
+            },
+            {
+              "name": "M Henriksen"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "physiology.org",
+            "file_format": "PDF",
+            "link": "https://journals.physiology.org/doi/pdf/10.1152/japplphysiol.00683.2005?download=true"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=YTq-xyilZAUJ",
+          "cited_by": {
+            "total": 499,
+            "link": "https://scholar.google.com/scholar?cites=388617062429112929&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "388617062429112929",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=388617062429112929&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:YTq-xyilZAUJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AYTq-xyilZAUJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 12,
+            "link": "https://scholar.google.com/scholar?cluster=388617062429112929&hl=en&as_sdt=0,26",
+            "cluster_id": "388617062429112929",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=388617062429112929&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "Intermittent Fasting in Metabolic Syndrome: Clinical Evidence, Molecular Mechanisms, and Future Perspectives",
+        "result_id": "hKZcE40jodAJ",
+        "link": "https://academic.oup.com/nutritionreviews/advance-article/doi/10.1093/nutrit/nuag155/8980887",
+        "snippet": "… The gut microbiota/metabolism axis is fundamental to host metabolic health… Intermittent fasting improves insulin resistance by modulating the gut microbiota and bile acid metabolism in …",
+        "publication_info": {
+          "summary": "L Pang, S Li, X Li, X Mao, M Gong, X Ye, B Yu… - Nutrition …, 2026 - academic.oup.com",
+          "authors": [
+            {
+              "name": "L Pang"
+            },
+            {
+              "name": "S Li"
+            },
+            {
+              "name": "X Li"
+            },
+            {
+              "name": "X Mao"
+            },
+            {
+              "name": "M Gong"
+            },
+            {
+              "name": "X Ye"
+            },
+            {
+              "name": "B Yu"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=hKZcE40jodAJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:hKZcE40jodAJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AhKZcE40jodAJ%3Ascholar.google.com%2F"
+        }
+      },
+      {
+        "position": 10,
+        "title": "The effect of intermittent fasting on insulin resistance and lipid metabolism",
+        "result_id": "U1HdEZZlmwMJ",
+        "link": "https://jurnal.stikeskesdam4dip.ac.id/index.php/ishel/article/view/971",
+        "snippet": "… Dietary intervention with intermittent fasting can be a non-pharmacological management … of implementing intermittent fasting in improving insulin sensitivity and lipid metabolism. …",
+        "publication_info": {
+          "summary": "M Arif - The International Science of Health Journal, 2023 - jurnal.stikeskesdam4dip.ac.id",
+          "authors": [
+            {
+              "name": "M Arif"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "stikeskesdam4dip.ac.id",
+            "file_format": "PDF",
+            "link": "https://jurnal.stikeskesdam4dip.ac.id/index.php/ishel/article/download/971/730"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=U1HdEZZlmwMJ",
+          "cited_by": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cites=259913098723152211&as_sdt=5,26&sciodt=0,26&hl=en",
+            "cites_id": "259913098723152211",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C26&cites=259913098723152211&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:U1HdEZZlmwMJ:scholar.google.com/&scioq=intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C26&engine=google_scholar&hl=en&num=10&q=related%3AU1HdEZZlmwMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=259913098723152211&hl=en&as_sdt=0,26",
+            "cluster_id": "259913098723152211",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C26&cluster=259913098723152211&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:U1HdEZZlmwMJ:scholar.google.com/+intermittent+fasting+insulin+sensitivity+metabolic+health&hl=en&as_sdt=0,26"
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 32100,
+      "time_taken_displayed": 0.42,
+      "query_displayed": "intermittent fasting insulin sensitivity metabolic health"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "intermittent fasting insulin sensitivity metabolic health",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

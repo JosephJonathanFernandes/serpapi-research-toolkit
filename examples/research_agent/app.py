@@ -5,12 +5,14 @@ Demonstrates the langchain_serpapi_provider plugin.
 
 Features
 --------
-- Enter a research question → fetch top papers via SerpApi (Scholar engine)
+- Enter a research question → fetch top papers via SerpApi (Scholar engine),
+  or replay recorded results in **demo mode** (no API key needed)
 - Embed each paper's title + snippet using spaCy or TF-IDF vectors
-- Cluster papers by topic similarity (KMeans)
-- Within each cluster, flag papers with possible divergent findings
-  (opposing conclusion keywords) — labeled conservatively for human review
-- Display results as clustered cards with citations
+- Cluster papers by topic similarity (KMeans; k chosen by silhouette score)
+- Within each cluster, flag a *possible disagreement* between snippets —
+  a weak, snippet-based signal labeled conservatively for human review
+- Show each cluster's top papers next to its auto-generated label
+- Sort by citations / year, export CSV and BibTeX
 
 Run
 ---
@@ -20,14 +22,44 @@ Run
 
 from __future__ import annotations
 
+import html
 import os
-import re
+import sys
 from collections import defaultdict
-from typing import Dict, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, Dict, List
+from urllib.parse import urlparse
 
-import numpy as np
 import streamlit as st
 from dotenv import load_dotenv
+
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
+try:  # allow running straight from a clone / Streamlit Cloud without `pip install -e .`
+    import langchain_serpapi_provider  # noqa: F401
+except ImportError:
+    sys.path.insert(0, str(_HERE.parents[1]))
+
+from analysis import (  # noqa: E402
+    choose_k,
+    cluster_papers,
+    embed_texts_spacy,
+    embed_texts_tfidf,
+    extract_cluster_topics,
+    sort_papers,
+    top_papers,
+)
+from demo_data import demo_queries_available, load_fixture_docs  # noqa: E402
+from disagreement import (  # noqa: E402
+    BADGE_BODY,
+    BADGE_TITLE,
+    detect_possible_disagreement,
+    make_nli_judge,
+)
+from export import docs_to_rows, to_bibtex, to_csv  # noqa: E402
+from sample_queries import SAMPLE_QUERIES, normalize_query  # noqa: E402
+from enrichment import enrich_documents  # noqa: E402
 
 load_dotenv()
 
@@ -89,11 +121,20 @@ html, body, [class*="css"] {
     font-size: 1.05rem;
     font-weight: 600;
     color: #58a6ff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
+.top-papers {
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    border-left: 2px solid #30363d;
+    padding-left: 0.75rem;
+}
+.top-papers strong { color: #c9d1d9; }
 
 /* Paper card */
 .paper-card {
@@ -112,13 +153,13 @@ html, body, [class*="css"] {
 .paper-url a { color: #58a6ff; text-decoration: none; }
 .paper-url a:hover { text-decoration: underline; }
 
-/* Divergence badge */
+/* Disagreement badge */
 .divergence-badge {
     background: linear-gradient(90deg, #3d1a00, #5a2800);
     border: 1px solid #f0883e55;
     border-radius: 6px;
     padding: 0.5rem 0.75rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.9rem;
     font-size: 0.8rem;
     color: #f0883e;
     display: flex;
@@ -136,6 +177,18 @@ html, body, [class*="css"] {
 }
 .stat-value { font-size: 1.8rem; font-weight: 700; color: #58a6ff; }
 .stat-label { font-size: 0.78rem; color: #8b949e; margin-top: 0.2rem; }
+
+/* Mode pill */
+.mode-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.mode-demo { background: #1b4332; color: #74c69d; border: 1px solid #2d6a4f; }
+.mode-live { background: #1f2a44; color: #79c0ff; border: 1px solid #1f6feb55; }
 
 /* Input */
 .stTextArea textarea { background: #161b22 !important; border-color: #30363d !important; color: #e6edf3 !important; border-radius: 8px !important; }
@@ -163,12 +216,22 @@ st.markdown(
 <div class="hero">
   <h1>🔬 Research Agent</h1>
   <p>Enter a research question — the agent retrieves academic papers via SerpApi,
-  clusters them by topic similarity, and flags possible divergent findings for
-  human review.</p>
+  clusters them by topic similarity, and flags <strong>possible disagreement</strong>
+  between snippets for human review.</p>
 </div>
 """,
     unsafe_allow_html=True,
 )
+
+
+def esc(value: Any) -> str:
+    """HTML-escape any value that will be injected into unsafe_allow_html markup."""
+    return html.escape(str(value), quote=True)
+
+
+def safe_url(url: str) -> str:
+    """Only allow http(s) links."""
+    return url if urlparse(url or "").scheme in ("http", "https") else ""
 
 
 # ---------------------------------------------------------------------------
@@ -177,8 +240,22 @@ st.markdown(
 with st.sidebar:
     st.markdown("### ⚙️ Configuration")
 
-    api_key = os.getenv("SERPAPI_API_KEY", "")
-    if api_key:
+    env_key = os.getenv("SERPAPI_API_KEY", "")
+    if env_key and env_key == "your_serpapi_api_key_here":
+        env_key = ""
+    api_key = env_key
+
+    demo_available = demo_queries_available()
+    demo_mode = st.checkbox(
+        "Demo mode (recorded results, no API key)",
+        value=not bool(api_key),
+        help="Replays real SerpApi responses recorded earlier for the three sample "
+        "questions. Uses no API credits and works offline.",
+    )
+
+    if demo_mode:
+        st.info("Demo mode: only the three sample questions are available.", icon="🧪")
+    elif api_key:
         st.success("🔑 API key loaded from environment", icon="✅")
     else:
         api_key = st.text_input(
@@ -188,16 +265,46 @@ with st.sidebar:
             help="Get yours at serpapi.com",
         )
 
-    num_results = st.slider("Papers to retrieve", min_value=5, max_value=20, value=10)
-    num_clusters = st.slider("Topic clusters", min_value=2, max_value=6, value=3)
-    use_cache = st.checkbox("Enable disk cache (saves API credits)", value=True)
+    num_results = st.slider("Papers to retrieve", min_value=5, max_value=20, value=10, disabled=demo_mode)
+
+    auto_k = st.checkbox(
+        "Choose cluster count automatically (silhouette)",
+        value=True,
+        help="Tries k = 2…6 and keeps the best silhouette score. With 10–20 papers "
+        "this is a noisy guide; untick to set k yourself.",
+    )
+    num_clusters = st.slider("Topic clusters (k)", min_value=2, max_value=6, value=3, disabled=auto_k)
+    sort_by = st.selectbox(
+        "Sort papers within a cluster",
+        ["relevance", "citations", "year"],
+        format_func={"relevance": "Search relevance", "citations": "Citations (high → low)", "year": "Indexed year (new → old)"}.get,
+    )
+    use_cache = st.checkbox("Enable disk cache (saves API credits)", value=True, disabled=demo_mode)
+
+    enrich_abstracts = st.checkbox(
+        "Enrich with full abstracts (OpenAlex / arXiv)",
+        value=True,
+        help="Replaces short truncated search snippets with full academic abstracts via OpenAlex and arXiv APIs (free, no API key).",
+    )
+
+    backend = st.selectbox(
+        "Disagreement detector",
+        ["phrases", "nli", "llm"],
+        format_func={
+            "phrases": "Tier 1: Phrase matching (fast, free)",
+            "nli": "Tier 2: Cross-Encoder NLI (DeBERTa, CPU)",
+            "llm": "Tier 3: LLM Judge (OpenAI / LangChain)",
+        }.get,
+        help="Tier 1 uses directional phrase patterns. Tier 2 uses a local DeBERTa cross-encoder on CPU. Tier 3 uses an LLM judge.",
+    )
 
     st.divider()
     st.markdown("### 📖 About")
     st.caption(
-        "Powered by **langchain-serpapi-provider** + **spaCy / TF-IDF** + **KMeans**.\n\n"
-        "• **Indexed Year:** Reflects the canonical edition/year indexed by Google Scholar (which may aggregate preprints published earlier).\n\n"
-        "• **Divergence:** Flags clusters where abstracts exhibit both affirmative and cautionary conclusion keywords on the same sub-topic."
+        "Powered by **langchain-serpapi-provider** + **OpenAlex / arXiv** + **spaCy / TF-IDF** + **KMeans**.\n\n"
+        "• **Indexed Year:** Reflects the canonical edition/year indexed by Google Scholar.\n\n"
+        "• **Possible disagreement:** A weak signal comparing empirical outcomes. "
+        "Differences may reflect distinct cohorts or dosing rather than direct contradiction. Always check the papers."
     )
 
 
@@ -218,43 +325,16 @@ def load_spacy():
 
 
 @st.cache_resource
-def load_faiss():
-    try:
-        import faiss  # type: ignore
-        return faiss
-    except ImportError:
-        return None
+def load_judge(backend_choice: str):
+    if backend_choice == "nli":
+        return make_nli_judge()
+    if backend_choice == "llm":
+        from disagreement import make_llm_judge
+        return make_llm_judge()
+    return None
 
 
-# ---------------------------------------------------------------------------
-# Embedding pipeline
-# ---------------------------------------------------------------------------
-
-def embed_texts_spacy(nlp, texts: List[str]) -> np.ndarray:
-    """Embed texts using spaCy's word vectors (300-dim)."""
-    vecs = []
-    for t in texts:
-        doc = nlp(t[:1000])  # truncate to avoid OOM
-        vecs.append(doc.vector)
-    return np.array(vecs, dtype=np.float32)
-
-
-def embed_texts_tfidf(texts: List[str]) -> np.ndarray:
-    """Fallback: TF-IDF + truncated SVD to produce dense 100-dim vectors."""
-    from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore
-    from sklearn.decomposition import TruncatedSVD  # type: ignore
-
-    vectorizer = TfidfVectorizer(max_features=5000, stop_words="english")
-    X = vectorizer.fit_transform(texts)
-    n_components = min(100, X.shape[1] - 1, X.shape[0] - 1)
-    if n_components < 2:
-        # Not enough texts — just use raw TF-IDF
-        return X.toarray().astype(np.float32)
-    svd = TruncatedSVD(n_components=n_components, random_state=42)
-    return svd.fit_transform(X).astype(np.float32)
-
-
-def get_embeddings(texts: List[str]) -> np.ndarray:
+def get_embeddings(texts: List[str]):
     nlp = load_spacy()
     if nlp is not None:
         return embed_texts_spacy(nlp, texts)
@@ -262,242 +342,238 @@ def get_embeddings(texts: List[str]) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Clustering
+# Query flow: fetch → analyze (stored in session state) → render
 # ---------------------------------------------------------------------------
 
-def cluster_papers(embeddings: np.ndarray, k: int) -> np.ndarray:
-    """Return cluster label array (int) for each embedding."""
-    from sklearn.cluster import KMeans  # type: ignore
+def fetch_docs(query: str) -> list:
+    search_query = normalize_query(query)  # trailing "?" breaks Scholar exact matching
+    if demo_mode:
+        docs = load_fixture_docs(search_query, num_results=20)
+    else:
+        from langchain_serpapi_provider import SerpApiCache, SerpApiRetriever
 
-    k = min(k, len(embeddings))
-    km = KMeans(n_clusters=k, random_state=42, n_init="auto")
-    labels = km.fit_predict(embeddings)
-    return labels
-
-
-# ---------------------------------------------------------------------------
-# Divergence / mixed outcome signal detection (heuristic)
-# ---------------------------------------------------------------------------
-
-# Directional academic outcome patterns — precise multi-word phrases and markers
-# to prevent shallow single-word false positives (e.g. matching "limiting" in "limiting calories")
-_AFFIRMATIVE_PATTERNS = [
-    r"\boutperform(?:s|ed|ing)?\b",
-    r"\benhance(?:s|d|ment)?\s+(?:cognitive|executive|memory|performance|health|function)\b",
-    r"\b(?:novel\s+)?evidence\s+in\s+support\s+of\b",
-    r"\bsignificant(?:ly)?\s+improv(?:e|ed|ement|ing)\b",
-    r"\bdemonstrated\s+advantage\b",
-    r"\bpositive\s+association\b",
-    r"\btherapeutic\s+efficacy\b",
-    r"\bclinically\s+(?:effective|meaningful)\b",
-    r"\bconfirms?\s+(?:an?\s+)?advantage\b",
-]
-
-_NULL_OR_CONTRARY_PATTERNS = [
-    r"\bno\s+(?:general\s+)?(?:cognitive|executive)?\s*advantages?\b",
-    r"\baffords\s+no\b",
-    r"\bfailed\s+to\s+replicate\b",
-    r"\bfailure\s+to\s+replicate\b",
-    r"\bdifficult\s+to\s+pin\s+down\b",
-    r"\bno\s+significant\s+(?:difference|effect|advantage|improvement)\b",
-    r"\black\s+of\s+evidence\b",
-    r"\bnull\s+(?:effect|findings?)\b",
-    r"\bconflicting\s+evidence\b",
-    r"\bdoes\s+not\s+support\b",
-    r"\bdid\s+not\s+support\b",
-    r"\bfails?\s+to\s+find\b",
-    r"\bineffective\b",
-    r"\bno\s+effect\b",
-]
-
-
-def _score_text(text: str) -> Tuple[List[str], List[str]]:
-    """Return matching (positive_cues, null_or_contrary_cues) keyword lists."""
-    if not text:
-        return [], []
-    pos_matches = []
-    for pat in _AFFIRMATIVE_PATTERNS:
-        for m in re.finditer(pat, text, re.IGNORECASE):
-            match_str = m.group(0).lower().strip()
-            if match_str not in pos_matches:
-                pos_matches.append(match_str)
-
-    neg_matches = []
-    for pat in _NULL_OR_CONTRARY_PATTERNS:
-        for m in re.finditer(pat, text, re.IGNORECASE):
-            match_str = m.group(0).lower().strip()
-            if match_str not in neg_matches:
-                neg_matches.append(match_str)
-
-    return pos_matches, neg_matches
-
-
-def detect_divergence(texts: List[str]) -> Tuple[bool, List[Tuple[List[str], List[str]]]]:
-    """
-    Return (has_divergence, per_paper_cues).
-    A cluster is flagged for human review if it contains papers with both
-    affirmative and null/contrary outcome signals on the topic.
-    """
-    per_paper = [_score_text(t) for t in texts]
-    has_pos = any(len(pos) > 0 for pos, _ in per_paper)
-    has_neg = any(len(neg) > 0 for _, neg in per_paper)
-    return (has_pos and has_neg), per_paper
-
-
-def extract_cluster_topics(all_texts: List[str], cluster_indices: List[int]) -> str:
-    """Extract top 2 distinctive key phrases representing the cluster."""
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    try:
-        vec = TfidfVectorizer(stop_words="english", ngram_range=(1, 2), max_features=2000)
-        X = vec.fit_transform(all_texts)
-        features = np.array(vec.get_feature_names_out())
-        mean_tfidf = np.asarray(X[cluster_indices].mean(axis=0)).flatten()
-        top_idx = mean_tfidf.argsort()[::-1][:2]
-        keywords = [features[i].title() for i in top_idx if mean_tfidf[i] > 0]
-        return " & ".join(keywords) if keywords else "General Topic"
-    except Exception:
-        return "General Topic"
-
-
-# ---------------------------------------------------------------------------
-# Main query flow
-# ---------------------------------------------------------------------------
-
-def run_research(query: str, api_key: str, num_results: int, num_clusters: int, use_cache: bool):
-    from langchain_serpapi_provider import SerpApiRetriever
-    from langchain_serpapi_provider.cache import SerpApiCache
-
-    # Strip trailing punctuation/question marks which restrict Google Scholar exact matching
-    search_query = query.strip().rstrip("?").strip()
-
-    cache = SerpApiCache(enabled=use_cache)
-    retriever = SerpApiRetriever(
-        api_key=api_key,
-        engine="google_scholar",
-        num_results=num_results,
-        cache=cache,
-    )
-
-    with st.spinner("🔍 Fetching papers from Google Scholar…"):
+        retriever = SerpApiRetriever(
+            api_key=api_key,
+            engine="google_scholar",
+            num_results=num_results,
+            cache=SerpApiCache(enabled=True) if use_cache else None,
+        )
         docs = retriever.invoke(search_query)
 
-    if not docs:
-        st.error("No results returned. Try a different query or check your API key.")
-        return
+    if enrich_abstracts and docs:
+        docs = enrich_documents(docs)
+    return docs
 
-    # Stats row
+
+def analyze(docs: list) -> Dict[str, Any]:
+    texts = [f"{d.metadata.get('title', '')} {d.page_content}" for d in docs]
+    embeddings = get_embeddings(texts)
+    if auto_k:
+        k, scores = choose_k(embeddings)
+    else:
+        k, scores = min(num_clusters, len(docs)), {}
+    labels = cluster_papers(embeddings, k)
+
+    judge = load_judge(backend) if backend in ("nli", "llm") else None
+    groups: Dict[int, List[int]] = defaultdict(list)
+    for idx, label in enumerate(labels):
+        groups[int(label)].append(idx)
+
+    clusters = []
+    for label, idxs in sorted(groups.items()):
+        result = detect_possible_disagreement(
+            [texts[i] for i in idxs], backend=backend, judge=judge
+        )
+        clusters.append(
+            {
+                "indices": idxs,
+                "topic": extract_cluster_topics(texts, idxs),
+                "disagreement": result,
+            }
+        )
+    return {"docs": docs, "clusters": clusters, "k": k, "silhouette": scores, "demo": demo_mode}
+
+
+def run_research(query: str) -> None:
+    try:
+        with st.spinner("🔍 Loading papers…" if demo_mode else "🔍 Fetching papers from Google Scholar…"):
+            docs = fetch_docs(query)
+        if not docs:
+            st.error("No results returned. Try a different query or check your API key.")
+            st.session_state.pop("result", None)
+            return
+        with st.spinner("🧠 Embedding and clustering…"):
+            st.session_state["result"] = analyze(docs)
+        st.session_state["result_query"] = query
+    except FileNotFoundError as exc:
+        st.session_state.pop("result", None)
+        st.error(str(exc))
+    except ImportError as exc:
+        st.session_state.pop("result", None)
+        st.error(f"Missing optional dependency: {exc}")
+    except Exception as exc:  # SerpApiError subclasses and anything unexpected
+        st.session_state.pop("result", None)
+        st.error(f"{type(exc).__name__}: {exc}")
+
+
+def stat_box(value: Any, label: str) -> str:
+    return (
+        f'<div class="stat-box"><div class="stat-value">{esc(value)}</div>'
+        f'<div class="stat-label">{esc(label)}</div></div>'
+    )
+
+
+def render_result(result: Dict[str, Any]) -> None:
+    docs = result["docs"]
+    clusters = result["clusters"]
+
+    pill = (
+        '<span class="mode-pill mode-demo">DEMO MODE — recorded SerpApi results</span>'
+        if result["demo"]
+        else '<span class="mode-pill mode-live">LIVE — SerpApi Google Scholar</span>'
+    )
+    st.markdown(pill, unsafe_allow_html=True)
+
     col1, col2, col3 = st.columns(3)
+    total_citations = sum(d.metadata.get("citation_count", 0) or 0 for d in docs)
+    sil = result["silhouette"].get(result["k"])
     with col1:
-        st.markdown(
-            f'<div class="stat-box"><div class="stat-value">{len(docs)}</div>'
-            f'<div class="stat-label">Papers Retrieved</div></div>',
-            unsafe_allow_html=True,
-        )
+        st.markdown(stat_box(len(docs), "Papers Retrieved"), unsafe_allow_html=True)
     with col2:
-        total_citations = sum(d.metadata.get("citation_count", 0) or 0 for d in docs)
-        st.markdown(
-            f'<div class="stat-box"><div class="stat-value">{total_citations:,}</div>'
-            f'<div class="stat-label">Total Citations</div></div>',
-            unsafe_allow_html=True,
-        )
+        st.markdown(stat_box(f"{total_citations:,}", "Total Citations"), unsafe_allow_html=True)
     with col3:
-        st.markdown(
-            f'<div class="stat-box"><div class="stat-value">{num_clusters}</div>'
-            f'<div class="stat-label">Topic Clusters</div></div>',
-            unsafe_allow_html=True,
-        )
+        label = f"Topic Clusters (silhouette {sil:.2f})" if sil is not None else "Topic Clusters"
+        st.markdown(stat_box(len(clusters), label), unsafe_allow_html=True)
 
+    # Cue lookup + export rows
+    cluster_names: List[str] = [""] * len(docs)
+    cues_by_doc: Dict[int, Any] = {}
+    for c_no, cl in enumerate(clusters, 1):
+        name = f"Cluster {c_no}: {cl['topic']}"
+        for local, idx in enumerate(cl["indices"]):
+            cluster_names[idx] = name
+            cues_by_doc[idx] = cl["disagreement"].per_paper_cues[local]
+    export_cues = [cues_by_doc.get(i, ([], [])) for i in range(len(docs))]
+
+    st.write("")
+    dl1, dl2, _ = st.columns([1, 1, 2])
+    dl1.download_button(
+        "⬇️ Export CSV",
+        data=to_csv(docs_to_rows(docs, cluster_names, export_cues)),
+        file_name="papers.csv",
+        mime="text/csv",
+        use_container_width=True,
+    )
+    dl2.download_button(
+        "⬇️ Export BibTeX",
+        data=to_bibtex(docs),
+        file_name="papers.bib",
+        mime="text/plain",
+        use_container_width=True,
+        help="Entries are @misc built from Scholar snippets; verify metadata before citing.",
+    )
     st.markdown("---")
 
-    # Embed
-    with st.spinner("🧠 Computing embeddings…"):
-        texts = [
-            f"{d.metadata.get('title', '')} {d.page_content}"
-            for d in docs
-        ]
-        embeddings = get_embeddings(texts)
-
-    # Cluster
-    with st.spinner("📊 Clustering by topic similarity…"):
-        labels = cluster_papers(embeddings, k=num_clusters)
-
-    # Group docs and text indices by cluster
-    clusters: Dict[int, List] = defaultdict(list)
-    cluster_doc_indices: Dict[int, List[int]] = defaultdict(list)
-    for idx, (doc, label) in enumerate(zip(docs, labels)):
-        clusters[int(label)].append(doc)
-        cluster_doc_indices[int(label)].append(idx)
-
-    # Render clusters
     CLUSTER_ICONS = ["🔵", "🟣", "🟢", "🟡", "🟠", "🔴"]
-    for cluster_idx, (label, papers) in enumerate(sorted(clusters.items())):
-        icon = CLUSTER_ICONS[cluster_idx % len(CLUSTER_ICONS)]
-        paper_texts = [f"{p.metadata.get('title', '')} {p.page_content}" for p in papers]
-        divergent, paper_cues = detect_divergence(paper_texts)
-        cluster_topic = extract_cluster_topics(texts, cluster_doc_indices[label])
+    for c_no, cl in enumerate(clusters):
+        icon = CLUSTER_ICONS[c_no % len(CLUSTER_ICONS)]
+        flagged = cl["disagreement"].flagged
+        cluster_docs = [docs[i] for i in cl["indices"]]
+        cue_map = {id(docs[i]): cl["disagreement"].per_paper_cues[n] for n, i in enumerate(cl["indices"])}
 
-        # Build cluster HTML
-        divergence_html = ""
-        if divergent:
-            divergence_html = (
-                '<div class="divergence-badge">'
-                '⚠️ <span><strong>Mixed findings signal — human review recommended.</strong> '
-                "Papers in this cluster contain contrasting outcome cues (e.g. studies reporting advantages/enhancements alongside population or replication studies finding null effects or limitations). "
-                "This heuristic flags active scientific disputes for primary paper inspection."
+        badge_html = ""
+        if flagged:
+            badge_html = (
+                '<div class="divergence-badge">⚠️ <span>'
+                f"<strong>{esc(BADGE_TITLE)}</strong> {esc(BADGE_BODY)}"
                 "</span></div>"
             )
 
+        top = top_papers(cluster_docs, 3)
+        top_html = "<br>".join(
+            f"<strong>{esc(p.metadata.get('title', '(untitled)'))}</strong>"
+            + (f" ({p.metadata['citation_count']:,} cites)" if p.metadata.get("citation_count") is not None else "")
+            for p in top
+        )
+
         papers_html = ""
-        for paper, (pos_cues, neg_cues) in zip(papers, paper_cues):
+        for paper in sort_papers(cluster_docs, sort_by):
+            pos_cues, neg_cues = cue_map[id(paper)]
             meta = paper.metadata
             title = meta.get("title", "(untitled)")
-            url = meta.get("url", "")
+            url = safe_url(meta.get("url", ""))
             snippet = paper.page_content or ""
             year = meta.get("publication_year")
             cites = meta.get("citation_count")
             authors = meta.get("authors")
             pub_info = meta.get("publication_info", "")
 
-            url_html = f'<div class="paper-url"><a href="{url}" target="_blank">↗ View paper</a></div>' if url else ""
+            url_html = f'<div class="paper-url"><a href="{esc(url)}" target="_blank" rel="noopener noreferrer">↗ View paper</a></div>' if url else ""
             meta_parts = []
             if authors:
-                meta_parts.append(f"👤 {authors}")
+                meta_parts.append(f"👤 {esc(authors)}")
             if year:
-                meta_parts.append(f"📅 Indexed: {year}")
+                meta_parts.append(f"📅 Indexed: {esc(year)}")
             if cites is not None:
                 meta_parts.append(f"📚 {cites:,} citations")
             if pub_info:
-                meta_parts.append(f"📖 {pub_info}")
+                meta_parts.append(f"📖 {esc(pub_info)}")
             meta_html = "".join(f"<span>{p}</span>" for p in meta_parts)
 
-            # Defensive cue tags
             cues_html = ""
-            if divergent:
+            if flagged:
                 cue_items = []
                 if pos_cues:
-                    cue_items.append(f'<span style="background: #1b4332; color: #74c69d; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Affirmative cue: {", ".join(pos_cues[:2])}</span>')
+                    cue_items.append(f'<span style="background: #1b4332; color: #74c69d; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Affirmative cue: {esc(", ".join(pos_cues[:2]))}</span>')
                 if neg_cues:
-                    cue_items.append(f'<span style="background: #4a154b; color: #e0aaff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Cautionary / Null cue: {", ".join(neg_cues[:2])}</span>')
+                    cue_items.append(f'<span style="background: #4a154b; color: #e0aaff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Cautionary / Null cue: {esc(", ".join(neg_cues[:2]))}</span>')
                 if cue_items:
                     cues_html = f'<div style="margin-top: 6px; display: flex; gap: 8px;">{"".join(cue_items)}</div>'
 
+            is_enriched = meta.get("is_enriched", False)
+            title_pill = (
+                ' <span style="background: rgba(31, 111, 235, 0.2); color: #58a6ff; '
+                'border: 1px solid rgba(56, 139, 253, 0.4); padding: 2px 8px; '
+                'border-radius: 12px; font-size: 0.72rem; vertical-align: middle;">Enriched Abstract</span>'
+                if is_enriched else ""
+            )
+            snippet_label = "Abstract" if is_enriched else "Snippet"
+            shown = snippet[:400] + ("…" if len(snippet) > 400 else "")
             papers_html += (
                 f'<div class="paper-card">'
-                f'  <div class="paper-title">{title}</div>'
-                f'  <div class="paper-snippet">{snippet[:300]}{"…" if len(snippet) > 300 else ""}</div>'
+                f'  <div class="paper-title">{esc(title)}{title_pill}</div>'
+                f'  <div class="paper-snippet"><strong>{snippet_label}:</strong> {esc(shown)}</div>'
                 f'  <div class="paper-meta">{meta_html}</div>'
                 f"  {cues_html}"
                 f"  {url_html}"
                 f"</div>"
             )
 
+        n = len(cluster_docs)
         st.markdown(
             f'<div class="cluster-card">'
-            f'  <div class="cluster-title">{icon} Cluster {cluster_idx + 1}: {cluster_topic} &mdash; {len(papers)} paper{"s" if len(papers) != 1 else ""}</div>'
-            f"  {divergence_html}"
+            f'  <div class="cluster-title">{icon} Cluster {c_no + 1}: {esc(cl["topic"])} &mdash; {n} paper{"s" if n != 1 else ""}</div>'
+            f'  <div class="top-papers">Most-cited in this cluster (check the label against these):<br>{top_html}</div>'
+            f"  {badge_html}"
             f"  {papers_html}"
             f"</div>",
             unsafe_allow_html=True,
+        )
+
+    with st.expander("⚠️ Limitations & Scientific Framing"):
+        st.markdown(
+            "- **Abstract & Snippet Evidence:** Google Scholar snippets are short (100–250 chars) and often cut "
+            "mid-sentence. Enabling OpenAlex abstract enrichment retrieves full paragraph abstracts, providing "
+            "substantially more context on sample sizes, methodology, and outcome metrics.\n"
+            "- **Possible Disagreement ≠ Proven Conflict:** Two papers can take opposing directional stances "
+            "because they examine different cohorts (e.g. children vs older adults) or different dosages. "
+            "The detector flags candidate disagreements for human verification; always read the full papers.\n"
+            "- **Detector Tiers:** Tier 1 (Phrase Matching) is fast and free. Tier 2 (Cross-Encoder NLI) evaluates "
+            "sentence entailment locally on CPU. Tier 3 uses an LLM judge for meta-analytic synthesis.\n"
+            "- **Small-N Clustering:** KMeans on 10–20 papers is noisy; optimal k is selected via silhouette score "
+            "with a minimum cluster size constraint.\n"
+            "- **SerpApi Credits:** Each live search uses one API credit. Repeat searches are served from disk cache "
+            "in < 1 ms."
         )
 
 
@@ -507,16 +583,11 @@ def run_research(query: str, api_key: str, num_results: int, num_clusters: int, 
 
 st.markdown("<p style='color: #8b949e; font-size: 0.85rem; margin-bottom: 6px;'><strong>Try a sample research question:</strong></p>", unsafe_allow_html=True)
 sample_cols = st.columns(3)
-sample_queries = [
-    ("Bilingual Advantage", "bilingual advantage executive function cognitive control"),
-    ("Intermittent Fasting", "intermittent fasting insulin sensitivity metabolic health"),
-    ("LLM Theory of Mind", "large language models theory of mind reasoning"),
-]
 
 if "current_query" not in st.session_state:
-    st.session_state.current_query = sample_queries[0][1]
+    st.session_state.current_query = SAMPLE_QUERIES[0][1]
 
-for col, (label, sq) in zip(sample_cols, sample_queries):
+for col, (label, sq) in zip(sample_cols, SAMPLE_QUERIES):
     if col.button(f"💡 {label}", help=sq, use_container_width=True):
         st.session_state.current_query = sq
         st.rerun()
@@ -529,15 +600,13 @@ query = st.text_area(
 )
 
 if st.button("🔬 Run Research Agent", use_container_width=True):
-    if not api_key:
-        st.error("Please enter your SerpApi API key in the sidebar.")
+    if not demo_mode and not api_key:
+        st.error("Please enter your SerpApi API key in the sidebar, or tick Demo mode.")
     elif not query.strip():
         st.warning("Please enter a research question.")
     else:
-        run_research(
-            query=query.strip(),
-            api_key=api_key,
-            num_results=num_results,
-            num_clusters=num_clusters,
-            use_cache=use_cache,
-        )
+        run_research(query.strip())
+
+# Results live in session state so sorting / downloads don't wipe them on rerun.
+if "result" in st.session_state:
+    render_result(st.session_state["result"])

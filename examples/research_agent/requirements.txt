@@ -4,12 +4,28 @@
 #
 # These are separate from the plugin (langchain_serpapi_provider) which
 # has its own pyproject.toml. This file covers the Streamlit UI layer only.
+#
+# Demo mode (recorded results) needs no API key and no spaCy model; the app
+# falls back to TF-IDF embeddings when spaCy is absent.
 
 streamlit>=1.35.0
 scikit-learn>=1.4.0
 numpy>=1.26.0
 python-dotenv>=1.0.0
-spacy>=3.7.0
+
+# Plugin runtime deps (so the app also works from a plain clone / Streamlit
+# Cloud, where the plugin itself is imported straight from the repo):
+langchain-core>=0.2.0
+pydantic>=2.0.0
+diskcache>=5.6.0
+google-search-results>=2.4.2
+
+# Optional: better embeddings (then run: python -m spacy download en_core_web_md)
+# spacy>=3.7.0
+
+# Optional: NLI-based disagreement backend
+# transformers>=4.40
+# torch
 
 # Install the plugin from the repo root:
 #   pip install -e ../../
