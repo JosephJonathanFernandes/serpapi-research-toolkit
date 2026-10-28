@@ -1,6 +1,13 @@
 {
-  "description": "Benchmark dataset of 120 hand-labeled paper pairs across 10 academic topics for literature contradiction, agreement, and unrelated detection.",
-  "version": "1.0",
+  "description": "120 paper pairs across 10 topics labeled contradict / agree / unrelated.",
+  "provenance": "DRAFT, NOT HUMAN-AUDITED. Labels and rationales were written by an AI coding assistant in one pass, from titles, snippets and (for only some papers) abstracts, plus general background knowledge. Rationales may state details that are not in the stored abstracts. There is one labeler and no inter-annotator agreement (no Cohen's kappa). Treat all metrics as provisional until a human re-labels at least a subset.",
+  "split_rule": "Topics sorted alphabetically; dev = every 4th topic (indices 0,4,8); test = the rest. Tune on dev only; report test once.",
+  "dev_topics": [
+    "bilingual_advantage_executive_function_cognitive_control",
+    "large_language_models_theory_of_mind_reasoning",
+    "screen_time_adolescent_well_being"
+  ],
+  "version": "1.1",
   "total_pairs": 120,
   "classes": [
     "contradict",

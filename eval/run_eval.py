@@ -11,7 +11,7 @@ Inputs:
   - Abstract: Full abstracts enriched from OpenAlex / arXiv (1,000-2,500 chars)
 
 Datasets:
-  - claim_pairs: 120 audited paper pairs labeled 'contradict', 'agree', or 'unrelated'
+  - claim_pairs: 120 AI-labeled, unaudited paper pairs ('contradict', 'agree', 'unrelated')
   - legacy: 416 pairs across 10 topics from labels.json
 
 Usage:
@@ -45,11 +45,28 @@ except Exception:
 from disagreement import (  # noqa: E402
     DEFAULT_NLI_THRESHOLD,
     LLMJudgeVerdict,
+    extract_findings,
     make_llm_judge,
     make_nli_judge,
+    make_stance_classifier,
     phrase_pair_disagrees,
+    stances_oppose,
 )
 from sample_queries import FIXTURE_DIR  # noqa: E402
+
+# Shared claim each topic's papers take a stance on (used by the stance backend).
+TOPIC_CLAIMS = {
+    "bilingual_advantage_executive_function_cognitive_control": "Bilingualism gives an advantage in executive function / cognitive control.",
+    "ego_depletion_self_control_replication": "Ego depletion (a depleting self-control resource) is a real, replicable effect.",
+    "growth_mindset_intervention_academic_achievement": "Growth mindset interventions improve academic achievement.",
+    "intermittent_fasting_insulin_sensitivity_metabolic_health": "Intermittent fasting improves insulin sensitivity beyond continuous calorie restriction.",
+    "large_language_models_theory_of_mind_reasoning": "LLMs show genuine, robust theory-of-mind reasoning.",
+    "mindfulness_meditation_anxiety_randomized_trial": "Mindfulness meditation reduces anxiety effectively.",
+    "omega_3_fatty_acids_cardiovascular_disease_prevention": "Omega-3 supplementation prevents cardiovascular disease.",
+    "power_posing_hormones_behavior": "Power posing changes feelings of power, hormones or behavior.",
+    "screen_time_adolescent_well_being": "Screen time harms adolescent well-being.",
+    "vitamin_d_supplementation_depression": "Vitamin D supplementation reduces depressive symptoms.",
+}
 
 EVAL_DIR = Path(__file__).resolve().parent
 
@@ -99,12 +116,15 @@ def evaluate_dataset(
         if input_field == "abstract":
             text_a = f"{p_a.get('title', '')} {p_a.get('abstract') or p_a.get('snippet', '')}".strip()
             text_b = f"{p_b.get('title', '')} {p_b.get('abstract') or p_b.get('snippet', '')}".strip()
+        elif input_field == "findings":
+            text_a = f"{p_a.get('title', '')} {extract_findings(p_a.get('abstract') or p_a.get('snippet', ''))}".strip()
+            text_b = f"{p_b.get('title', '')} {extract_findings(p_b.get('abstract') or p_b.get('snippet', ''))}".strip()
         else:
             text_a = f"{p_a.get('title', '')} {p_a.get('snippet', '')}".strip()
             text_b = f"{p_b.get('title', '')} {p_b.get('snippet', '')}".strip()
 
         truth = item["label"] == "contradict"
-        pred = bool(predict_fn(text_a, text_b))
+        pred = bool(predict_fn(text_a, text_b, topic))
 
         if truth and pred:
             tp += 1
@@ -206,28 +226,46 @@ def evaluate_legacy(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate literature contradiction detector.")
-    parser.add_argument("--backend", choices=["phrases", "nli", "llm"], default="phrases")
+    parser.add_argument("--backend", choices=["phrases", "nli", "llm", "stance"], default="phrases")
     parser.add_argument("--patterns", choices=["v1", "v2"], default="v2", help="Phrase lexicon.")
-    parser.add_argument("--input", choices=["snippet", "abstract"], default="abstract", help="Text input representation.")
+    parser.add_argument("--input", choices=["snippet", "abstract", "findings"], default="abstract", help="Text input representation.")
+    parser.add_argument("--split", choices=["all", "dev", "test"], default="all", help="Topic-level dev/test split (tune on dev only).")
     parser.add_argument("--dataset", choices=["claim_pairs", "legacy"], default="claim_pairs")
     parser.add_argument("--threshold", type=float, default=DEFAULT_NLI_THRESHOLD)
     parser.add_argument("--show-errors", action="store_true")
     parser.add_argument("--compare-inputs", action="store_true", help="Compare Snippets vs Enriched Abstracts ablation.")
     args = parser.parse_args()
 
-    # Build prediction function
-    if args.backend == "nli":
-        judge = make_nli_judge()
-        predict_fn = lambda a, b: judge(a, b) >= args.threshold  # noqa: E731
-    elif args.backend == "llm":
-        llm_judge = make_llm_judge()
-        def predict_fn(a: str, b: str) -> bool:  # noqa: E306
-            res = llm_judge(a, b)
-            if isinstance(res, LLMJudgeVerdict):
-                return res.relationship == "CONTRADICT" or res.score >= args.threshold
-            return float(res) >= args.threshold
-    else:
-        predict_fn = lambda a, b: phrase_pair_disagrees(a, b, args.patterns)  # noqa: E731
+    # Build prediction function: predict_fn(text_a, text_b, topic=None) -> bool
+    try:
+        if args.backend == "nli":
+            judge = make_nli_judge()
+            predict_fn = lambda a, b, t=None: judge(a, b) >= args.threshold  # noqa: E731
+        elif args.backend == "llm":
+            llm_judge = make_llm_judge()
+
+            def predict_fn(a: str, b: str, t=None) -> bool:  # noqa: E306
+                res = llm_judge(a, b)
+                if isinstance(res, LLMJudgeVerdict):
+                    return res.relationship == "CONTRADICT" or res.score >= args.threshold
+                return float(res) >= args.threshold
+        elif args.backend == "stance":
+            classify = make_stance_classifier()
+            _cache: dict = {}
+
+            def _stance(topic: str, text: str) -> str:
+                key = (topic, text)
+                if key not in _cache:
+                    _cache[key] = classify(TOPIC_CLAIMS[topic], text)
+                return _cache[key]
+
+            def predict_fn(a: str, b: str, t=None) -> bool:  # noqa: E306
+                return stances_oppose(_stance(t, a), _stance(t, b))
+        else:
+            predict_fn = lambda a, b, t=None: phrase_pair_disagrees(a, b, args.patterns)  # noqa: E731
+    except (ImportError, Exception) as exc:  # missing deps / API key
+        print(f"NOT EVALUATED: backend '{args.backend}' could not start ({type(exc).__name__}: {str(exc)[:200]})")
+        return 2
 
     if args.dataset == "legacy":
         res = evaluate_legacy(predict_fn, show_errors=args.show_errors)
@@ -248,11 +286,18 @@ def main() -> int:
 
     payload = json.loads(data_path.read_text(encoding="utf-8"))
     pairs = payload["pairs"]
+    dev_topics = set(payload.get("dev_topics", []))
+    if args.split == "dev":
+        pairs = [p for p in pairs if p["topic"] in dev_topics]
+    elif args.split == "test":
+        pairs = [p for p in pairs if p["topic"] not in dev_topics]
+    n_pos = sum(p["label"] == "contradict" for p in pairs)
+    print(f"[split={args.split}] {len(pairs)} pairs, {n_pos} contradict. Labels: {payload.get('provenance', '')[:60]}...")
 
     if args.compare_inputs:
         print("=" * 70)
         print("ABLATION STUDY: Raw Google Scholar Snippets vs. Enriched Abstracts")
-        print(f"Backend: {args.backend} | Dataset: {len(pairs)} audited pairs across 10 topics")
+        print(f"Backend: {args.backend} | Dataset: {len(pairs)} AI-labeled (unaudited) pairs across 10 topics")
         print("=" * 70)
         res_snip = evaluate_dataset(pairs, predict_fn, input_field="snippet", show_errors=False)
         res_abs = evaluate_dataset(pairs, predict_fn, input_field="abstract", show_errors=args.show_errors)
@@ -276,7 +321,7 @@ def main() -> int:
     detail = f" ({args.patterns} lexicon)" if args.backend == "phrases" else f" (threshold {args.threshold})"
     print(f"Backend            : {args.backend}{detail}")
     print(f"Input Mode         : {args.input} (Scholar snippet vs OpenAlex full abstract)")
-    print(f"Dataset            : {len(pairs)} audited pairs across 10 topics ({payload['counts']})")
+    print(f"Dataset            : {len(pairs)} AI-labeled (unaudited) pairs across 10 topics ({payload['counts']})")
     print(f"TP / FP / FN / TN  : {res['tp']} / {res['fp']} / {res['fn']} / {res['tn']}")
     print(f"Precision          : {res['precision']:.2f}  (95% CI {res['ci_p'][0]:.2f}-{res['ci_p'][1]:.2f})")
     print(f"Recall             : {res['recall']:.2f}  (95% CI {res['ci_r'][0]:.2f}-{res['ci_r'][1]:.2f})")

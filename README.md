@@ -231,8 +231,8 @@ serpapi-research-toolkit/
 │       ├── export.py               # CSV (injection-safe) and BibTeX generators
 │       ├── fixtures/               # Recorded SerpApi responses for offline demo
 │       └── requirements.txt        # Demo-only dependencies
-├── eval/                           # 120-pair benchmark, ablation study, & run_eval.py
-└── tests/                          # 120 unit & integration tests (100% offline passing)
+├── eval/                           # 120-pair AI-labeled benchmark, dev/test ablation, run_ablation.py
+└── tests/                          # 126 unit & integration tests (offline)
 ```
 
 ### Launch the Demo in 2 Minutes (Zero API Key Needed!)
@@ -265,30 +265,38 @@ Check the **Demo mode** box in the sidebar: the entire pipeline (abstract enrich
 
 ---
 
-## 🧪 Disagreement Detection & Evaluation Benchmark
+## 🧪 Disagreement Detection: Results (Mostly Negative)
 
-A core challenge in automated literature review is surfacing contradictory evidence across studies. We built a **3-tier disagreement detection pipeline** backed by a hand-labeled benchmark in [`eval/`](eval/):
+The research agent flags clusters as a **possible disagreement for human review**. We built an evaluation to find out whether that signal is any good. **Short answer: it is weak, and the best detector misses about 3 in 4 contradictions.**
 
-### The 3 Detector Tiers
-- **Tier 1 (Directional Phrase Matching):** Fast, deterministic pattern lexicon that scans for affirmative vs cautionary/contrary outcome language with zero compute footprint.
-- **Tier 2 (Transformer Cross-Encoder NLI):** Runs `cross-encoder/nli-deberta-v3-small` locally on CPU to score sentence-level contradiction probabilities.
-- **Tier 3 (LLM Judge):** Uses a structured LangChain chat model (`BaseChatModel`) to evaluate meta-analytic contradiction, agreement, or unrelatedness.
+### Detectors
+- **Phrase matching (free):** directional cue lexicon. V1 was written before any evaluation. V2 was written after reading snippets from these same topics, so its numbers are **optimistic and not a clean held-out result**.
+- **NLI cross-encoder (CPU):** `cross-encoder/nli-deberta-v3-small`, threshold fixed at 0.5.
+- **LLM stance classifier:** classifies each paper as SUPPORTS / NULL / MIXED / UNCLEAR toward a shared claim, then flags SUPPORTS-vs-NULL pairs. Implemented and unit-tested with a fake LLM, but **NOT EVALUATED** because no API key was available. We make no claim about its accuracy.
 
-### Benchmark Dataset (`eval/claim_pairs_labeled.json`)
-- **120 audited paper pairs** across 10 contentious literature domains (bilingual advantage, power posing, ego depletion replication, growth mindset, intermittent fasting, screen time, vitamin D, omega-3, mindfulness, LLM theory of mind).
-- Explicit 3-class ground truth: **42 contradict**, **43 agree**, and **35 unrelated** pairs with annotator rationales.
+### Dataset and its limits
+- 120 paper pairs, 10 topics, 42 contradict / 43 agree / 35 unrelated ([`eval/claim_pairs_labeled.json`](eval/claim_pairs_labeled.json)).
+- **Labels were written by an AI assistant in one pass, not by human experts, and were not audited.** Only some abstracts were read. There is no second labeler and no Cohen's kappa. Treat everything below as provisional.
+- Topic-level split: **dev** 36 pairs (12 contradict), **test** 84 pairs (30 contradict). 'Contradict vs unrelated' is subjective when study cohorts differ.
 
-### Input Ablation: Google Scholar Snippets vs. Enriched Abstracts
-We empirically tested whether pulling full abstracts from OpenAlex improves contradiction detection compared to short search snippets:
+### Ablation on the test split (precision / recall / F1)
 
-| Detector | Input Mode | Precision (95% CI) | Recall (95% CI) | F1 Score |
-|---|---|:---:|:---:|:---:|
-| **Tier 1 (Phrases V2)** | Google Scholar Snippets (100–250 chars) | **0.82** [0.52, 0.95] | **0.21** [0.12, 0.36] | **0.34** |
-| **Tier 1 (Phrases V2)** | OpenAlex Enriched Abstracts (1k–2.5k chars) | 0.38 [0.18, 0.61] | 0.14 [0.07, 0.28] | 0.21 |
-| **Tier 2 (NLI DeBERTa)** | Snippets | **0.50** [0.28, 0.72] | **0.19** [0.10, 0.33] | **0.28** |
-| **Tier 2 (NLI DeBERTa)** | Enriched Abstracts (Head Truncation) | 0.08 [0.01, 0.33] | 0.02 [0.00, 0.12] | 0.04 |
+| Detector | Snippet | Full abstract | Findings only (last sentences) |
+|---|:---:|:---:|:---:|
+| Phrases V1 | 0.00 / 0.00 / 0.00 | 0.50 / 0.03 / 0.06 | 0.00 / 0.00 / 0.00 |
+| Phrases V2 (tuned on these topics) | 0.80 / 0.27 / **0.40** | 0.33 / 0.13 / 0.19 | 0.17 / 0.03 / 0.06 |
+| NLI (DeBERTa) | 0.58 / 0.23 / 0.33 | 0.00 / 0.00 / 0.00 | 0.44 / 0.13 / 0.21 |
+| LLM stance | not evaluated | not evaluated | not evaluated |
 
-*(See [eval/README.md](eval/README.md) for full error analysis on why NLI cross-encoders fail when truncated on introductory background text rather than conclusion sentences).*
+Full dev and test table with counts: [`eval/results.md`](eval/results.md). Reproduce with `python eval/run_ablation.py`.
+
+### What we found
+1. **Enriching with full abstracts made detection worse, not better,** for every detector on test (phrases V2 F1 0.40 to 0.19, NLI 0.33 to 0.00). The assumption that better input would help did not hold for these detectors.
+2. **Findings-only extraction recovers part of NLI (0.00 to 0.21) but not phrase matching (0.19 to 0.06),** and neither beats raw snippets. Whether the cause is cue co-occurrence in long text or crude sentence extraction is untested.
+3. **With 30 test positives, most differences here are within noise.** One extra true positive moves recall by 0.03. Do not read rankings between close rows as real.
+4. **Best recall is 0.27.** The detector is a triage hint at most, never evidence that a literature disagrees.
+
+The next experiment that matters is the LLM stance classifier, evaluated on a human-relabeled subset.
 
 ---
 
@@ -303,7 +311,7 @@ We empirically tested whether pulling full abstracts from OpenAlex improves cont
 
 ## Running Tests & Verifiability
 
-All **120 unit and integration tests** run offline with **zero API credits** consumed:
+All **126 unit and integration tests** run offline with **zero API credits** consumed:
 
 ```bash
 # Install test dependencies

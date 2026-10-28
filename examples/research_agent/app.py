@@ -282,9 +282,11 @@ with st.sidebar:
     use_cache = st.checkbox("Enable disk cache (saves API credits)", value=True, disabled=demo_mode)
 
     enrich_abstracts = st.checkbox(
-        "Enrich with full abstracts (OpenAlex / arXiv)",
-        value=True,
-        help="Replaces short truncated search snippets with full academic abstracts via OpenAlex and arXiv APIs (free, no API key).",
+        "Show full abstracts (OpenAlex / arXiv)",
+        value=False,
+        help="Replaces short snippets with full abstracts (free, no key). Off by default: in our "
+        "ablation, full abstracts lowered disagreement-detection scores for every detector tested. "
+        "Useful for reading, not (yet) for detection.",
     )
 
     backend = st.selectbox(
@@ -563,8 +565,10 @@ def render_result(result: Dict[str, Any]) -> None:
     with st.expander("⚠️ Limitations & Scientific Framing"):
         st.markdown(
             "- **Abstract & Snippet Evidence:** Google Scholar snippets are short (100–250 chars) and often cut "
-            "mid-sentence. Enabling OpenAlex abstract enrichment retrieves full paragraph abstracts, providing "
-            "substantially more context on sample sizes, methodology, and outcome metrics.\n"
+            "mid-sentence. Full abstracts (optional) give more context for reading, but in our ablation they did "
+            "not improve, and usually reduced, disagreement-detection scores.\n"
+            "- **Weak detector:** the best free detector reached about 0.27 recall on an AI-labeled, unaudited "
+            "test set of 84 pairs. It misses most disagreements; see `eval/README.md`.\n"
             "- **Possible Disagreement ≠ Proven Conflict:** Two papers can take opposing directional stances "
             "because they examine different cohorts (e.g. children vs older adults) or different dosages. "
             "The detector flags candidate disagreements for human verification; always read the full papers.\n"

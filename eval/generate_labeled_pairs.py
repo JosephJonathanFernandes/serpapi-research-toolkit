@@ -289,9 +289,20 @@ SPECS = [
      "Paper 2 investigates competitive poker and matrix games, while Paper 7 evaluates psychological false belief stories."),
 ]
 
+DEV_TOPICS = sorted({s[0] for s in SPECS})[::4]
+
 dataset = {
-    "description": "Benchmark dataset of 120 hand-labeled paper pairs across 10 academic topics for literature contradiction, agreement, and unrelated detection.",
-    "version": "1.0",
+    "description": "120 paper pairs across 10 topics labeled contradict / agree / unrelated.",
+    "provenance": (
+        "DRAFT, NOT HUMAN-AUDITED. Labels and rationales were written by an AI coding assistant in one "
+        "pass, from titles, snippets and (for only some papers) abstracts, plus general background "
+        "knowledge. Rationales may state details that are not in the stored abstracts. There is one "
+        "labeler and no inter-annotator agreement (no Cohen's kappa). Treat all metrics as provisional "
+        "until a human re-labels at least a subset."
+    ),
+    "split_rule": "Topics sorted alphabetically; dev = every 4th topic (indices 0,4,8); test = the rest. Tune on dev only; report test once.",
+    "dev_topics": DEV_TOPICS,
+    "version": "1.1",
     "total_pairs": len(SPECS),
     "classes": ["contradict", "agree", "unrelated"],
     "pairs": []

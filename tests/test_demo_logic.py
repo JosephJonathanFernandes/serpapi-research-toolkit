@@ -264,3 +264,49 @@ class TestEmbeddingComparison:
         assert res["tfidf_svd"]["available"] is True
         assert res["tfidf_svd"]["best_k"] in (2, 3)
 
+
+
+# --------------------------------------------------------------------------
+# Findings extraction + stance detection
+# --------------------------------------------------------------------------
+
+class _FakeLLM:
+    def __init__(self, reply):
+        self.reply = reply
+
+    def invoke(self, prompt):
+        return type("R", (), {"content": self.reply})()
+
+
+class TestFindingsAndStance:
+    def test_short_text_unchanged(self):
+        from disagreement import extract_findings
+        assert extract_findings("Short abstract.") == "Short abstract."
+
+    def test_tail_sentences_used(self):
+        from disagreement import extract_findings
+        text = " ".join(
+            "Background sentence number %d is long enough to pad the text." % i for i in range(30)
+        ) + " We found no effect. Conclusion follows."
+        out = extract_findings(text)
+        assert "We found no effect" in out and "number 0 " not in out
+
+    def test_structured_results_section(self):
+        from disagreement import extract_findings
+        text = "Background: " + "x " * 400 + "Results: significant improvement. Conclusion: it works."
+        assert extract_findings(text).lower().startswith("results:")
+
+    def test_stance_classifier_parses_json(self):
+        from disagreement import make_stance_classifier
+        c = make_stance_classifier(_FakeLLM('{"stance": "null", "rationale": "x"}'))
+        assert c("claim", "text") == "NULL"
+
+    def test_stance_classifier_bad_output_is_unclear(self):
+        from disagreement import make_stance_classifier
+        assert make_stance_classifier(_FakeLLM("no idea"))("c", "t") == "UNCLEAR"
+
+    def test_stances_oppose(self):
+        from disagreement import stances_oppose
+        assert stances_oppose("SUPPORTS", "NULL") and stances_oppose("NULL", "SUPPORTS")
+        assert not stances_oppose("SUPPORTS", "MIXED") and not stances_oppose("NULL", "NULL")
+

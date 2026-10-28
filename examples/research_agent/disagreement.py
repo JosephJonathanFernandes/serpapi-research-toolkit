@@ -33,7 +33,9 @@ BADGE_BODY = (
     "Snippets in this cluster contain contrasting outcome wording (for example one "
     "reports an advantage and another reports no effect). This is based on short, "
     "possibly truncated snippets, so it may reflect different populations, "
-    "outcomes or background text rather than a real dispute. Open the papers to check."
+    "outcomes or background text rather than a real dispute. On our small, AI-labeled "
+    "(unaudited) test set the best free detector reached about 0.27 recall, so it misses "
+    "most disagreements, and absence of this flag means nothing. Open the papers to check."
 )
 
 # ---------------------------------------------------------------------------
@@ -314,3 +316,72 @@ def detect_possible_disagreement(
         raise ValueError(f"Unknown backend {backend!r}; use 'phrases', 'nli', or 'llm'.")
 
     return DisagreementResult(flagged=bool(pairs), per_paper_cues=per_paper, pairs=pairs, backend=backend)
+
+
+# ---------------------------------------------------------------------------
+# Findings extraction + stance-toward-claim detection
+# ---------------------------------------------------------------------------
+
+_SECTION_RE = re.compile(r"\b(?:results?|conclusions?|findings)\s*[:\-]\s*", re.IGNORECASE)
+
+
+def extract_findings(text: str, max_sentences: int = 3, max_chars: int = 600) -> str:
+    """Return the part of an abstract that states findings.
+
+    Uses a structured-abstract ``Results:``/``Conclusion:`` section if present,
+    otherwise the last ``max_sentences`` sentences (findings come last in most
+    abstracts, background first). Short texts are returned unchanged.
+    """
+    if not text or len(text) <= max_chars:
+        return text or ""
+    m = _SECTION_RE.search(text)
+    if m:
+        return text[m.start():][:max_chars]
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    tail = " ".join(sentences[-max_sentences:])
+    return tail[-max_chars:]
+
+
+STANCES = ("SUPPORTS", "NULL", "MIXED", "UNCLEAR")
+
+STANCE_PROMPT = (
+    "You classify what a paper's own FINDINGS say about a claim.\n\n"
+    "CLAIM: {claim}\n\nPAPER TEXT:\n{text}\n\n"
+    "Answer with exactly one stance:\n"
+    "- SUPPORTS: the paper reports evidence in favour of the claim.\n"
+    "- NULL: the paper reports no effect, a failure to replicate, or evidence against the claim.\n"
+    "- MIXED: effects depend on conditions or evidence is split.\n"
+    "- UNCLEAR: the text does not state findings about the claim (background, protocol, commentary).\n\n"
+    'Respond as JSON only: {{"stance": "SUPPORTS|NULL|MIXED|UNCLEAR", "rationale": "<one sentence>"}}'
+)
+
+StanceClassifier = Callable[[str, str], str]
+
+
+def make_stance_classifier(llm: Optional[Any] = None, model_name: str = "gpt-4o-mini") -> StanceClassifier:
+    """Build ``classify(claim, text) -> stance`` from a LangChain chat model."""
+    if llm is None:
+        try:
+            from langchain_openai import ChatOpenAI  # type: ignore
+        except ImportError as exc:
+            raise ImportError(
+                "Pass a chat model via make_stance_classifier(llm=...) or pip install langchain-openai."
+            ) from exc
+        llm = ChatOpenAI(model=model_name, temperature=0)
+
+    def classify(claim: str, text: str) -> str:
+        resp = llm.invoke(STANCE_PROMPT.format(claim=claim, text=text[:1500]))
+        content = resp.content if hasattr(resp, "content") else str(resp)
+        m = re.search(r"\{.*\}", content, re.DOTALL)
+        try:
+            stance = str(json.loads(m.group(0)).get("stance", "UNCLEAR")).upper() if m else "UNCLEAR"
+        except Exception:
+            stance = "UNCLEAR"
+        return stance if stance in STANCES else "UNCLEAR"
+
+    return classify
+
+
+def stances_oppose(a: str, b: str) -> bool:
+    """Two papers contradict when one SUPPORTS the claim and the other reports NULL."""
+    return {a, b} == {"SUPPORTS", "NULL"}
