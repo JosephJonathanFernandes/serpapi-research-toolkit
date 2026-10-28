@@ -1,0 +1,545 @@
+{
+  "query": "growth mindset intervention academic achievement",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:17+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Reducing inequality in academic success for incoming college students: A randomized trial of growth mindset and belonging interventions",
+        "result_id": "c4cUKEJLP7oJ",
+        "link": "https://www.tandfonline.com/doi/abs/10.1080/19345747.2018.1429037",
+        "snippet": "… present the results of three … growth mindset intervention on participants’ fall and spring semester outcomes. To estimate the causal impact of the treatment condition, for each academic …",
+        "publication_info": {
+          "summary": "M Broda, J Yun, B Schneider, DS Yeager… - … on Educational …, 2018 - Taylor & Francis",
+          "authors": [
+            {
+              "name": "M Broda",
+              "link": "https://scholar.google.com/citations?user=Fw2ff8IAAAAJ&hl=en&oi=sra",
+              "author_id": "Fw2ff8IAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Fw2ff8IAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "J Yun",
+              "link": "https://scholar.google.com/citations?user=fX-msacAAAAJ&hl=en&oi=sra",
+              "author_id": "fX-msacAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=fX-msacAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "B Schneider",
+              "link": "https://scholar.google.com/citations?user=BxHHpfYAAAAJ&hl=en&oi=sra",
+              "author_id": "BxHHpfYAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=BxHHpfYAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "DS Yeager",
+              "link": "https://scholar.google.com/citations?user=lxMgjf8AAAAJ&hl=en&oi=sra",
+              "author_id": "lxMgjf8AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=lxMgjf8AAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "nih.gov",
+            "file_format": "PDF",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10798796/pdf/nihms-1913918.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=c4cUKEJLP7oJ",
+          "cited_by": {
+            "total": 395,
+            "link": "https://scholar.google.com/scholar?cites=13420528162099726195&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "13420528162099726195",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=13420528162099726195&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:c4cUKEJLP7oJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3Ac4cUKEJLP7oJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=13420528162099726195&hl=en&as_sdt=0,14",
+            "cluster_id": "13420528162099726195",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=13420528162099726195&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "Failure to replicate: Testing a growth mindset intervention for college student success",
+        "result_id": "7ki5PMeCdfgJ",
+        "link": "https://www.tandfonline.com/doi/abs/10.1080/01973533.2020.1806845",
+        "snippet": "… a growth mindset intervention on students’ academic success … intervention had little impact on students’ academic success … to benefit from this type of intervention (eg, minority, low …",
+        "publication_info": {
+          "summary": "C Brez, EM Hampton, L Behrendt, L Brown… - Basic and Applied …, 2020 - Taylor & Francis",
+          "authors": [
+            {
+              "name": "C Brez"
+            },
+            {
+              "name": "EM Hampton"
+            },
+            {
+              "name": "L Behrendt"
+            },
+            {
+              "name": "L Brown"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Caitlin-Brez/publication/343613147_Failure_to_Replicate_Testing_a_Growth_Mindset_Intervention_for_College_Student_Success/links/5f35394a299bf13404bea887/Failure-to-Replicate-Testing-a-Growth-Mindset-Intervention-for-College-Student-Success.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=7ki5PMeCdfgJ",
+          "cited_by": {
+            "total": 85,
+            "link": "https://scholar.google.com/scholar?cites=17903359685910153454&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "17903359685910153454",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=17903359685910153454&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:7ki5PMeCdfgJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3A7ki5PMeCdfgJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 5,
+            "link": "https://scholar.google.com/scholar?cluster=17903359685910153454&hl=en&as_sdt=0,14",
+            "cluster_id": "17903359685910153454",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=17903359685910153454&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Growth mindset tempers the effects of poverty on academic achievement",
+        "result_id": "OqVtClr93PEJ",
+        "link": "https://www.pnas.org/doi/abs/10.1073/pnas.1608207113",
+        "snippet": "… grades than students who hold a fixed mindset (11, 17, 18), … now shown that growth mindset plays a causal role in achievement. … interventions can help students start to develop a growth …",
+        "publication_info": {
+          "summary": "S Claro, D Paunesku, CS Dweck - … of the National Academy of Sciences, 2016 - pnas.org",
+          "authors": [
+            {
+              "name": "S Claro",
+              "link": "https://scholar.google.com/citations?user=D0WSvvMAAAAJ&hl=en&oi=sra",
+              "author_id": "D0WSvvMAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=D0WSvvMAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "D Paunesku"
+            },
+            {
+              "name": "CS Dweck",
+              "link": "https://scholar.google.com/citations?user=mf7WO2MAAAAJ&hl=en&oi=sra",
+              "author_id": "mf7WO2MAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=mf7WO2MAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "pnas.org",
+            "file_format": "PDF",
+            "link": "https://www.pnas.org/doi/pdf/10.1073/pnas.1608207113"
+          },
+          {
+            "title": "Full View",
+            "link": "https://scholar.google.com/scholar?output=instlink&q=info:OqVtClr93PEJ:scholar.google.com/&hl=en&as_sdt=0,14&scillfp=9058386302595568738&oi=lle"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=OqVtClr93PEJ",
+          "cited_by": {
+            "total": 1958,
+            "link": "https://scholar.google.com/scholar?cites=17428083221180818746&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "17428083221180818746",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=17428083221180818746&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:OqVtClr93PEJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AOqVtClr93PEJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 20,
+            "link": "https://scholar.google.com/scholar?cluster=17428083221180818746&hl=en&as_sdt=0,14",
+            "cluster_id": "17428083221180818746",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=17428083221180818746&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "A growth mind-set intervention improves interest but not academic performance in the field of computer science",
+        "result_id": "J1dWCy7HEXsJ",
+        "link": "https://journals.sagepub.com/doi/abs/10.1177/1948550619841631",
+        "snippet": "… growth mindset interventions work to improve classroom performance, we also investigate if growth mindset interventions … First, do mindset interventions improve academic achievement …",
+        "publication_info": {
+          "summary": "JL Burnette, CL Hoyt, VM Russell… - Social …, 2020 - journals.sagepub.com",
+          "authors": [
+            {
+              "name": "JL Burnette",
+              "link": "https://scholar.google.com/citations?user=SySgBFcAAAAJ&hl=en&oi=sra",
+              "author_id": "SySgBFcAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=SySgBFcAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "CL Hoyt",
+              "link": "https://scholar.google.com/citations?user=0EAf9gsAAAAJ&hl=en&oi=sra",
+              "author_id": "0EAf9gsAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=0EAf9gsAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "VM Russell",
+              "link": "https://scholar.google.com/citations?user=2jOzik0AAAAJ&hl=en&oi=sra",
+              "author_id": "2jOzik0AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=2jOzik0AAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "richmond.edu",
+            "file_format": "PDF",
+            "link": "https://scholarship.richmond.edu/cgi/viewcontent.cgi?article=1507&context=jepson-faculty-publications"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=J1dWCy7HEXsJ",
+          "cited_by": {
+            "total": 181,
+            "link": "https://scholar.google.com/scholar?cites=8868088141841848103&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "8868088141841848103",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=8868088141841848103&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:J1dWCy7HEXsJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AJ1dWCy7HEXsJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=8868088141841848103&hl=en&as_sdt=0,14",
+            "cluster_id": "8868088141841848103",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=8868088141841848103&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 5,
+        "title": "Growth Mindset Interventions and Academic Achievement: A Meta-Analysis of Implications for Educational Management",
+        "result_id": "KNJEDpDsfugJ",
+        "link": "https://north-press.com/index.php/snhss/article/view/203",
+        "snippet": "… Pooled effects on academic achievement ranged from d = 0.02 (highest-quality studies) … We conclude that growth mindset interventions are best treated as a low-cost, context-…",
+        "publication_info": {
+          "summary": "E Nasrudin, D Sahroni, E Agustin - Sciences du Nord Humanities …, 2025 - north-press.com",
+          "authors": [
+            {
+              "name": "E Nasrudin",
+              "link": "https://scholar.google.com/citations?user=3NO0kOcAAAAJ&hl=en&oi=sra",
+              "author_id": "3NO0kOcAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=3NO0kOcAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "D Sahroni",
+              "link": "https://scholar.google.com/citations?user=ZG7igk0AAAAJ&hl=en&oi=sra",
+              "author_id": "ZG7igk0AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ZG7igk0AAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "E Agustin",
+              "link": "https://scholar.google.com/citations?user=JP7vpsMAAAAJ&hl=en&oi=sra",
+              "author_id": "JP7vpsMAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=JP7vpsMAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "north-press.com",
+            "file_format": "PDF",
+            "link": "https://north-press.com/index.php/snhss/article/download/203/204"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=KNJEDpDsfugJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:KNJEDpDsfugJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AKNJEDpDsfugJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:KNJEDpDsfugJ:scholar.google.com/+growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14"
+        }
+      },
+      {
+        "position": 6,
+        "title": "Introducing a mindset intervention to improve student success",
+        "result_id": "Id2rkuOfU44J",
+        "type": "Pdf",
+        "link": "https://www.academia.edu/download/110771734/IJELLv15p135-155Buzzetto5835.pdf",
+        "snippet": "… The opposite of a growth mindset is a fixed mindset, the belief … received a mindset intervention reported more growth mindset, … The mindset intervention however did not alter cognitive …",
+        "publication_info": {
+          "summary": "N Buzzetto-Hollywood, BC Mitchell… - … and Lifelong Learning, 2019 - academia.edu",
+          "authors": [
+            {
+              "name": "N Buzzetto-Hollywood",
+              "link": "https://scholar.google.com/citations?user=R5YneooAAAAJ&hl=en&oi=sra",
+              "author_id": "R5YneooAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=R5YneooAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "BC Mitchell"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "academia.edu",
+            "file_format": "PDF",
+            "link": "https://www.academia.edu/download/110771734/IJELLv15p135-155Buzzetto5835.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=Id2rkuOfU44J",
+          "cited_by": {
+            "total": 56,
+            "link": "https://scholar.google.com/scholar?cites=10255716576219880737&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "10255716576219880737",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=10255716576219880737&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:Id2rkuOfU44J:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AId2rkuOfU44J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=10255716576219880737&hl=en&as_sdt=0,14",
+            "cluster_id": "10255716576219880737",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=10255716576219880737&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:Id2rkuOfU44J:scholar.google.com/+growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14"
+        }
+      },
+      {
+        "position": 7,
+        "title": "How does adopting a growth mindset improve academic performance? Probing the Underlying Mechanisms in a Nationally-Representative Sample",
+        "result_id": "lIn9TlgrPdoJ",
+        "type": "Pdf",
+        "link": "https://osf.io/download/sz6km/",
+        "snippet": "… ’ motivation and academic achievement. Specifically, we … ’ learning-oriented behavior—induced by the growth mindset … the growth mindset intervention would interpret struggles as …",
+        "publication_info": {
+          "summary": "M Gopalan, D Yeager - 2020 - osf.io",
+          "authors": [
+            {
+              "name": "M Gopalan"
+            },
+            {
+              "name": "D Yeager"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "osf.io",
+            "file_format": "PDF",
+            "link": "https://osf.io/download/sz6km/"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=lIn9TlgrPdoJ",
+          "cited_by": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cites=15725773132129995156&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "15725773132129995156",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=15725773132129995156&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:lIn9TlgrPdoJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AlIn9TlgrPdoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=15725773132129995156&hl=en&as_sdt=0,14",
+            "cluster_id": "15725773132129995156",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=15725773132129995156&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:lIn9TlgrPdoJ:scholar.google.com/+growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14"
+        }
+      },
+      {
+        "position": 8,
+        "title": "The Impact of Growth Mindset Interventions on Student Achievement",
+        "result_id": "-yOh4hAHvnUJ",
+        "link": "https://research.adra.ac.id/index.php/rpoc/article/view/2375",
+        "snippet": "… This study aims to examine the effectiveness of a growth mindset intervention in enhancing students’ academic achievement in mathematics and academic perseverance. The research …",
+        "publication_info": {
+          "summary": "P Krit, M Pong, V Rith, S Suyitno - … Psychologie, Orientation et …, 2025 - research.adra.ac.id",
+          "authors": [
+            {
+              "name": "P Krit"
+            },
+            {
+              "name": "M Pong"
+            },
+            {
+              "name": "V Rith"
+            },
+            {
+              "name": "S Suyitno"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "adra.ac.id",
+            "file_format": "PDF",
+            "link": "https://research.adra.ac.id/index.php/rpoc/article/download/2375/1702"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=-yOh4hAHvnUJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:-yOh4hAHvnUJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3A-yOh4hAHvnUJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:-yOh4hAHvnUJ:scholar.google.com/+growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14"
+        }
+      },
+      {
+        "position": 9,
+        "title": "Does growth mindset improve children's IQ, educational attainment or response to setbacks? Active-control interventions and data on children's own mindsets",
+        "result_id": "bLrhUfwXqcAJ",
+        "link": "https://www.research.ed.ac.uk/en/publications/does-growth-mindset-improve-childrens-iq-educational-attainment-o/",
+        "snippet": "… , or educational progress. … mindsets on post-challenge performance failed to materialise (β = 0.01 [0.08, 0.10], t = 0.16, p = 0.870). Finally, we tested if the growth mindset intervention …",
+        "publication_info": {
+          "summary": "Y Li, T Bates - 2017 - research.ed.ac.uk",
+          "authors": [
+            {
+              "name": "Y Li"
+            },
+            {
+              "name": "T Bates"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "ed.ac.uk",
+            "file_format": "PDF",
+            "link": "https://www.research.ed.ac.uk/files/53884982/Li_and_Bates_2017_SocArXiv_Dweck_Replication.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=bLrhUfwXqcAJ",
+          "cited_by": {
+            "total": 46,
+            "link": "https://scholar.google.com/scholar?cites=13882653698819209836&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "13882653698819209836",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=13882653698819209836&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:bLrhUfwXqcAJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AbLrhUfwXqcAJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=13882653698819209836&hl=en&as_sdt=0,14",
+            "cluster_id": "13882653698819209836",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=13882653698819209836&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:bLrhUfwXqcAJ:scholar.google.com/+growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14"
+        }
+      },
+      {
+        "position": 10,
+        "title": "New directions in social psychological interventions to improve academic achievement.",
+        "result_id": "zWaGXdZU3QsJ",
+        "link": "https://psycnet.apa.org/record/2016-15978-006",
+        "snippet": "… Attempts to improve student achievement typically focus on changing the educational … Previous studies have shown that small interventions designed to change student beliefs (…",
+        "publication_info": {
+          "summary": "TD Wilson, NR Buttrick - Journal of Educational Psychology, 2016 - psycnet.apa.org",
+          "authors": [
+            {
+              "name": "TD Wilson"
+            },
+            {
+              "name": "NR Buttrick"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "apa.org",
+            "file_format": "PDF",
+            "link": "https://psycnet.apa.org/manuscript/2016-15978-006.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=zWaGXdZU3QsJ",
+          "cited_by": {
+            "total": 72,
+            "link": "https://scholar.google.com/scholar?cites=854932783939086029&as_sdt=400005&sciodt=0,14&hl=en",
+            "cites_id": "854932783939086029",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=400005&cites=854932783939086029&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:zWaGXdZU3QsJ:scholar.google.com/&scioq=growth+mindset+intervention+academic+achievement&hl=en&as_sdt=0,14",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C14&engine=google_scholar&hl=en&num=10&q=related%3AzWaGXdZU3QsJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=854932783939086029&hl=en&as_sdt=0,14",
+            "cluster_id": "854932783939086029",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C14&cluster=854932783939086029&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 38000,
+      "time_taken_displayed": 1.0,
+      "query_displayed": "growth mindset intervention academic achievement"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "growth mindset intervention academic achievement",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

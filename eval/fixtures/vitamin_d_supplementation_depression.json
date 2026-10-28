@@ -1,0 +1,495 @@
+{
+  "query": "vitamin D supplementation depression",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:21+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Vitamin D supplementation to reduce depression in adults: meta-analysis of randomized controlled trials",
+        "result_id": "UJWeYCO5K7QJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0899900714004857",
+        "snippet": "… estimate the weighted mean effect of vitamin D supplementation in reducing depressive symptoms among individuals aged ≥18 y diagnosed with depression or depressive symptoms. …",
+        "publication_info": {
+          "summary": "MHNU Gowda, MPHMP Mutowo, PDBJ Smith… - Nutrition, 2015 - Elsevier",
+          "authors": [
+            {
+              "name": "MHNU Gowda"
+            },
+            {
+              "name": "MPHMP Mutowo",
+              "link": "https://scholar.google.com/citations?user=rWAThpgAAAAJ&hl=en&oi=sra",
+              "author_id": "rWAThpgAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=rWAThpgAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "PDBJ Smith",
+              "link": "https://scholar.google.com/citations?user=idlgRh8AAAAJ&hl=en&oi=sra",
+              "author_id": "idlgRh8AAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=idlgRh8AAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "academia.edu",
+            "file_format": "PDF",
+            "link": "https://www.academia.edu/download/45955479/Vitamin_D_supplementation_to_reduce_depr20160525-27352-sbw0vd.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=UJWeYCO5K7QJ",
+          "cited_by": {
+            "total": 322,
+            "link": "https://scholar.google.com/scholar?cites=12982673912421586256&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "12982673912421586256",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=12982673912421586256&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:UJWeYCO5K7QJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AUJWeYCO5K7QJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=12982673912421586256&hl=en&as_sdt=0,10",
+            "cluster_id": "12982673912421586256",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=12982673912421586256&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "… protective effect of vitamin D supplementation as adjunctive therapy to antidepressants on brain structural and functional connectivity of patients with major depressive …",
+        "result_id": "8E2YggDxcV4J",
+        "link": "https://www.cambridge.org/core/journals/psychological-medicine/article/protective-effect-of-vitamin-d-supplementation-as-adjunctive-therapy-to-antidepressants-on-brain-structural-and-functional-connectivity-of-patients-with-major-depressive-disorder-a-randomized-controlled-trial/89E8FFB858E16277B22D89169AC49E5F",
+        "snippet": "… the effects of vitamin D supplementation on the brain of MDD patients. … that vitamin D deficiency is associated with an increased risk of depression and vitamin D supplementation is of …",
+        "publication_info": {
+          "summary": "W Zhao, D Zhu, Y Shen, Y Zhang, T Chen… - Psychological …, 2024 - cambridge.org",
+          "authors": [
+            {
+              "name": "W Zhao"
+            },
+            {
+              "name": "D Zhu"
+            },
+            {
+              "name": "Y Shen"
+            },
+            {
+              "name": "Y Zhang"
+            },
+            {
+              "name": "T Chen"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=8E2YggDxcV4J",
+          "cited_by": {
+            "total": 23,
+            "link": "https://scholar.google.com/scholar?cites=6805485496426843632&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "6805485496426843632",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=6805485496426843632&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:8E2YggDxcV4J:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3A8E2YggDxcV4J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=6805485496426843632&hl=en&as_sdt=0,10",
+            "cluster_id": "6805485496426843632",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=6805485496426843632&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Vitamin D–containing supplementation and depressive symptom severity in adults: A Bayesian systematic review and evidence-structure assessment",
+        "result_id": "Nh2lyei-y0oJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0261561426001780",
+        "snippet": "… -related adjunctive strategy for depressive symptoms, but … vitamin D–containing regimens is unclear. We 4 evaluated the effects of vitamin D–containing supplementation on depressive …",
+        "publication_info": {
+          "summary": "G Xu, T Hu, C Zhang, M Kang, Y Fang, Y Jiang, Z Gao… - Clinical Nutrition, 2026 - Elsevier",
+          "authors": [
+            {
+              "name": "G Xu"
+            },
+            {
+              "name": "T Hu"
+            },
+            {
+              "name": "C Zhang"
+            },
+            {
+              "name": "M Kang"
+            },
+            {
+              "name": "Y Fang"
+            },
+            {
+              "name": "Y Jiang"
+            },
+            {
+              "name": "Z Gao"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=Nh2lyei-y0oJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:Nh2lyei-y0oJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3ANh2lyei-y0oJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=5389611286103661878&hl=en&as_sdt=0,10",
+            "cluster_id": "5389611286103661878",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=5389611286103661878&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Vitamin D and depressive symptoms in women during the winter: a pilot study",
+        "result_id": "5fwLlqlDZlcJ",
+        "link": "https://rex.libraries.wsu.edu/esploro/outputs/graduate/Vitamin-D-and-Depressive-Symptoms-in/99900591036901842",
+        "snippet": "… vitamin D supplementation and depressive symptoms of women with low senlnl 25 OH vitamin D … a significant relationship between vitamin D levels and depressive symptoms? 2) Do …",
+        "publication_info": {
+          "summary": "C Shipowick - 2007 - rex.libraries.wsu.edu",
+          "authors": [
+            {
+              "name": "C Shipowick"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "wsu.edu",
+            "file_format": "PDF",
+            "link": "https://rex.libraries.wsu.edu/esploro/fulltext/graduate/Vitamin-D-and-Depressive-Symptoms-in/99900591036901842?repId=12351567060001842&mId=13351554970001842&institution=01ALLIANCE_WSU"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=5fwLlqlDZlcJ",
+          "cited_by": {
+            "total": 97,
+            "link": "https://scholar.google.com/scholar?cites=6297795524570119397&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "6297795524570119397",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=6297795524570119397&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:5fwLlqlDZlcJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3A5fwLlqlDZlcJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 6,
+            "link": "https://scholar.google.com/scholar?cluster=6297795524570119397&hl=en&as_sdt=0,10",
+            "cluster_id": "6297795524570119397",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=6297795524570119397&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:5fwLlqlDZlcJ:scholar.google.com/+vitamin+D+supplementation+depression&hl=en&as_sdt=0,10"
+        }
+      },
+      {
+        "position": 5,
+        "title": "Effect of vitamin D supplementation on depression treatment",
+        "result_id": "woG_9gqKrYEJ",
+        "link": "https://www.scielo.br/j/ramb/a/jyHttR53LrrWJsxrJbb9CBM/?lang=en",
+        "snippet": "… Of the clinical trials present in this review, three found improvements with the use of vitamin D supplementation in depression symptoms: Alavi et al., Omidian et al., and Zheng et al.…",
+        "publication_info": {
+          "summary": "RT Moreira, LARL Rodrigues, LM Farias… - Revista da Associação …, 2021 - SciELO Brasil",
+          "authors": [
+            {
+              "name": "RT Moreira"
+            },
+            {
+              "name": "LARL Rodrigues"
+            },
+            {
+              "name": "LM Farias"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "scielo.br",
+            "file_format": "PDF",
+            "link": "https://www.scielo.br/j/ramb/a/jyHttR53LrrWJsxrJbb9CBM/?format=pdf&lang=en"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=woG_9gqKrYEJ",
+          "cited_by": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cites=9344276581557699010&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "9344276581557699010",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=9344276581557699010&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:woG_9gqKrYEJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AwoG_9gqKrYEJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=9344276581557699010&hl=en&as_sdt=0,10",
+            "cluster_id": "9344276581557699010",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=9344276581557699010&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:woG_9gqKrYEJ:scholar.google.com/+vitamin+D+supplementation+depression&hl=en&as_sdt=0,10"
+        }
+      },
+      {
+        "position": 6,
+        "title": "Vitamin D supplementation in depression—Meaningful, evidence-based or guideline-compliant?",
+        "result_id": "dcaqbFvupXMJ",
+        "type": "Html",
+        "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13550080/",
+        "snippet": "… Wenn im Herbst die Tage kürzer und die Sonnenstunden seltener werden, nimmt die endogene Vitamin-D-Synthese ab und die Serumspiegel sinken kontinuierlich. Vitamin D wird …",
+        "publication_info": {
+          "summary": "A Röh, R Hiltensperger, M Schepp, T Halms… - Der …, 2026 - pmc.ncbi.nlm.nih.gov",
+          "authors": [
+            {
+              "name": "A Röh"
+            },
+            {
+              "name": "R Hiltensperger"
+            },
+            {
+              "name": "M Schepp"
+            },
+            {
+              "name": "T Halms"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "nih.gov",
+            "file_format": "HTML",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13550080/"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=dcaqbFvupXMJ",
+          "html_version": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13550080/",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:dcaqbFvupXMJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AdcaqbFvupXMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=8333328761951536757&hl=en&as_sdt=0,10",
+            "cluster_id": "8333328761951536757",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=8333328761951536757&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Vitamin-D-Supplementation bei Depression–sinnvoll, evidenzbasiert oder doch leitliniengerecht?",
+        "result_id": "_kATwcGPmBwJ",
+        "link": "https://link.springer.com/article/10.1007/s00115-026-02000-2",
+        "snippet": "… Wenn im Herbst die Tage kürzer und die Sonnenstunden seltener werden, nimmt die endogene Vitamin-D-Synthese ab und die Serumspiegel sinken kontinuierlich. Vitamin D wird …",
+        "publication_info": {
+          "summary": "A Röh, R Hiltensperger, M Schepp, T Halms, A Hasan… - Der Nervenarzt, 2026 - Springer",
+          "authors": [
+            {
+              "name": "A Röh"
+            },
+            {
+              "name": "R Hiltensperger"
+            },
+            {
+              "name": "M Schepp"
+            },
+            {
+              "name": "T Halms"
+            },
+            {
+              "name": "A Hasan"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "springer.com",
+            "file_format": "PDF",
+            "link": "https://link.springer.com/content/pdf/10.1007/s00115-026-02000-2.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=_kATwcGPmBwJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:_kATwcGPmBwJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3A_kATwcGPmBwJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=2060554891852726526&hl=en&as_sdt=0,10",
+            "cluster_id": "2060554891852726526",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=2060554891852726526&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Effect of vitamin D supplementation on depressive symptoms in patients with knee osteoarthritis",
+        "result_id": "mUsJ-8oFFH0J",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1525861018304973",
+        "snippet": "… Nevertheless, this study is the first to examine the effect of vitamin D supplementation on depression in OA patients, and the findings from this study are biologically plausible. Although …",
+        "publication_info": {
+          "summary": "MMS Zheng, MDL Tu, PDF Cicuttini, MW Han… - Journal of the American …, 2019 - Elsevier",
+          "authors": [
+            {
+              "name": "MMS Zheng"
+            },
+            {
+              "name": "MDL Tu"
+            },
+            {
+              "name": "PDF Cicuttini"
+            },
+            {
+              "name": "MW Han"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=mUsJ-8oFFH0J",
+          "cited_by": {
+            "total": 45,
+            "link": "https://scholar.google.com/scholar?cites=9012835123628428185&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "9012835123628428185",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=9012835123628428185&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:mUsJ-8oFFH0J:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AmUsJ-8oFFH0J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cluster=9012835123628428185&hl=en&as_sdt=0,10",
+            "cluster_id": "9012835123628428185",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=9012835123628428185&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "The effect of vitamin D supplementation on symptoms of depression in patients with type 2 diabetes mellitus: a systematic review and meta-analysis of …",
+        "result_id": "H3lmiv0kWxUJ",
+        "type": "Pdf",
+        "link": "https://distantreader.org/stacks/journals/ijim01/ijim01-2171.pdf",
+        "snippet": "… The results of the systematic review and meta-analysis demonstrated that vitamin D supplementation may improve the depressive symptoms in type 2 diabetic patients. …",
+        "publication_info": {
+          "summary": "R Putranto, K Harimurti, S Setiati, ED Safitri… - Acta Med …, 2022 - distantreader.org",
+          "authors": [
+            {
+              "name": "R Putranto"
+            },
+            {
+              "name": "K Harimurti"
+            },
+            {
+              "name": "S Setiati"
+            },
+            {
+              "name": "ED Safitri"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "distantreader.org",
+            "file_format": "PDF",
+            "link": "https://distantreader.org/stacks/journals/ijim01/ijim01-2171.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=H3lmiv0kWxUJ",
+          "cited_by": {
+            "total": 14,
+            "link": "https://scholar.google.com/scholar?cites=1538864369044453663&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "1538864369044453663",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=1538864369044453663&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:H3lmiv0kWxUJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AH3lmiv0kWxUJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=1538864369044453663&hl=en&as_sdt=0,10",
+            "cluster_id": "1538864369044453663",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=1538864369044453663&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:H3lmiv0kWxUJ:scholar.google.com/+vitamin+D+supplementation+depression&hl=en&as_sdt=0,10"
+        }
+      },
+      {
+        "position": 10,
+        "title": "Protective effects of vitamin D supplementation combined with exercise on depressive-like behaviors in chronic stress rats",
+        "result_id": "FjG5_qFJjtgJ",
+        "link": "https://journals.lww.com/neuroreport/_layouts/15/oaks.journals/downloadpdf.aspx?an=00001756-202602020-00003",
+        "snippet": "… In this study, after 8 weeks of vitamin D supplement, exercise, and combined vitamin D and exercise interventions in CUMS-induced rats, the depressive-like behaviors were alleviated, …",
+        "publication_info": {
+          "summary": "C Yu, T Chen, H Wu - NeuroReport, 2026 - journals.lww.com",
+          "authors": [
+            {
+              "name": "C Yu"
+            },
+            {
+              "name": "T Chen"
+            },
+            {
+              "name": "H Wu"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=FjG5_qFJjtgJ",
+          "cited_by": {
+            "total": 2,
+            "link": "https://scholar.google.com/scholar?cites=15604490718997459222&as_sdt=40005&sciodt=0,10&hl=en",
+            "cites_id": "15604490718997459222",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=40005&cites=15604490718997459222&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:FjG5_qFJjtgJ:scholar.google.com/&scioq=vitamin+D+supplementation+depression&hl=en&as_sdt=0,10",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C10&engine=google_scholar&hl=en&num=10&q=related%3AFjG5_qFJjtgJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=15604490718997459222&hl=en&as_sdt=0,10",
+            "cluster_id": "15604490718997459222",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C10&cluster=15604490718997459222&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 36100,
+      "time_taken_displayed": 0.37,
+      "query_displayed": "vitamin D supplementation depression"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "vitamin D supplementation depression",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

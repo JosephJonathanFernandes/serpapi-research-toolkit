@@ -1,0 +1,486 @@
+{
+  "query": "screen time adolescent well-being",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:25+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Electronic media use and adolescent health and well-being: cross-sectional community study",
+        "result_id": "mBBJbz4a39AJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1876285909001016",
+        "snippet": "… This study aimed to explore the average daily time adolescents (age 13–19 years) spend … between adolescents' self-reported health/well-being and (1) duration of time spent using …",
+        "publication_info": {
+          "summary": "BAS Hon, M Mathers, MBL Canterford, PDT Olds… - Academic pediatrics, 2009 - Elsevier",
+          "authors": [
+            {
+              "name": "BAS Hon"
+            },
+            {
+              "name": "M Mathers"
+            },
+            {
+              "name": "MBL Canterford"
+            },
+            {
+              "name": "PDT Olds"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "academia.edu",
+            "file_format": "PDF",
+            "link": "https://www.academia.edu/download/46490981/j.acap.2009.04.00320160614-481-1bqdckq.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=mBBJbz4a39AJ",
+          "cited_by": {
+            "total": 321,
+            "link": "https://scholar.google.com/scholar?cites=15050777335152840856&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15050777335152840856",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15050777335152840856&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:mBBJbz4a39AJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AmBBJbz4a39AJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=15050777335152840856&hl=en&as_sdt=0,5",
+            "cluster_id": "15050777335152840856",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15050777335152840856&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "Not just time: Multidimensional patterns of screen use and adolescent well-being in nine countries and regions",
+        "result_id": "oEn_Zv2qX9wJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S016503272601195X",
+        "snippet": "… have long advocated limiting adolescents' screen time to reduce … screen use. The present study aimed to comprehensively capture the associations between multiple features of screen …",
+        "publication_info": {
+          "summary": "Z Xie, Z Zhang, K Bi, J Du - Journal of Affective Disorders, 2026 - Elsevier",
+          "authors": [
+            {
+              "name": "Z Xie",
+              "link": "https://scholar.google.com/citations?user=ujTB-hsAAAAJ&hl=en&oi=sra",
+              "author_id": "ujTB-hsAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ujTB-hsAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "Z Zhang",
+              "link": "https://scholar.google.com/citations?user=C6tiDKkAAAAJ&hl=en&oi=sra",
+              "author_id": "C6tiDKkAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=C6tiDKkAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "K Bi",
+              "link": "https://scholar.google.com/citations?user=OycmyuQAAAAJ&hl=en&oi=sra",
+              "author_id": "OycmyuQAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=OycmyuQAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "J Du"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=oEn_Zv2qX9wJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:oEn_Zv2qX9wJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AoEn_Zv2qX9wJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=15879598816463112608&hl=en&as_sdt=0,5",
+            "cluster_id": "15879598816463112608",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15879598816463112608&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Associations of passive and active screen time with psychosomatic complaints of adolescents",
+        "result_id": "SixcDbGE7esJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0749379722000630",
+        "snippet": "… Increased screen time is a ubiquitous part of adolescent life and is adversely associated with their well-being. However, it remains unclear whether different types of screen time have …",
+        "publication_info": {
+          "summary": "PDA Khan, PDEY Lee, PDI Janssen… - American Journal of …, 2022 - Elsevier",
+          "authors": [
+            {
+              "name": "PDA Khan"
+            },
+            {
+              "name": "PDEY Lee"
+            },
+            {
+              "name": "PDI Janssen"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=SixcDbGE7esJ",
+          "cited_by": {
+            "total": 47,
+            "link": "https://scholar.google.com/scholar?cites=17000390064361712714&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "17000390064361712714",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=17000390064361712714&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:SixcDbGE7esJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ASixcDbGE7esJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=17000390064361712714&hl=en&as_sdt=0,5",
+            "cluster_id": "17000390064361712714",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=17000390064361712714&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Screen time and its association with psychological wellbeing and sleep quality: overview of the Fujian Adolescent Mental Wellness Study (FAMWeS)",
+        "result_id": "7xVKtUR4Jz8J",
+        "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1686399/full",
+        "snippet": "… This study examined adolescent screen time, psychological well-being, and sleep quality … The findings reveal an intriguing interplay between screen time, psychological well-being, …",
+        "publication_info": {
+          "summary": "Y Lin, J Jiang, Z Luo, Q Wang, F Zou, H Alias… - Frontiers in …, 2026 - frontiersin.org",
+          "authors": [
+            {
+              "name": "Y Lin"
+            },
+            {
+              "name": "J Jiang"
+            },
+            {
+              "name": "Z Luo"
+            },
+            {
+              "name": "Q Wang"
+            },
+            {
+              "name": "F Zou"
+            },
+            {
+              "name": "H Alias",
+              "link": "https://scholar.google.com/citations?user=6t14w9YAAAAJ&hl=en&oi=sra",
+              "author_id": "6t14w9YAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=6t14w9YAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "frontiersin.org",
+            "file_format": "PDF",
+            "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1686399/pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=7xVKtUR4Jz8J",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:7xVKtUR4Jz8J:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A7xVKtUR4Jz8J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=4550738184975816175&hl=en&as_sdt=0,5",
+            "cluster_id": "4550738184975816175",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=4550738184975816175&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:7xVKtUR4Jz8J:scholar.google.com/+screen+time+adolescent+well-being&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 5,
+        "title": "Adolescent mental health in the digital era: Social media, screen time, and digital literacy",
+        "result_id": "nh4mm6XN4NsJ",
+        "type": "Pdf",
+        "link": "https://www.researchgate.net/profile/Marta-Sechi-2/publication/395661826_Adolescent_Mental_Health_in_the_Digital_Era_Social_Media_Screen_Time_and_Digital_Literacy/links/68cd8bc911d348252ba66194/Adolescent-Mental-Health-in-the-Digital-Era-Social-Media-Screen-Time-and-Digital-Literacy.pdf",
+        "snippet": "… The impact of online social networking on adolescent psychological well-being (WB): A population-level analysis of Korean school-aged children. International Journal of …",
+        "publication_info": {
+          "summary": "M Sechi, V Saladino, D Calaresi… - Journal of Clinical & …, 2025 - researchgate.net",
+          "authors": [
+            {
+              "name": "M Sechi"
+            },
+            {
+              "name": "V Saladino"
+            },
+            {
+              "name": "D Calaresi"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Marta-Sechi-2/publication/395661826_Adolescent_Mental_Health_in_the_Digital_Era_Social_Media_Screen_Time_and_Digital_Literacy/links/68cd8bc911d348252ba66194/Adolescent-Mental-Health-in-the-Digital-Era-Social-Media-Screen-Time-and-Digital-Literacy.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=nh4mm6XN4NsJ",
+          "cited_by": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cites=15843889600245669534&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15843889600245669534",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15843889600245669534&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:nh4mm6XN4NsJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3Anh4mm6XN4NsJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:nh4mm6XN4NsJ:scholar.google.com/+screen+time+adolescent+well-being&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 6,
+        "title": "The health indicators associated with screen-based sedentary behavior among adolescent girls: a systematic review",
+        "result_id": "BrCwdpjceEoJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1054139X12003242",
+        "snippet": "… well-being, and screen time and … to screen time, the primary aim of this systematic review is therefore to investigate the association between time spent engaging in recreational screen-…",
+        "publication_info": {
+          "summary": "MHPSA Costigan, PDL Barnett, PDRC Plotnikoff… - Journal of Adolescent …, 2013 - Elsevier",
+          "authors": [
+            {
+              "name": "MHPSA Costigan"
+            },
+            {
+              "name": "PDL Barnett"
+            },
+            {
+              "name": "PDRC Plotnikoff"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "academia.edu",
+            "file_format": "PDF",
+            "link": "https://www.academia.edu/download/46121452/The_Health_Indicators_Associated_With_Sc20160531-3705-1041htg.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=BrCwdpjceEoJ",
+          "cited_by": {
+            "total": 443,
+            "link": "https://scholar.google.com/scholar?cites=5366281503396376582&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "5366281503396376582",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=5366281503396376582&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:BrCwdpjceEoJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ABrCwdpjceEoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 14,
+            "link": "https://scholar.google.com/scholar?cluster=5366281503396376582&hl=en&as_sdt=0,5",
+            "cluster_id": "5366281503396376582",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=5366281503396376582&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Mediators of psychological well-being in adolescent boys",
+        "result_id": "JEtzlQWWp74J",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1054139X1500405X",
+        "snippet": "… This study suggests that satisfying adolescent boys' … their recreational screen time may positively influence well-being. … effects of screen time in relation to adolescent well-being using …",
+        "publication_info": {
+          "summary": "PDDR Lubans, PDJJ Smith, PDPJ Morgan… - Journal of Adolescent …, 2016 - Elsevier",
+          "authors": [
+            {
+              "name": "PDDR Lubans",
+              "link": "https://scholar.google.com/citations?user=TJtUO7sAAAAJ&hl=en&oi=sra",
+              "author_id": "TJtUO7sAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=TJtUO7sAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "PDJJ Smith",
+              "link": "https://scholar.google.com/citations?user=x4SCR2YAAAAJ&hl=en&oi=sra",
+              "author_id": "x4SCR2YAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=x4SCR2YAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "PDPJ Morgan",
+              "link": "https://scholar.google.com/citations?user=xEG3qFAAAAAJ&hl=en&oi=sra",
+              "author_id": "xEG3qFAAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=xEG3qFAAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "newcastle.edu.au",
+            "file_format": "PDF",
+            "link": "https://openresearch.newcastle.edu.au/articles/journal_contribution/Mediators_of_psychological_well-being_in_adolescent_boys/28965251/1/files/54319409.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=JEtzlQWWp74J",
+          "cited_by": {
+            "total": 131,
+            "link": "https://scholar.google.com/scholar?cites=13738114139043351332&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "13738114139043351332",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=13738114139043351332&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:JEtzlQWWp74J:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AJEtzlQWWp74J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=13738114139043351332&hl=en&as_sdt=0,5",
+            "cluster_id": "13738114139043351332",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=13738114139043351332&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Digital engagement, social inequalities and adolescent well-being",
+        "result_id": "E9CwZGxZnZQJ",
+        "link": "https://osf.io/preprints/socarxiv/ks3tj",
+        "snippet": "… of digital screen time (ie, 3+ hours daily) are associated with declines in well-being, particularly for … digital activities and gaming is associated with better adolescent outcomes. Low-SES …",
+        "publication_info": {
+          "summary": "M Bohnert, P Gracia - 2022 - osf.io",
+          "authors": [
+            {
+              "name": "M Bohnert"
+            },
+            {
+              "name": "P Gracia"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "osf.io",
+            "file_format": "PDF",
+            "link": "https://osf.io/download/ks3tj/"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=E9CwZGxZnZQJ",
+          "cited_by": {
+            "total": 6,
+            "link": "https://scholar.google.com/scholar?cites=10708813811037556755&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "10708813811037556755",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=10708813811037556755&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:E9CwZGxZnZQJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AE9CwZGxZnZQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=10708813811037556755&hl=en&as_sdt=0,5",
+            "cluster_id": "10708813811037556755",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=10708813811037556755&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:E9CwZGxZnZQJ:scholar.google.com/+screen+time+adolescent+well-being&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 9,
+        "title": "Impact of digital screen time on adolescents",
+        "result_id": "95N5WkdAHWwJ",
+        "link": "https://up.ijip.co.in/index.php/ijip/article/view/3906",
+        "snippet": "… It’s essential for parents, caregivers, and educators to be aware of and monitor adolescents’ digital screen time to ensure a healthy balance between screen time … ’ overall well-being. …",
+        "publication_info": {
+          "summary": "N Kumari, KC Choudhary - International Journal of Indian Psychȯlogy, 2024 - up.ijip.co.in",
+          "authors": [
+            {
+              "name": "N Kumari"
+            },
+            {
+              "name": "KC Choudhary"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=95N5WkdAHWwJ",
+          "cited_by": {
+            "total": 5,
+            "link": "https://scholar.google.com/scholar?cites=7790453605625598967&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "7790453605625598967",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=7790453605625598967&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:95N5WkdAHWwJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A95N5WkdAHWwJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:95N5WkdAHWwJ:scholar.google.com/+screen+time+adolescent+well-being&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 10,
+        "title": "Digital Lifestyle, Screen Time, and Academic Performance: A Multidimensional Study of Adolescent Health and Well-Being",
+        "result_id": "I0-7qpYlaKMJ",
+        "link": "https://adolescenciaesaude.com/index.php/aes/article/view/2719",
+        "snippet": "… This research contends the connection of digital lifestyle, screen time, academic achievement, and the well-being and health of adolescents in a multidimensional research paradigm. …",
+        "publication_info": {
+          "summary": "U Farooq, S Tripathi, S Sachan… - Adolescência e …, 2026 - adolescenciaesaude.com",
+          "authors": [
+            {
+              "name": "U Farooq"
+            },
+            {
+              "name": "S Tripathi"
+            },
+            {
+              "name": "S Sachan"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "adolescenciaesaude.com",
+            "file_format": "PDF",
+            "link": "https://adolescenciaesaude.com/index.php/aes/article/download/2719/2078"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=I0-7qpYlaKMJ",
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:I0-7qpYlaKMJ:scholar.google.com/&scioq=screen+time+adolescent+well-being&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AI0-7qpYlaKMJ%3Ascholar.google.com%2F",
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:I0-7qpYlaKMJ:scholar.google.com/+screen+time+adolescent+well-being&hl=en&as_sdt=0,5"
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 121000,
+      "time_taken_displayed": 0.45,
+      "query_displayed": "screen time adolescent well-being"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "screen time adolescent well-being",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

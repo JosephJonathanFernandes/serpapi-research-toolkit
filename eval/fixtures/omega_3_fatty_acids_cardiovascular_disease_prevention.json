@@ -1,0 +1,485 @@
+{
+  "query": "omega-3 fatty acids cardiovascular disease prevention",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:27+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Omega-3 polyunsaturated fatty acid (fish oil) supplementation and the prevention of clinical cardiovascular disease: a science advisory from the American Heart …",
+        "result_id": "-Dsx9hQK68kJ",
+        "link": "https://www.ahajournals.org/doi/abs/10.1161/cir.0000000000000482",
+        "snippet": "… of omega-3 polyunsaturated fatty acid supplementation on clinical cardiovascular events, we update prior recommendations for patients with prevalent coronary heart disease, and …",
+        "publication_info": {
+          "summary": "DS Siscovick, TA Barringer, AM Fretts, JHY Wu… - Circulation, 2017 - ahajournals.org",
+          "authors": [
+            {
+              "name": "DS Siscovick"
+            },
+            {
+              "name": "TA Barringer"
+            },
+            {
+              "name": "AM Fretts"
+            },
+            {
+              "name": "JHY Wu"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "ahajournals.org",
+            "file_format": "PDF",
+            "link": "https://www.ahajournals.org/doi/pdf/10.1161/cir.0000000000000482"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=-Dsx9hQK68kJ",
+          "cited_by": {
+            "total": 870,
+            "link": "https://scholar.google.com/scholar?cites=14549734106296564728&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "14549734106296564728",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=14549734106296564728&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:-Dsx9hQK68kJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3A-Dsx9hQK68kJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 12,
+            "link": "https://scholar.google.com/scholar?cluster=14549734106296564728&hl=en&as_sdt=0,23",
+            "cluster_id": "14549734106296564728",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=14549734106296564728&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "Indications for omega-3 long chain polyunsaturated fatty acid in the prevention and treatment of cardiovascular disease",
+        "result_id": "s59l1fP-vdUJ",
+        "link": "https://www.heartlungcirc.org/article/S1443-9506(15)00167-5/abstract",
+        "snippet": "… review on omega-3 long-chain polyunsaturated fatty acids (… and secondary prevention of cardiovascular disease. Since … ship between omega-3 polyunsaturated fatty acids, including …",
+        "publication_info": {
+          "summary": "P Nestel, P Clifton, D Colquhoun… - Heart, Lung and …, 2015 - heartlungcirc.org",
+          "authors": [
+            {
+              "name": "P Nestel"
+            },
+            {
+              "name": "P Clifton"
+            },
+            {
+              "name": "D Colquhoun"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "heartlungcirc.org",
+            "file_format": "PDF",
+            "link": "https://www.heartlungcirc.org/article/S1443-9506(15)00167-5/pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=s59l1fP-vdUJ",
+          "cited_by": {
+            "total": 226,
+            "link": "https://scholar.google.com/scholar?cites=15401746623887679411&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "15401746623887679411",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=15401746623887679411&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:s59l1fP-vdUJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3As59l1fP-vdUJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=15401746623887679411&hl=en&as_sdt=0,23",
+            "cluster_id": "15401746623887679411",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=15401746623887679411&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Secondary prevention of coronary artery disease with omega-3 fatty acids",
+        "result_id": "FNqU4X__g80J",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0002914905021910",
+        "snippet": "… No placebo control was used in this study. Omega-3 fatty acid supplementation was initiated 5 days before surgery and ended with discharge from the hospital after an average of 7 …",
+        "publication_info": {
+          "summary": "MDTA Jacobson - The American journal of cardiology, 2006 - Elsevier",
+          "authors": [
+            {
+              "name": "MDTA Jacobson",
+              "link": "https://scholar.google.com/citations?user=N6hht6QAAAAJ&hl=en&oi=sra",
+              "author_id": "N6hht6QAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=N6hht6QAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=FNqU4X__g80J",
+          "cited_by": {
+            "total": 245,
+            "link": "https://scholar.google.com/scholar?cites=14808960924434881044&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "14808960924434881044",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=14808960924434881044&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:FNqU4X__g80J:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AFNqU4X__g80J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 9,
+            "link": "https://scholar.google.com/scholar?cluster=14808960924434881044&hl=en&as_sdt=0,23",
+            "cluster_id": "14808960924434881044",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=14808960924434881044&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Dietary omega-3 fatty acid intake and cardiovascular risk",
+        "result_id": "uFwoMu3i2oAJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0002914905021855",
+        "snippet": "… disease (CVD). Both epidemiologic and interventional studies have … effects of omega-3 fatty acids on many CVD end points, including all CVD (defined as all coronary artery disease […",
+        "publication_info": {
+          "summary": "TL Psota, SK Gebauer - The American journal of cardiology, 2006 - Elsevier",
+          "authors": [
+            {
+              "name": "TL Psota"
+            },
+            {
+              "name": "SK Gebauer"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=uFwoMu3i2oAJ",
+          "cited_by": {
+            "total": 392,
+            "link": "https://scholar.google.com/scholar?cites=9284983090154331320&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "9284983090154331320",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=9284983090154331320&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:uFwoMu3i2oAJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AuFwoMu3i2oAJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=9284983090154331320&hl=en&as_sdt=0,23",
+            "cluster_id": "9284983090154331320",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=9284983090154331320&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 5,
+        "title": "Usefulness of omega-3 fatty acids and the prevention of coronary heart disease",
+        "result_id": "nauQp_eHTNgJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0002914905014542",
+        "snippet": "… for the omega-3 polyunsaturated fatty acids in coronary heart disease prevention. However, … several different types of omega-3 polyunsaturated fatty acids, including eicosapentaenoic …",
+        "publication_info": {
+          "summary": "MDCR Harper, MDTA Jacobson - The American journal of cardiology, 2005 - Elsevier",
+          "authors": [
+            {
+              "name": "MDCR Harper"
+            },
+            {
+              "name": "MDTA Jacobson",
+              "link": "https://scholar.google.com/citations?user=N6hht6QAAAAJ&hl=en&oi=sra",
+              "author_id": "N6hht6QAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=N6hht6QAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "ajconline.org",
+            "file_format": "PDF",
+            "link": "https://www.ajconline.org/article/S0002-9149(05)01454-2/pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=nauQp_eHTNgJ",
+          "cited_by": {
+            "total": 250,
+            "link": "https://scholar.google.com/scholar?cites=15585981908160392093&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "15585981908160392093",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=15585981908160392093&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:nauQp_eHTNgJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AnauQp_eHTNgJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=15585981908160392093&hl=en&as_sdt=0,23",
+            "cluster_id": "15585981908160392093",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=15585981908160392093&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 6,
+        "title": "Omega-3-fatty acids: Do they prevent cardiovascular disease?",
+        "result_id": "SHtRdvkLyrAJ",
+        "type": "Html",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1521690X22000689",
+        "snippet": "… with incident CVD events. Omega-3 fatty acids (n3-FAs), specifically eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA), lower TG levels, but their ability to reduce CV …",
+        "publication_info": {
+          "summary": "BSSCR Sherratt, MDRH Eckel - Best Practice & Research Clinical …, 2023 - Elsevier",
+          "authors": [
+            {
+              "name": "BSSCR Sherratt",
+              "link": "https://scholar.google.com/citations?user=NyukDzUAAAAJ&hl=en&oi=sra",
+              "author_id": "NyukDzUAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=NyukDzUAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "MDRH Eckel"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "sciencedirect.com",
+            "file_format": "HTML",
+            "link": "https://www.sciencedirect.com/science/article/pii/S1521690X22000689"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=SHtRdvkLyrAJ",
+          "html_version": "https://www.sciencedirect.com/science/article/pii/S1521690X22000689",
+          "cited_by": {
+            "total": 55,
+            "link": "https://scholar.google.com/scholar?cites=12739007662030682952&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "12739007662030682952",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=12739007662030682952&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:SHtRdvkLyrAJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3ASHtRdvkLyrAJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=12739007662030682952&hl=en&as_sdt=0,23",
+            "cluster_id": "12739007662030682952",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=12739007662030682952&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Omega-3 fatty acids and primary and secondary prevention of cardiovascular disease",
+        "result_id": "qf7HxtjpuzQJ",
+        "link": "https://link.springer.com/article/10.1007/s12013-014-0407-5",
+        "snippet": "… in the primary and secondary prevention of CVD. This … omega-3 fatty acids in primary and secondary prevention of CVD. Keywords Cardiovascular disease 4 Polyunsaturated fatty acids …",
+        "publication_info": {
+          "summary": "Y Cao, L Lu, J Liang, M Liu, X Li, RR Sun… - Cell Biochemistry and …, 2015 - Springer",
+          "authors": [
+            {
+              "name": "Y Cao"
+            },
+            {
+              "name": "L Lu"
+            },
+            {
+              "name": "J Liang"
+            },
+            {
+              "name": "M Liu"
+            },
+            {
+              "name": "X Li"
+            },
+            {
+              "name": "RR Sun"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=qf7HxtjpuzQJ",
+          "cited_by": {
+            "total": 44,
+            "link": "https://scholar.google.com/scholar?cites=3799887827874348713&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "3799887827874348713",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=3799887827874348713&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:qf7HxtjpuzQJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3Aqf7HxtjpuzQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=3799887827874348713&hl=en&as_sdt=0,23",
+            "cluster_id": "3799887827874348713",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=3799887827874348713&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Omega-3 fatty acids effect on major cardiovascular events in patients at high cardiovascular risk",
+        "result_id": "dWMi617jYu8J",
+        "link": "https://jamanetwork.com/journals/jama/article-abstract/2778119",
+        "snippet": "… omega-3 fatty acids vs corn oil on major adverse cardiovascular events in patients at high cardiovascular risk: … Cardiovascular risk reduction with icosapent ethyl for hypertriglyceridemia. …",
+        "publication_info": {
+          "summary": "F Welty, B Bistrian, D Driscoll - Jama, 2021 - jamanetwork.com",
+          "authors": [
+            {
+              "name": "F Welty"
+            },
+            {
+              "name": "B Bistrian"
+            },
+            {
+              "name": "D Driscoll"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=dWMi617jYu8J",
+          "cited_by": {
+            "total": 20,
+            "link": "https://scholar.google.com/scholar?cites=17249599519593751413&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "17249599519593751413",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=17249599519593751413&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:dWMi617jYu8J:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AdWMi617jYu8J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 11,
+            "link": "https://scholar.google.com/scholar?cluster=17249599519593751413&hl=en&as_sdt=0,23",
+            "cluster_id": "17249599519593751413",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=17249599519593751413&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "Omega-3 polyunsaturated fatty acids and cardiovascular health: a comprehensive review",
+        "result_id": "gcJhsgNLS90J",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0033062018300616",
+        "snippet": "… Omega-3 polyunsaturated fatty acids (OM3) in reducing cardiovascular (CV) disease (CVD) and CVD events … As early as 1944, Sinclair 1 described the rarity of coronary heart disease (…",
+        "publication_info": {
+          "summary": "A Elagizi, CJ Lavie, K Marshall… - … cardiovascular diseases, 2018 - Elsevier",
+          "authors": [
+            {
+              "name": "A Elagizi"
+            },
+            {
+              "name": "CJ Lavie"
+            },
+            {
+              "name": "K Marshall"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "uq.edu.au",
+            "file_format": "PDF",
+            "link": "https://espace.library.uq.edu.au/view/UQ:de1060f/UQde1060f_OA.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=gcJhsgNLS90J",
+          "cited_by": {
+            "total": 120,
+            "link": "https://scholar.google.com/scholar?cites=15945921384885109377&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "15945921384885109377",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=15945921384885109377&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:gcJhsgNLS90J:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AgcJhsgNLS90J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=15945921384885109377&hl=en&as_sdt=0,23",
+            "cluster_id": "15945921384885109377",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=15945921384885109377&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 10,
+        "title": "Omega-3 fatty acids and coronary heart disease risk: clinical and mechanistic perspectives",
+        "result_id": "MRPZkhVLhvMJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0021915007007344",
+        "snippet": "… which these fatty acids reduce cardiovascular disease risk. … The TG-lowering effects of omega-3 fatty acids appear to be … mechanisms that link omega-3 fatty acids and CHD risk are due, …",
+        "publication_info": {
+          "summary": "WS Harris, M Miller, AP Tighe, MH Davidson… - Atherosclerosis, 2008 - Elsevier",
+          "authors": [
+            {
+              "name": "WS Harris"
+            },
+            {
+              "name": "M Miller"
+            },
+            {
+              "name": "AP Tighe"
+            },
+            {
+              "name": "MH Davidson"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Michael-Miller-108/publication/5689510_Omega-3_fatty_acids_and_coronary_heart_disease_risk_Clinical_and_mechanistic_perspectives/links/5fb28e54299bf10c3683f1cd/Omega-3-fatty-acids-and-coronary-heart-disease-risk-Clinical-and-mechanistic-perspectives.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=MRPZkhVLhvMJ",
+          "cited_by": {
+            "total": 915,
+            "link": "https://scholar.google.com/scholar?cites=17547795554125812529&as_sdt=80000005&sciodt=0,23&hl=en",
+            "cites_id": "17547795554125812529",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=80000005&cites=17547795554125812529&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:MRPZkhVLhvMJ:scholar.google.com/&scioq=omega-3+fatty+acids+cardiovascular+disease+prevention&hl=en&as_sdt=0,23",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C23&engine=google_scholar&hl=en&num=10&q=related%3AMRPZkhVLhvMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 12,
+            "link": "https://scholar.google.com/scholar?cluster=17547795554125812529&hl=en&as_sdt=0,23",
+            "cluster_id": "17547795554125812529",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C23&cluster=17547795554125812529&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 58400,
+      "time_taken_displayed": 0.72,
+      "query_displayed": "omega-3 fatty acids cardiovascular disease prevention"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "omega-3 fatty acids cardiovascular disease prevention",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

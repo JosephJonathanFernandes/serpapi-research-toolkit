@@ -1,0 +1,516 @@
+{
+  "query": "mindfulness meditation anxiety randomized trial",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:30+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Mindfulness-based stress reduction vs escitalopram for the treatment of adults with anxiety disorders: a randomized clinical trial",
+        "result_id": "PcOi1btPh9wJ",
+        "type": "Html",
+        "link": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2798510/",
+        "snippet": "… Mindfulness meditation has been found to help reduce anxiety; a recent meta-analysis 8 of trials with anxiety disorders found a significant benefit with mindfulness meditation compared …",
+        "publication_info": {
+          "summary": "EA Hoge, E Bui, M Mete, MA Dutton, AW Baker… - JAMA …, 2023 - jamanetwork.com",
+          "authors": [
+            {
+              "name": "EA Hoge"
+            },
+            {
+              "name": "E Bui"
+            },
+            {
+              "name": "M Mete"
+            },
+            {
+              "name": "MA Dutton"
+            },
+            {
+              "name": "AW Baker"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "jamanetwork.com",
+            "file_format": "HTML",
+            "link": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2798510/"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=PcOi1btPh9wJ",
+          "html_version": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2798510/",
+          "cited_by": {
+            "total": 371,
+            "link": "https://scholar.google.com/scholar?cites=15890757478361776957&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15890757478361776957",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15890757478361776957&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:PcOi1btPh9wJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3APcOi1btPh9wJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 18,
+            "link": "https://scholar.google.com/scholar?cluster=15890757478361776957&hl=en&as_sdt=0,5",
+            "cluster_id": "15890757478361776957",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15890757478361776957&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 2,
+        "title": "Effectiveness of mindfulness meditation in intervention for anxiety: A meta-analysis",
+        "result_id": "bqWHeyRobb8J",
+        "link": "https://journal.psych.ac.cn/acps/EN/10.3724/SP.J.1041.2018.00283",
+        "snippet": "… Normally, ITT is the main way of analysis for clinical randomized trials. Some meta-analysis study … It can be seen that ITT is important in clinical randomized trials. However, ignoring task …",
+        "publication_info": {
+          "summary": "Z Ren, Y Zhang, G Jiang - Acta Psychologica Sinica, 2018 - journal.psych.ac.cn",
+          "authors": [
+            {
+              "name": "Z Ren",
+              "link": "https://scholar.google.com/citations?user=T9fPDmAAAAAJ&hl=en&oi=sra",
+              "author_id": "T9fPDmAAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=T9fPDmAAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "Y Zhang"
+            },
+            {
+              "name": "G Jiang"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "psych.ac.cn",
+            "file_format": "PDF",
+            "link": "https://journal.psych.ac.cn/acps/EN/article/downloadArticleFile.do?attachType=PDF&id=4121"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=bqWHeyRobb8J",
+          "cited_by": {
+            "total": 56,
+            "link": "https://scholar.google.com/scholar?cites=13793795739606295918&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "13793795739606295918",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=13793795739606295918&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:bqWHeyRobb8J:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AbqWHeyRobb8J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=13793795739606295918&hl=en&as_sdt=0,5",
+            "cluster_id": "13793795739606295918",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=13793795739606295918&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:bqWHeyRobb8J:scholar.google.com/+mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 3,
+        "title": "A randomized controlled trial of mindfulness versus yoga: effects on depression and/or anxiety in college students",
+        "result_id": "X1GJEtRoxKQJ",
+        "link": "https://journals.sagepub.com/doi/abs/10.1177/1078390316663307",
+        "snippet": "… This study demonstrates that both mindfulness and yoga practices may be beneficial to college students with depression and/or anxiety. These results are in agreement with the …",
+        "publication_info": {
+          "summary": "N Falsafi - Journal of the American Psychiatric Nurses …, 2016 - journals.sagepub.com",
+          "authors": [
+            {
+              "name": "N Falsafi"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "yoga-als-therapie.de",
+            "file_format": "PDF",
+            "link": "https://www.yoga-als-therapie.de/assets/Studien/Downloads/Falsafi-2016-J-Am-Psychiatr-Nurses-Assoc.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=X1GJEtRoxKQJ",
+          "cited_by": {
+            "total": 332,
+            "link": "https://scholar.google.com/scholar?cites=11872729777708814687&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "11872729777708814687",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=11872729777708814687&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:X1GJEtRoxKQJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AX1GJEtRoxKQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=11872729777708814687&hl=en&as_sdt=0,5",
+            "cluster_id": "11872729777708814687",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=11872729777708814687&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Effects of length of mindfulness practice on mindfulness, depression, anxiety, and stress: A randomized controlled experiment",
+        "result_id": "PPBj1IUidA0J",
+        "link": "https://link.springer.com/article/10.1007/s12671-020-01512-5",
+        "snippet": "… The CONSORT statement: revised recommendations for improving the quality of reports of parallel-group randomized trials. Annals of Internal Medicine, 134, 657–662. https://doi.org/…",
+        "publication_info": {
+          "summary": "S Strohmaier, FW Jones, JE Cane - Mindfulness, 2021 - Springer",
+          "authors": [
+            {
+              "name": "S Strohmaier"
+            },
+            {
+              "name": "FW Jones"
+            },
+            {
+              "name": "JE Cane"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "academia.edu",
+            "file_format": "PDF",
+            "link": "https://www.academia.edu/download/94899846/s12671-020-01512-520221127-1-1tep0v9.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=PPBj1IUidA0J",
+          "cited_by": {
+            "total": 233,
+            "link": "https://scholar.google.com/scholar?cites=969437777980813372&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "969437777980813372",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=969437777980813372&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:PPBj1IUidA0J:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3APPBj1IUidA0J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 5,
+            "link": "https://scholar.google.com/scholar?cluster=969437777980813372&hl=en&as_sdt=0,5",
+            "cluster_id": "969437777980813372",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=969437777980813372&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 5,
+        "title": "The impact of brief mindfulness meditation on anxiety, cognitive load, and teamwork in emergency simulation training: A randomized controlled trial",
+        "result_id": "HnmYJqNr9aQJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S026069172300299X",
+        "snippet": "… randomized controlled study evaluating the integration of a brief pre-briefing MM practice effects on both individual (anxiety, mindfulness… The current study seeks to provide evidence for …",
+        "publication_info": {
+          "summary": "K Takhdat, H Rebahi, DM Rooney, M Ait Babram… - Nurse Education …, 2024 - Elsevier",
+          "authors": [
+            {
+              "name": "K Takhdat"
+            },
+            {
+              "name": "H Rebahi"
+            },
+            {
+              "name": "DM Rooney"
+            },
+            {
+              "name": "M Ait Babram"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=HnmYJqNr9aQJ",
+          "cited_by": {
+            "total": 29,
+            "link": "https://scholar.google.com/scholar?cites=11886525139985660190&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "11886525139985660190",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=11886525139985660190&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:HnmYJqNr9aQJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AHnmYJqNr9aQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 2,
+            "link": "https://scholar.google.com/scholar?cluster=11886525139985660190&hl=en&as_sdt=0,5",
+            "cluster_id": "11886525139985660190",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=11886525139985660190&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 6,
+        "title": "Daily meditation program for anxiety in individuals admitted to the antepartum unit: a multicenter randomized controlled trial (MEDITATE)",
+        "result_id": "CkDszPe0qIcJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S2589933322000027",
+        "snippet": "… A paucity of trials exist using mindful meditation for maternal anxiety in … and anxiety factors, we conducted a randomized trial to … Our study introduced mindful meditation for anxiety to the …",
+        "publication_info": {
+          "summary": "DOMS Doty, PDHY Chen, BSO Ajishegiri… - American Journal of …, 2022 - Elsevier",
+          "authors": [
+            {
+              "name": "DOMS Doty"
+            },
+            {
+              "name": "PDHY Chen",
+              "link": "https://scholar.google.com/citations?user=9vf9WEYAAAAJ&hl=en&oi=sra",
+              "author_id": "9vf9WEYAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=9vf9WEYAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "BSO Ajishegiri"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=CkDszPe0qIcJ",
+          "cited_by": {
+            "total": 16,
+            "link": "https://scholar.google.com/scholar?cites=9775261967595618314&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "9775261967595618314",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=9775261967595618314&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:CkDszPe0qIcJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ACkDszPe0qIcJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 4,
+            "link": "https://scholar.google.com/scholar?cluster=9775261967595618314&hl=en&as_sdt=0,5",
+            "cluster_id": "9775261967595618314",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=9775261967595618314&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 7,
+        "title": "Randomized trial on the effects of a mindfulness intervention on temperament, anxiety, and depression: a multi-arm psychometric study",
+        "result_id": "aAGsci43W2IJ",
+        "type": "Html",
+        "link": "https://www.mdpi.com/2076-328X/12/3/74",
+        "snippet": "… by mindfulness meditation [32,33]. Hence, this study aims to investigate whether a mindfulness program with primary school children can be effective in reducing anxiety and depression …",
+        "publication_info": {
+          "summary": "A Poli, AGI Maremmani, A Gemignani, M Miccoli - Behavioral Sciences, 2022 - mdpi.com",
+          "authors": [
+            {
+              "name": "A Poli"
+            },
+            {
+              "name": "AGI Maremmani"
+            },
+            {
+              "name": "A Gemignani"
+            },
+            {
+              "name": "M Miccoli"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "mdpi.com",
+            "file_format": "HTML",
+            "link": "https://www.mdpi.com/2076-328X/12/3/74"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=aAGsci43W2IJ",
+          "html_version": "https://www.mdpi.com/2076-328X/12/3/74",
+          "cited_by": {
+            "total": 23,
+            "link": "https://scholar.google.com/scholar?cites=7087319111229505896&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "7087319111229505896",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=7087319111229505896&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:aAGsci43W2IJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AaAGsci43W2IJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 15,
+            "link": "https://scholar.google.com/scholar?cluster=7087319111229505896&hl=en&as_sdt=0,5",
+            "cluster_id": "7087319111229505896",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=7087319111229505896&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:aAGsci43W2IJ:scholar.google.com/+mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 8,
+        "title": "Treatment for anxiety: Mindfulness meditation versus escitalopram (TAME): Design of a randomized, controlled non-inferiority trial",
+        "result_id": "m6jUM30KjiYJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S1551714420300434",
+        "snippet": "… the treatment of anxiety disorders. We will use a non-inferiority, comparative effectiveness trial design, in which individuals with diagnosed anxiety disorders will be randomized to either …",
+        "publication_info": {
+          "summary": "EA Hoge, E Bui, M Mete, SR Philip, C Gabriel… - … clinical trials, 2020 - Elsevier",
+          "authors": [
+            {
+              "name": "EA Hoge"
+            },
+            {
+              "name": "E Bui"
+            },
+            {
+              "name": "M Mete"
+            },
+            {
+              "name": "SR Philip"
+            },
+            {
+              "name": "C Gabriel"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=m6jUM30KjiYJ",
+          "cited_by": {
+            "total": 27,
+            "link": "https://scholar.google.com/scholar?cites=2778169552990939291&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "2778169552990939291",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=2778169552990939291&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:m6jUM30KjiYJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3Am6jUM30KjiYJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cluster=2778169552990939291&hl=en&as_sdt=0,5",
+            "cluster_id": "2778169552990939291",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=2778169552990939291&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "A randomized trial of mindfulness-based cognitive therapy for children: Promoting mindful attention to enhance social-emotional resiliency in children",
+        "result_id": "F98NAtXVavoJ",
+        "link": "https://link.springer.com/article/10.1007/s10826-009-9301-y",
+        "snippet": "… future clinical trials of MBCT-C with children who have diagnosed anxiety disorders or … Mindfulness meditation based stress reduction for children and their parents. Paper presented at …",
+        "publication_info": {
+          "summary": "RJ Semple, J Lee, D Rosa, LF Miller - Journal of child and family studies, 2010 - Springer",
+          "authors": [
+            {
+              "name": "RJ Semple"
+            },
+            {
+              "name": "J Lee"
+            },
+            {
+              "name": "D Rosa"
+            },
+            {
+              "name": "LF Miller"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Randye-Semple/publication/225948589_A_Randomized_Trial_of_Mindfulness-Based_Cognitive_Therapy_for_Children_Promoting_Mindful_Attention_to_Enhance_Social-Emotional_Resiliency_in_Children/links/687e7cea1a77b36b5b046a96/A-Randomized-Trial-of-Mindfulness-Based-Cognitive-Therapy-for-Children-Promoting-Mindful-Attention-to-Enhance-Social-Emotional-Resiliency-in-Children.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=F98NAtXVavoJ",
+          "cited_by": {
+            "total": 1068,
+            "link": "https://scholar.google.com/scholar?cites=18044469967852527383&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "18044469967852527383",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=18044469967852527383&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:F98NAtXVavoJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AF98NAtXVavoJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 12,
+            "link": "https://scholar.google.com/scholar?cluster=18044469967852527383&hl=en&as_sdt=0,5",
+            "cluster_id": "18044469967852527383",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=18044469967852527383&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 10,
+        "title": "The effectiveness of mindfulness-based meditation treatments for late life anxiety: a systematic review of randomized controlled trials",
+        "result_id": "9pEJYfgS5gQJ",
+        "link": "https://www.tandfonline.com/doi/abs/10.1080/13607863.2022.2102140",
+        "snippet": "… that evaluated mindfulness-based interventions with a meditation component as the primary intervention for late life anxiety. The inclusion criteria were: randomized control trial, if the …",
+        "publication_info": {
+          "summary": "S Hatch, J Webber, S Rej, M Finlayson… - Aging & Mental …, 2023 - Taylor & Francis",
+          "authors": [
+            {
+              "name": "S Hatch"
+            },
+            {
+              "name": "J Webber"
+            },
+            {
+              "name": "S Rej"
+            },
+            {
+              "name": "M Finlayson"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "researchgate.net",
+            "file_format": "PDF",
+            "link": "https://www.researchgate.net/profile/Stacey-Hatch/publication/362393667_The_effectiveness_of_mindfulness-based_meditation_treatments_for_late_life_anxiety_a_systematic_review_of_randomized_controlled_trials/links/6724ee7277f274616d563e0a/The-effectiveness-of-mindfulness-based-meditation-treatments-for-late-life-anxiety-a-systematic-review-of-randomized-controlled-trials.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=9pEJYfgS5gQJ",
+          "cited_by": {
+            "total": 16,
+            "link": "https://scholar.google.com/scholar?cites=352990478784369142&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "352990478784369142",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=352990478784369142&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:9pEJYfgS5gQJ:scholar.google.com/&scioq=mindfulness+meditation+anxiety+randomized+trial&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A9pEJYfgS5gQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=352990478784369142&hl=en&as_sdt=0,5",
+            "cluster_id": "352990478784369142",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=352990478784369142&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 25900,
+      "time_taken_displayed": 0.5,
+      "query_displayed": "mindfulness meditation anxiety randomized trial"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "mindfulness meditation anxiety randomized trial",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "description": "Pairwise labels over recorded Google Scholar results (title + snippet, 10 papers per topic). A pair is 'disagree' when, read at face value, the two entries state findings in opposite directions on the same question. Every unlisted pair is labeled 'no disagreement'. 'unclear' pairs are excluded from the metrics because the snippet is too truncated or ambiguous to judge.",
+  "annotator": "DRAFT: single annotator (an AI assistant) reading only the truncated snippets. Not yet reviewed by a domain expert. Please audit before quoting the numbers.",
+  "topics": {
+    "bilingual_advantage_executive_function_cognitive_control": {
+      "disagree": [[1, 2]],
+      "unclear": [[0, 1], [1, 9]]
+    },
+    "intermittent_fasting_insulin_sensitivity_metabolic_health": {
+      "disagree": [[1, 3], [1, 7], [1, 8]],
+      "unclear": [[1, 5], [1, 6], [1, 9], [4, 7], [0, 3]]
+    },
+    "large_language_models_theory_of_mind_reasoning": {
+      "disagree": [],
+      "unclear": []
+    },
+    "ego_depletion_self_control_replication": {
+      "disagree": [[0, 6], [3, 6]],
+      "unclear": [[0, 5], [3, 5], [6, 9], [6, 7], [3, 7], [0, 7], [5, 9]]
+    },
+    "growth_mindset_intervention_academic_achievement": {
+      "disagree": [[1, 2], [2, 3], [2, 4], [2, 8]],
+      "unclear": [[1, 6], [3, 6], [4, 6], [6, 8], [0, 1], [0, 8]]
+    },
+    "vitamin_d_supplementation_depression": {
+      "disagree": [],
+      "unclear": [[2, 8], [1, 2], [4, 8], [4, 9]]
+    },
+    "screen_time_adolescent_well_being": {
+      "disagree": [[2, 6]],
+      "unclear": [[6, 7], [6, 8], [2, 7]]
+    },
+    "omega_3_fatty_acids_cardiovascular_disease_prevention": {
+      "disagree": [],
+      "unclear": [[5, 9], [5, 6]]
+    },
+    "mindfulness_meditation_anxiety_randomized_trial": {
+      "disagree": [],
+      "unclear": []
+    },
+    "power_posing_hormones_behavior": {
+      "disagree": [[0, 3], [0, 8], [0, 1], [3, 7], [7, 8], [1, 7]],
+      "unclear": [[3, 9], [8, 9], [1, 9], [0, 2], [2, 7]]
+    }
+  }
+}

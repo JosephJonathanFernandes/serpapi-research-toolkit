@@ -1,0 +1,516 @@
+{
+  "query": "ego depletion self-control replication",
+  "engine": "google_scholar",
+  "num_results": 10,
+  "recorded_at": "2026-10-27T02:12:09+00:00",
+  "response": {
+    "organic_results": [
+      {
+        "position": 1,
+        "title": "Commentary: A multilab preregistered replication of the ego-depletion effect",
+        "result_id": "6Z9MkTeiYFQJ",
+        "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01155/full",
+        "snippet": "… task, the worse they perform on the subsequent self-control task. This pattern holds in both English-speaking sample and non-English speaking sample. The interactions between …",
+        "publication_info": {
+          "summary": "J Dang - Frontiers in Psychology, 2016 - frontiersin.org",
+          "authors": [
+            {
+              "name": "J Dang",
+              "link": "https://scholar.google.com/citations?user=ZaNXfBMAAAAJ&hl=en&oi=sra",
+              "author_id": "ZaNXfBMAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ZaNXfBMAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "frontiersin.org",
+            "file_format": "PDF",
+            "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01155/pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=6Z9MkTeiYFQJ",
+          "cited_by": {
+            "total": 112,
+            "link": "https://scholar.google.com/scholar?cites=6080037856494788585&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "6080037856494788585",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=6080037856494788585&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:6Z9MkTeiYFQJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A6Z9MkTeiYFQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 10,
+            "link": "https://scholar.google.com/scholar?cluster=6080037856494788585&hl=en&as_sdt=0,5",
+            "cluster_id": "6080037856494788585",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=6080037856494788585&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:6Z9MkTeiYFQJ:scholar.google.com/+ego+depletion+self-control+replication&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 2,
+        "title": "The past, present, and future of ego depletion",
+        "result_id": "5avBxUMa5vQJ",
+        "type": "Html",
+        "link": "https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000398",
+        "snippet": "… valid a test this multi-site replication of one specific ego depletion study really was. Several … Ego depletion and the strength model of self-control: A meta-analysis. Psychological Bulletin…",
+        "publication_info": {
+          "summary": "M Inzlicht, M Friese - Social Psychology, 2019 - econtent.hogrefe.com",
+          "authors": [
+            {
+              "name": "M Inzlicht",
+              "link": "https://scholar.google.com/citations?user=z7DDahYAAAAJ&hl=en&oi=sra",
+              "author_id": "z7DDahYAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=z7DDahYAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "M Friese",
+              "link": "https://scholar.google.com/citations?user=YleEtoEAAAAJ&hl=en&oi=sra",
+              "author_id": "YleEtoEAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=YleEtoEAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "hogrefe.com",
+            "file_format": "HTML",
+            "link": "https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000398"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=5avBxUMa5vQJ",
+          "html_version": "https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000398",
+          "cited_by": {
+            "total": 202,
+            "link": "https://scholar.google.com/scholar?cites=17646821068280802277&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "17646821068280802277",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=17646821068280802277&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:5avBxUMa5vQJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A5avBxUMa5vQJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=17646821068280802277&hl=en&as_sdt=0,5",
+            "cluster_id": "17646821068280802277",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=17646821068280802277&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 3,
+        "title": "Self-control and limited willpower: Current status of ego depletion theory and research",
+        "result_id": "kCrbHlaZmokJ",
+        "type": "Html",
+        "link": "https://www.sciencedirect.com/science/article/pii/S2352250X24000952",
+        "snippet": "… Although debates about replication slowed progress in ego depletion research, … ego depletion matters into why ego depletion effects occur (mediating factors), and when ego depletion …",
+        "publication_info": {
+          "summary": "RF Baumeister, N André, DA Southwick… - Current Opinion in …, 2024 - Elsevier",
+          "authors": [
+            {
+              "name": "RF Baumeister",
+              "link": "https://scholar.google.com/citations?user=ShSEUuoAAAAJ&hl=en&oi=sra",
+              "author_id": "ShSEUuoAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ShSEUuoAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "N André",
+              "link": "https://scholar.google.com/citations?user=JB_tFFcAAAAJ&hl=en&oi=sra",
+              "author_id": "JB_tFFcAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=JB_tFFcAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "DA Southwick",
+              "link": "https://scholar.google.com/citations?user=ZOWapFsAAAAJ&hl=en&oi=sra",
+              "author_id": "ZOWapFsAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ZOWapFsAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "HTML",
+            "link": null
+          },
+          {
+            "title": "sciencedirect.com",
+            "file_format": "HTML",
+            "link": "https://www.sciencedirect.com/science/article/pii/S2352250X24000952"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=kCrbHlaZmokJ",
+          "html_version": "https://www.sciencedirect.com/science/article/pii/S2352250X24000952",
+          "cited_by": {
+            "total": 179,
+            "link": "https://scholar.google.com/scholar?cites=9915406124773485200&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "9915406124773485200",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=9915406124773485200&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:kCrbHlaZmokJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AkCrbHlaZmokJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=9915406124773485200&hl=en&as_sdt=0,5",
+            "cluster_id": "9915406124773485200",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=9915406124773485200&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 4,
+        "title": "Ego Depletion, Self-Control",
+        "result_id": "QioYYU_42p0J",
+        "link": "https://books.google.com/books?hl=en&lr=&id=j_KMRe9wK2MC&oi=fnd&pg=PA398&dq=ego+depletion+self-control+replication&ots=1z2z_x1k-8&sig=bmDWQM5bxwuXTYFlsR6Gy1Uvqyo",
+        "snippet": "… participants also gave up sooner than nondepleted participants on later acts of self-control (replicating the classic depletion effect) . Last, time perceptions statistically mediated the effect …",
+        "publication_info": {
+          "summary": "KD Vohs, R BAUMEISTER - Handbook of experimental …, 2004 - books.google.com",
+          "authors": [
+            {
+              "name": "KD Vohs",
+              "link": "https://scholar.google.com/citations?user=7az4bqkAAAAJ&hl=en&oi=sra",
+              "author_id": "7az4bqkAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=7az4bqkAAAAJ&engine=google_scholar_author&hl=en"
+            },
+            {
+              "name": "R BAUMEISTER",
+              "link": "https://scholar.google.com/citations?user=ShSEUuoAAAAJ&hl=en&oi=sra",
+              "author_id": "ShSEUuoAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=ShSEUuoAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "sqspcdn.com",
+            "file_format": "PDF",
+            "link": "http://static1.1.sqspcdn.com/static/f/82279/28040275/1544226690043/Ryan+Deci+2004+-+Autonomy+is+no+Illusion.pdf#page=421"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=QioYYU_42p0J",
+          "cited_by": {
+            "total": 114,
+            "link": "https://scholar.google.com/scholar?cites=11374676828692687426&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "11374676828692687426",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=11374676828692687426&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:QioYYU_42p0J:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AQioYYU_42p0J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=11374676828692687426&hl=en&as_sdt=0,5",
+            "cluster_id": "11374676828692687426",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=11374676828692687426&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 5,
+        "title": "Making sense of ego depletion: The replication crisis, a path forward, and lessons for accounting researchers",
+        "result_id": "8IoZrUpNX7cJ",
+        "link": "https://publications.aaahq.org/ajpt/article-pdf/42/2/163/92893/i0278-0380-42-2-163.pdf",
+        "snippet": "… surrounding ego depletion as a phenomenon and the strength model of self-control as its … In this paper, I use the narrower term self-control, while recognizing that these constructs …",
+        "publication_info": {
+          "summary": "PJ Hurley - Auditing: A Journal of Practice & Theory, 2023 - publications.aaahq.org",
+          "authors": [
+            {
+              "name": "PJ Hurley",
+              "link": "https://scholar.google.com/citations?user=LwMDfmcAAAAJ&hl=en&oi=sra",
+              "author_id": "LwMDfmcAAAAJ",
+              "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=LwMDfmcAAAAJ&engine=google_scholar_author&hl=en"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "ssrn.com",
+            "file_format": "PDF",
+            "link": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3794259"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=8IoZrUpNX7cJ",
+          "cited_by": {
+            "total": 16,
+            "link": "https://scholar.google.com/scholar?cites=13213364814855375600&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "13213364814855375600",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=13213364814855375600&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:8IoZrUpNX7cJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A8IoZrUpNX7cJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 13,
+            "link": "https://scholar.google.com/scholar?cluster=13213364814855375600&hl=en&as_sdt=0,5",
+            "cluster_id": "13213364814855375600",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=13213364814855375600&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 6,
+        "title": "Can the ego be depleted?: Attempts to replicate the ego depletion effect and integrate its explanations",
+        "result_id": "swd3zJ3ksvYJ",
+        "link": "https://portal.research.lu.se/en/publications/can-the-ego-be-depleted-attempts-to-replicate-the-ego-depletion-e/",
+        "snippet": "… are detrimental to self-control, which leads to a state called “ego depletion”. Before 2016, the ego depletion effect had been a hot topic for a long time. After a multi-lab replication that …",
+        "publication_info": {
+          "summary": "J Dang - 2018 - portal.research.lu.se",
+          "authors": [
+            {
+              "name": "J Dang"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "lu.se",
+            "file_format": "PDF",
+            "link": "https://portal.research.lu.se/files/35809239/242965_1_G5_Junhua_D_1_70.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=swd3zJ3ksvYJ",
+          "cited_by": {
+            "total": 3,
+            "link": "https://scholar.google.com/scholar?cites=17776522045576120243&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "17776522045576120243",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=17776522045576120243&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:swd3zJ3ksvYJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3Aswd3zJ3ksvYJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 7,
+            "link": "https://scholar.google.com/scholar?cluster=17776522045576120243&hl=en&as_sdt=0,5",
+            "cluster_id": "17776522045576120243",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=17776522045576120243&engine=google_scholar&hl=en"
+          },
+          "cached_page_link": "https://scholar.googleusercontent.com/scholar?q=cache:swd3zJ3ksvYJ:scholar.google.com/+ego+depletion+self-control+replication&hl=en&as_sdt=0,5"
+        }
+      },
+      {
+        "position": 7,
+        "title": "Unsuccessful attempts to replicate effects of self control operations and glucose on ego-depletion pose an interesting research question that demands explanation",
+        "result_id": "5uzIQpDXDOIJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0195666314005054",
+        "snippet": "… attempts to replicate effects of glucose on ego-depletion may … inherent to self-control tasks exert on ego-depletion. We also … attention to ego-depleting value of self-control tasks when …",
+        "publication_info": {
+          "summary": "NLD Chatzisarantis, MS Hagger - Appetite, 2015 - Elsevier",
+          "authors": [
+            {
+              "name": "NLD Chatzisarantis"
+            },
+            {
+              "name": "MS Hagger"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "griffith.edu.au",
+            "file_format": "PDF",
+            "link": "https://research-repository.griffith.edu.au/bitstreams/69c5a2ec-156c-46e8-8d24-56aeec69387c/download"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=5uzIQpDXDOIJ",
+          "cited_by": {
+            "total": 25,
+            "link": "https://scholar.google.com/scholar?cites=16288630966887967974&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "16288630966887967974",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=16288630966887967974&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:5uzIQpDXDOIJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3A5uzIQpDXDOIJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 8,
+            "link": "https://scholar.google.com/scholar?cluster=16288630966887967974&hl=en&as_sdt=0,5",
+            "cluster_id": "16288630966887967974",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=16288630966887967974&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 8,
+        "title": "Ego-depletion increases selfish decision making, but may also increase self-conflict and regret about those decisions",
+        "result_id": "Tzs1Z53ZdxMJ",
+        "link": "https://www.tandfonline.com/doi/abs/10.1080/00224545.2018.1505706",
+        "snippet": "… replicated and extended earlier findings on ego-depletion and prosocial behavior. Study Two tested the effect of ego-depletion on selfcontrol … found no significant effects of egodepletion. …",
+        "publication_info": {
+          "summary": "JM Osgood - The Journal of social psychology, 2019 - Taylor & Francis",
+          "authors": [
+            {
+              "name": "JM Osgood"
+            }
+          ]
+        },
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=Tzs1Z53ZdxMJ",
+          "cited_by": {
+            "total": 21,
+            "link": "https://scholar.google.com/scholar?cites=1402829079013833551&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "1402829079013833551",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=1402829079013833551&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:Tzs1Z53ZdxMJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3ATzs1Z53ZdxMJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 6,
+            "link": "https://scholar.google.com/scholar?cluster=1402829079013833551&hl=en&as_sdt=0,5",
+            "cluster_id": "1402829079013833551",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=1402829079013833551&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 9,
+        "title": "Strong effort manipulations reduce response caution: A preregistered reinvention of the ego-depletion paradigm",
+        "result_id": "scqchbWLAtYJ",
+        "link": "https://journals.sagepub.com/doi/abs/10.1177/0956797620904990",
+        "snippet": "… Both groups then completed a second, unrelated self-control … The depletion group showed reduced self-control on the … , which we planned to confirm and replicate in Studies 2 to 4, in …",
+        "publication_info": {
+          "summary": "H Lin, B Saunders, M Friese, NJ Evans… - Psychological …, 2020 - journals.sagepub.com",
+          "authors": [
+            {
+              "name": "H Lin"
+            },
+            {
+              "name": "B Saunders"
+            },
+            {
+              "name": "M Friese"
+            },
+            {
+              "name": "NJ Evans"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "sagepub.com",
+            "file_format": "PDF",
+            "link": "https://journals.sagepub.com/doi/pdf/10.1177/0956797620904990"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=scqchbWLAtYJ",
+          "cited_by": {
+            "total": 146,
+            "link": "https://scholar.google.com/scholar?cites=15421041685816986289&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15421041685816986289",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15421041685816986289&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:scqchbWLAtYJ:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AscqchbWLAtYJ%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 26,
+            "link": "https://scholar.google.com/scholar?cluster=15421041685816986289&hl=en&as_sdt=0,5",
+            "cluster_id": "15421041685816986289",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15421041685816986289&engine=google_scholar&hl=en"
+          }
+        }
+      },
+      {
+        "position": 10,
+        "title": "Unable to resist temptation: How self-control depletion promotes unethical behavior",
+        "result_id": "En-SRD3lW90J",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0749597811000422",
+        "snippet": "… In Study 2, we constructively replicate our test of Hypothesis 1 and also test Hypotheses 2 and 3 with an implicit measure of moral awareness. This measure allowed us to assess the …",
+        "publication_info": {
+          "summary": "F Gino, ME Schweitzer, NL Mead, D Ariely - Organizational behavior and …, 2011 - Elsevier",
+          "authors": [
+            {
+              "name": "F Gino"
+            },
+            {
+              "name": "ME Schweitzer"
+            },
+            {
+              "name": "NL Mead"
+            },
+            {
+              "name": "D Ariely"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "title": "",
+            "file_format": "PDF",
+            "link": null
+          },
+          {
+            "title": "communicationcache.com",
+            "file_format": "PDF",
+            "link": "http://www.communicationcache.com/uploads/1/0/8/8/10887248/unable_to_resist_temptation-_how_self-control_depletion_promotes_unethical_behavior.pdf"
+          }
+        ],
+        "inline_links": {
+          "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&hl=en&q=En-SRD3lW90J",
+          "cited_by": {
+            "total": 1294,
+            "link": "https://scholar.google.com/scholar?cites=15950594556568960786&as_sdt=2005&sciodt=0,5&hl=en",
+            "cites_id": "15950594556568960786",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=2005&cites=15950594556568960786&engine=google_scholar&hl=en"
+          },
+          "related_pages_link": "https://scholar.google.com/scholar?q=related:En-SRD3lW90J:scholar.google.com/&scioq=ego+depletion+self-control+replication&hl=en&as_sdt=0,5",
+          "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C5&engine=google_scholar&hl=en&num=10&q=related%3AEn-SRD3lW90J%3Ascholar.google.com%2F",
+          "versions": {
+            "total": 17,
+            "link": "https://scholar.google.com/scholar?cluster=15950594556568960786&hl=en&as_sdt=0,5",
+            "cluster_id": "15950594556568960786",
+            "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C5&cluster=15950594556568960786&engine=google_scholar&hl=en"
+          }
+        }
+      }
+    ],
+    "search_information": {
+      "organic_results_state": "Results for exact spelling",
+      "total_results": 4130,
+      "time_taken_displayed": 0.29,
+      "query_displayed": "ego depletion self-control replication"
+    },
+    "search_parameters": {
+      "engine": "google_scholar",
+      "q": "ego depletion self-control replication",
+      "hl": "en",
+      "num": "10"
+    }
+  }
+}
