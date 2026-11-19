@@ -226,8 +226,8 @@ def evaluate_legacy(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate literature contradiction detector.")
-    parser.add_argument("--backend", choices=["phrases", "nli", "llm", "stance"], default="phrases")
-    parser.add_argument("--patterns", choices=["v1", "v2"], default="v2", help="Phrase lexicon.")
+    parser.add_argument("--backend", choices=["phrases", "nli", "llm", "stance", "nli-stance"], default="phrases")
+    parser.add_argument("--patterns", choices=["v1", "v2", "v3"], default="v2", help="Phrase lexicon (v3 = selected on dev only).")
     parser.add_argument("--input", choices=["snippet", "abstract", "findings"], default="abstract", help="Text input representation.")
     parser.add_argument("--split", choices=["all", "dev", "test"], default="all", help="Topic-level dev/test split (tune on dev only).")
     parser.add_argument("--dataset", choices=["claim_pairs", "legacy"], default="claim_pairs")
@@ -249,8 +249,13 @@ def main() -> int:
                 if isinstance(res, LLMJudgeVerdict):
                     return res.relationship == "CONTRADICT" or res.score >= args.threshold
                 return float(res) >= args.threshold
-        elif args.backend == "stance":
-            classify = make_stance_classifier()
+        elif args.backend in ("stance", "nli-stance"):
+            if args.backend == "nli-stance":
+                from disagreement import make_nli_stance_classifier
+
+                classify = make_nli_stance_classifier()
+            else:
+                classify = make_stance_classifier()
             _cache: dict = {}
 
             def _stance(topic: str, text: str) -> str:

@@ -14,6 +14,13 @@ SAMPLE_QUERIES: List[Tuple[str, str]] = [
     ("LLM Theory of Mind", "large language models theory of mind reasoning"),
 ]
 
+#: The claim each sample query's papers are classified against (stance view).
+SAMPLE_CLAIMS = {
+    "bilingual advantage executive function cognitive control": "Bilingualism improves executive function and cognitive control.",
+    "intermittent fasting insulin sensitivity metabolic health": "Intermittent fasting improves insulin sensitivity and metabolic health.",
+    "large language models theory of mind reasoning": "Large language models show genuine theory-of-mind reasoning.",
+}
+
 
 def normalize_query(query: str) -> str:
     """Same normalization the app applies before searching Google Scholar."""

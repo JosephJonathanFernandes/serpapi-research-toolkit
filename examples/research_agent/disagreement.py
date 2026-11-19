@@ -38,6 +38,21 @@ BADGE_BODY = (
     "most disagreements, and absence of this flag means nothing. Open the papers to check."
 )
 
+SPLIT_BADGE_TITLE = "Split findings \u2014 human review recommended."
+SPLIT_BADGE_BODY = (
+    "At least one paper in this cluster was classified as supporting the claim and at least one "
+    "as reporting a null or contrary result. Stance labels are automatic and can be wrong "
+    "(see eval/scifact/results.md for measured accuracy), and papers may differ in population, "
+    "dose or outcome. Open the papers before drawing conclusions."
+)
+
+STANCE_DISPLAY = {
+    "SUPPORTS": ("\u2705", "supports"),
+    "NULL": ("\u26d4", "null / contrary"),
+    "MIXED": ("\u25d0", "mixed"),
+    "UNCLEAR": ("\u2754", "unclear"),
+}
+
 # ---------------------------------------------------------------------------
 # Phrase-matching backend
 # ---------------------------------------------------------------------------
@@ -106,6 +121,14 @@ _PATTERN_SETS = {
     "v1": (AFFIRMATIVE_PATTERNS_V1, NULL_OR_CONTRARY_PATTERNS_V1),
     "v2": (AFFIRMATIVE_PATTERNS_V2, NULL_OR_CONTRARY_PATTERNS_V2),
 }
+
+# V3: selected mechanically on the dev topics only (eval/build_lexicon_v3.py).
+_V3_PATH = __import__("pathlib").Path(__file__).with_name("lexicon_v3.json")
+if _V3_PATH.exists():
+    _v3 = json.loads(_V3_PATH.read_text(encoding="utf-8"))
+    AFFIRMATIVE_PATTERNS_V3 = list(_v3["affirmative"])
+    NULL_OR_CONTRARY_PATTERNS_V3 = list(_v3["null_or_contrary"])
+    _PATTERN_SETS["v3"] = (AFFIRMATIVE_PATTERNS_V3, NULL_OR_CONTRARY_PATTERNS_V3)
 
 Cues = Tuple[List[str], List[str]]
 
@@ -193,23 +216,19 @@ LLMJudge = Callable[[str, str], LLMJudgeVerdict]
 
 def make_llm_judge(
     llm: Optional[Any] = None,
-    model_name: str = "gpt-4o-mini",
+    model_name: Optional[str] = None,
 ) -> LLMJudge:
-    """Build a contradiction judge using an LLM (Tier 3).
+    """Build a pairwise contradiction judge using an LLM.
 
     Accepts any LangChain BaseChatModel or a callable returning a string/ChatResult.
-    If *llm* is None, attempts to construct ``ChatOpenAI(model=model_name, temperature=0)``.
+    If *llm* is None, uses :func:`llm_backends.default_chat_model` (OpenAI when
+    ``OPENAI_API_KEY`` is set, otherwise a local Ollama server).
     Returns a callable ``judge(text_a, text_b) -> LLMJudgeVerdict``.
     """
     if llm is None:
-        try:
-            from langchain_openai import ChatOpenAI  # type: ignore
-        except ImportError as exc:
-            raise ImportError(
-                "The Tier 3 LLM judge needs `langchain-openai`: pip install langchain-openai. "
-                "Alternatively, pass an initialized chat model to `make_llm_judge(llm=...)`."
-            ) from exc
-        llm = ChatOpenAI(model=model_name, temperature=0)
+        from llm_backends import default_chat_model
+
+        llm = default_chat_model(model_name)
 
     prompt_template = (
         "You are an expert scientific meta-analyst evaluating academic claims.\n"
@@ -345,32 +364,37 @@ def extract_findings(text: str, max_sentences: int = 3, max_chars: int = 600) ->
 STANCES = ("SUPPORTS", "NULL", "MIXED", "UNCLEAR")
 
 STANCE_PROMPT = (
-    "You classify what a paper's own FINDINGS say about a claim.\n\n"
+    "You classify what a paper's own FINDINGS say about a claim, taking the claim exactly as worded.\n\n"
     "CLAIM: {claim}\n\nPAPER TEXT:\n{text}\n\n"
     "Answer with exactly one stance:\n"
-    "- SUPPORTS: the paper reports evidence in favour of the claim.\n"
-    "- NULL: the paper reports no effect, a failure to replicate, or evidence against the claim.\n"
+    "- SUPPORTS: the paper's findings agree with the claim as worded.\n"
+    "- NULL: the findings contradict the claim as worded: no effect where the claim asserts one, "
+    "the opposite effect, a failure to replicate, or an effect where the claim denies one.\n"
     "- MIXED: effects depend on conditions or evidence is split.\n"
-    "- UNCLEAR: the text does not state findings about the claim (background, protocol, commentary).\n\n"
+    "- UNCLEAR: the text does not state findings about this claim (background, protocol, commentary, other topic).\n\n"
     'Respond as JSON only: {{"stance": "SUPPORTS|NULL|MIXED|UNCLEAR", "rationale": "<one sentence>"}}'
 )
 
 StanceClassifier = Callable[[str, str], str]
 
 
-def make_stance_classifier(llm: Optional[Any] = None, model_name: str = "gpt-4o-mini") -> StanceClassifier:
-    """Build ``classify(claim, text) -> stance`` from a LangChain chat model."""
+def make_stance_classifier(llm: Optional[Any] = None, model_name: Optional[str] = None) -> StanceClassifier:
+    """Build ``classify(claim, text) -> stance`` from a chat model (Tier 3).
+
+    *llm* is any object with ``.invoke(prompt)`` (every LangChain chat model
+    qualifies). If omitted, :func:`llm_backends.default_chat_model` picks
+    OpenAI when ``OPENAI_API_KEY`` is set, otherwise a local Ollama server.
+    """
     if llm is None:
-        try:
-            from langchain_openai import ChatOpenAI  # type: ignore
-        except ImportError as exc:
-            raise ImportError(
-                "Pass a chat model via make_stance_classifier(llm=...) or pip install langchain-openai."
-            ) from exc
-        llm = ChatOpenAI(model=model_name, temperature=0)
+        from llm_backends import default_chat_model
+
+        llm = default_chat_model(model_name)
 
     def classify(claim: str, text: str) -> str:
-        resp = llm.invoke(STANCE_PROMPT.format(claim=claim, text=text[:1500]))
+        # Long abstracts: keep the opening (what was studied) plus the findings tail.
+        if len(text) > 1500:
+            text = text[:400] + " ... " + extract_findings(text, max_sentences=5, max_chars=1100)
+        resp = llm.invoke(STANCE_PROMPT.format(claim=claim, text=text))
         content = resp.content if hasattr(resp, "content") else str(resp)
         m = re.search(r"\{.*\}", content, re.DOTALL)
         try:
@@ -385,3 +409,98 @@ def make_stance_classifier(llm: Optional[Any] = None, model_name: str = "gpt-4o-
 def stances_oppose(a: str, b: str) -> bool:
     """Two papers contradict when one SUPPORTS the claim and the other reports NULL."""
     return {a, b} == {"SUPPORTS", "NULL"}
+
+
+# --- Tier 1 stance: phrase cues on the findings text (claim-agnostic) -------
+
+
+def phrase_stance(text: str, patterns: str = "v2") -> str:
+    """Stance from outcome-wording cues alone.
+
+    Ignores the claim entirely, so it cannot notice that a paper's positive
+    finding *contradicts* a negatively phrased claim. Cheap baseline only.
+    """
+    pos, neg = score_text(text, patterns)
+    if pos and neg:
+        return "MIXED"
+    if pos:
+        return "SUPPORTS"
+    if neg:
+        return "NULL"
+    return "UNCLEAR"
+
+
+def make_phrase_stance_classifier(patterns: str = "v2") -> StanceClassifier:
+    """``classify(claim, text)`` wrapper around :func:`phrase_stance` (claim unused)."""
+
+    def classify(claim: str, text: str) -> str:  # noqa: ARG001 - signature parity
+        return phrase_stance(extract_findings(text), patterns)
+
+    return classify
+
+
+# --- Tier 2 stance: NLI with the claim as hypothesis -----------------------
+
+#: Label order of the ``cross-encoder/nli-*`` checkpoints when the config only
+#: exposes generic ``LABEL_i`` names.
+_CROSS_ENCODER_LABELS = {"label_0": "contradiction", "label_1": "entailment", "label_2": "neutral"}
+
+
+def make_nli_stance_classifier(
+    model_name: str = DEFAULT_NLI_MODEL,
+    min_prob: float = 0.5,
+    predict_probs: Optional[Callable[[str, str], dict]] = None,
+) -> StanceClassifier:
+    """Stance via NLI: premise = paper findings, hypothesis = the claim.
+
+    This is the setting NLI models are trained for (does the evidence entail
+    or contradict a statement?), unlike paper-vs-paper pairs where differing
+    cohorts make everything "neutral". ``entailment`` -> SUPPORTS,
+    ``contradiction`` -> NULL, otherwise UNCLEAR. ``predict_probs`` lets tests
+    inject a fake ``(premise, hypothesis) -> {label: prob}`` function.
+    """
+    if predict_probs is None:
+        try:
+            from transformers import pipeline  # type: ignore
+        except ImportError as exc:  # pragma: no cover - optional deps
+            raise ImportError("NLI stance needs `transformers` and `torch`: pip install transformers torch") from exc
+        clf = pipeline("text-classification", model=model_name, top_k=None, truncation=True)
+
+        def predict_probs(premise: str, hypothesis: str) -> dict:
+            scores = clf({"text": premise, "text_pair": hypothesis})
+            if scores and isinstance(scores[0], list):
+                scores = scores[0]
+            out = {}
+            for item in scores:
+                name = str(item["label"]).lower()
+                out[_CROSS_ENCODER_LABELS.get(name, name)] = float(item["score"])
+            return out
+
+    def classify(claim: str, text: str) -> str:
+        probs = predict_probs(extract_findings(text), claim)
+        label, prob = max(probs.items(), key=lambda kv: kv[1]) if probs else ("neutral", 0.0)
+        if prob < min_prob:
+            return "UNCLEAR"
+        if label.startswith("entail"):
+            return "SUPPORTS"
+        if label.startswith("contradict"):
+            return "NULL"
+        return "UNCLEAR"
+
+    return classify
+
+
+# --- Cluster-level stance summary (what the UI shows) ----------------------
+
+
+def summarize_stances(stances: Sequence[str]) -> dict:
+    """Count stances, always returning every key in :data:`STANCES`."""
+    counts = {s: 0 for s in STANCES}
+    for s in stances:
+        counts[s if s in counts else "UNCLEAR"] += 1
+    return counts
+
+
+def stance_split(counts: dict) -> bool:
+    """A cluster is *split* when at least one paper supports and one reports null."""
+    return counts.get("SUPPORTS", 0) > 0 and counts.get("NULL", 0) > 0

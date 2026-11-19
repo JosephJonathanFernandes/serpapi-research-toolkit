@@ -10,6 +10,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 CSV_FIELDS = [
     "cluster",
+    "stance",
     "title",
     "authors",
     "year",
@@ -26,6 +27,7 @@ def docs_to_rows(
     docs: Sequence[Any],
     clusters: Optional[Sequence[Optional[str]]] = None,
     cues: Optional[Sequence[Any]] = None,
+    stances: Optional[Sequence[str]] = None,
 ) -> List[Dict[str, Any]]:
     """Flatten Documents into dict rows. ``cues[i]`` is ``(pos_cues, neg_cues)``."""
     rows = []
@@ -35,6 +37,7 @@ def docs_to_rows(
         rows.append(
             {
                 "cluster": clusters[i] if clusters else "",
+                "stance": stances[i] if stances else "",
                 "title": m.get("title", ""),
                 "authors": m.get("authors", "") or "",
                 "year": m.get("publication_year", "") or "",

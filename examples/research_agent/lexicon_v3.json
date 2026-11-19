@@ -1,0 +1,42 @@
+{
+  "provenance": "Greedy forward selection on DEV topics only (eval/build_lexicon_v3.py). Base = V1; candidate pool = V2 additions (pool authored with exposure to test snippets).",
+  "dev_topics": [
+    "bilingual_advantage_executive_function_cognitive_control",
+    "large_language_models_theory_of_mind_reasoning",
+    "screen_time_adolescent_well_being"
+  ],
+  "dev_f1": 0.1538,
+  "selection_log": [
+    "start (V1): dev F1=0.000 tp=0 fp=0 fn=12",
+    "+ pos '\\\\b(?:improves?|improved|increases?|increased|enhances?|promotes?|boosts?)\\\\s+(?!the\\\\b|a\\\\b|an\\\\b|\\\\d)\\\\w+' & neg '\\\\b(?:does|do|did)\\\\s+not\\\\s+(?:elicit|alter|improve|matter|affect|lead|differ|replicate|change|influence|increase|reduce)\\\\b': dev F1=0.154 tp=1 fp=0 fn=11"
+  ],
+  "affirmative": [
+    "\\boutperform(?:s|ed|ing)?\\b",
+    "\\benhance(?:s|d|ment)?\\s+(?:cognitive|executive|memory|performance|health|function)\\b",
+    "\\b(?:novel\\s+)?evidence\\s+in\\s+support\\s+of\\b",
+    "\\bsignificant(?:ly)?\\s+improv(?:e|ed|ement|ing)\\b",
+    "\\bdemonstrated\\s+advantage\\b",
+    "\\bpositive\\s+association\\b",
+    "\\btherapeutic\\s+efficacy\\b",
+    "\\bclinically\\s+(?:effective|meaningful)\\b",
+    "\\bconfirms?\\s+(?:an?\\s+)?advantage\\b",
+    "\\b(?:improves?|improved|increases?|increased|enhances?|promotes?|boosts?)\\s+(?!the\\b|a\\b|an\\b|\\d)\\w+"
+  ],
+  "null_or_contrary": [
+    "\\bno\\s+(?:general\\s+)?(?:cognitive|executive)?\\s*advantages?\\b",
+    "\\baffords\\s+no\\b",
+    "\\bfailed\\s+to\\s+replicate\\b",
+    "\\bfailure\\s+to\\s+replicate\\b",
+    "\\bdifficult\\s+to\\s+pin\\s+down\\b",
+    "\\bno\\s+significant\\s+(?:difference|effect|advantage|improvement)\\b",
+    "\\black\\s+of\\s+evidence\\b",
+    "\\bnull\\s+(?:effect|findings?)\\b",
+    "\\bconflicting\\s+evidence\\b",
+    "\\bdoes\\s+not\\s+support\\b",
+    "\\bdid\\s+not\\s+support\\b",
+    "\\bfails?\\s+to\\s+find\\b",
+    "\\bineffective\\b",
+    "\\bno\\s+effect\\b",
+    "\\b(?:does|do|did)\\s+not\\s+(?:elicit|alter|improve|matter|affect|lead|differ|replicate|change|influence|increase|reduce)\\b"
+  ]
+}

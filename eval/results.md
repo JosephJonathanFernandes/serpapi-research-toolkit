@@ -2,18 +2,29 @@
 
 Dev: 36 pairs (12 contradict). Test: 84 pairs (30 contradict).
 Cells are precision / recall / F1. Labels are AI-drafted and unaudited (see eval/README.md).
+With ~30 test positives, differences under ~0.15 F1 are not distinguishable.
+phrases-v2 was written after reading these topics: its numbers are an upper bound.
+phrases-v3 was selected on dev only (eval/build_lexicon_v3.py): report its test row.
+nli-pair = cross-encoder on paper vs paper; nli-stance = cross-encoder on findings vs topic claim.
+For externally labeled numbers see eval/scifact/results.md.
 
 | Detector | Input | Dev P/R/F1 | Test P/R/F1 |
 |---|---|---|---|
 | phrases-v1 | snippet | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 12) | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 30) |
 | phrases-v1 | abstract | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 12) | 0.50 / 0.03 / 0.06 (TP 1, FP 1, FN 29) |
 | phrases-v1 | findings | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 12) | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 30) |
-| phrases-v2 | snippet | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.80 / 0.27 / 0.40 (TP 8, FP 2, FN 22) |
-| phrases-v2 | abstract | 0.50 / 0.17 / 0.25 (TP 2, FP 2, FN 10) | 0.33 / 0.13 / 0.19 (TP 4, FP 8, FN 26) |
-| phrases-v2 | findings | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.17 / 0.03 / 0.06 (TP 1, FP 5, FN 29) |
-| nli | snippet | 0.25 / 0.08 / 0.12 (TP 1, FP 3, FN 11) | 0.58 / 0.23 / 0.33 (TP 7, FP 5, FN 23) |
-| nli | abstract | 0.20 / 0.08 / 0.12 (TP 1, FP 4, FN 11) | 0.00 / 0.00 / 0.00 (TP 0, FP 8, FN 30) |
-| nli | findings | 0.33 / 0.08 / 0.13 (TP 1, FP 2, FN 11) | 0.44 / 0.13 / 0.21 (TP 4, FP 5, FN 26) |
-| llm-stance | snippet | NOT EVALUATED | NOT EVALUATED (ImportError: Pass a chat model via make_stance_classifier(llm=...) or pip install langchain-o) |
-| llm-stance | abstract | NOT EVALUATED | NOT EVALUATED (ImportError: Pass a chat model via make_stance_classifier(llm=...) or pip install langchain-o) |
-| llm-stance | findings | NOT EVALUATED | NOT EVALUATED (ImportError: Pass a chat model via make_stance_classifier(llm=...) or pip install langchain-o) |
+| phrases-v2 (tuned on same topics) | snippet | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.80 / 0.27 / 0.40 (TP 8, FP 2, FN 22) |
+| phrases-v2 (tuned on same topics) | abstract | 0.50 / 0.17 / 0.25 (TP 2, FP 2, FN 10) | 0.33 / 0.13 / 0.19 (TP 4, FP 8, FN 26) |
+| phrases-v2 (tuned on same topics) | findings | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.17 / 0.03 / 0.06 (TP 1, FP 5, FN 29) |
+| phrases-v3 (selected on dev only) | snippet | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.75 / 0.10 / 0.18 (TP 3, FP 1, FN 27) |
+| phrases-v3 (selected on dev only) | abstract | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.44 / 0.13 / 0.21 (TP 4, FP 5, FN 26) |
+| phrases-v3 (selected on dev only) | findings | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.20 / 0.03 / 0.06 (TP 1, FP 4, FN 29) |
+| nli-pair | snippet | 0.25 / 0.08 / 0.12 (TP 1, FP 3, FN 11) | 0.58 / 0.23 / 0.33 (TP 7, FP 5, FN 23) |
+| nli-pair | abstract | 0.20 / 0.08 / 0.12 (TP 1, FP 4, FN 11) | 0.00 / 0.00 / 0.00 (TP 0, FP 8, FN 30) |
+| nli-pair | findings | 0.33 / 0.08 / 0.13 (TP 1, FP 2, FN 11) | 0.44 / 0.13 / 0.21 (TP 4, FP 5, FN 26) |
+| nli-stance | snippet | 0.50 / 0.08 / 0.14 (TP 1, FP 1, FN 11) | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 30) |
+| nli-stance | abstract | 1.00 / 0.08 / 0.15 (TP 1, FP 0, FN 11) | 0.00 / 0.00 / 0.00 (TP 0, FP 1, FN 30) |
+| nli-stance | findings | 0.00 / 0.00 / 0.00 (TP 0, FP 0, FN 12) | 0.00 / 0.00 / 0.00 (TP 0, FP 2, FN 30) |
+| llm-stance | snippet | NOT EVALUATED | NOT EVALUATED (skipped; rerun with --llm (slow on CPU)) |
+| llm-stance | abstract | NOT EVALUATED | NOT EVALUATED (skipped; rerun with --llm (slow on CPU)) |
+| llm-stance | findings | NOT EVALUATED | NOT EVALUATED (skipped; rerun with --llm (slow on CPU)) |

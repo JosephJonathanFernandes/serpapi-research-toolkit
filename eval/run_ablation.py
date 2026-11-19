@@ -1,10 +1,10 @@
 """Run the full ablation (detector x input) on the dev and test splits and write eval/results.md.
 
-    python eval/run_ablation.py
+    python eval/run_ablation.py          # Tiers 1-2
+    python eval/run_ablation.py --llm    # also Tier 3 (OpenAI key or local Ollama; slow on CPU)
 
-Rows whose backend cannot start (e.g. no OPENAI_API_KEY for the LLM stance
-classifier) are recorded as NOT EVALUATED instead of being silently omitted.
-Thresholds are fixed (NLI 0.5); nothing here is tuned on the test split.
+Rows whose backend cannot start are recorded as NOT EVALUATED instead of being
+silently omitted. Thresholds are fixed (NLI 0.5); nothing here is tuned on the test split.
 """
 
 from __future__ import annotations
@@ -23,28 +23,37 @@ from run_eval import (  # noqa: E402
     phrase_pair_disagrees,
     stances_oppose,
 )
+from disagreement import make_nli_stance_classifier  # noqa: E402
 
 
-def build_predictors():
+def _stance_pair_predictor(classify):
+    cache: dict = {}
+
+    def stance(topic, text):
+        if (topic, text) not in cache:
+            cache[(topic, text)] = classify(TOPIC_CLAIMS[topic], text)
+        return cache[(topic, text)]
+
+    return lambda a, b, t=None: stances_oppose(stance(t, a), stance(t, b))
+
+
+def build_predictors(with_llm: bool = False):
     preds = {
         "phrases-v1": lambda a, b, t=None: phrase_pair_disagrees(a, b, "v1"),
-        "phrases-v2": lambda a, b, t=None: phrase_pair_disagrees(a, b, "v2"),
+        "phrases-v2 (tuned on same topics)": lambda a, b, t=None: phrase_pair_disagrees(a, b, "v2"),
+        "phrases-v3 (selected on dev only)": lambda a, b, t=None: phrase_pair_disagrees(a, b, "v3"),
     }
     try:
         judge = make_nli_judge()
-        preds["nli"] = lambda a, b, t=None: judge(a, b) >= 0.5
+        preds["nli-pair"] = lambda a, b, t=None: judge(a, b) >= 0.5
+        preds["nli-stance"] = _stance_pair_predictor(make_nli_stance_classifier())
     except Exception as exc:  # pragma: no cover
-        preds["nli"] = f"{type(exc).__name__}: {str(exc)[:80]}"
+        preds["nli-pair"] = preds["nli-stance"] = f"{type(exc).__name__}: {str(exc)[:80]}"
+    if not with_llm:
+        preds["llm-stance"] = "skipped; rerun with --llm (slow on CPU)"
+        return preds
     try:
-        classify = make_stance_classifier()
-        cache: dict = {}
-
-        def stance(topic, text):
-            if (topic, text) not in cache:
-                cache[(topic, text)] = classify(TOPIC_CLAIMS[topic], text)
-            return cache[(topic, text)]
-
-        preds["llm-stance"] = lambda a, b, t=None: stances_oppose(stance(t, a), stance(t, b))
+        preds["llm-stance"] = _stance_pair_predictor(make_stance_classifier())
     except Exception as exc:
         preds["llm-stance"] = f"{type(exc).__name__}: {str(exc)[:80]}"
     return preds
@@ -66,12 +75,17 @@ def main() -> None:
         "",
         f"Dev: {len(dev)} pairs ({n_pos(dev)} contradict). Test: {len(test)} pairs ({n_pos(test)} contradict).",
         "Cells are precision / recall / F1. Labels are AI-drafted and unaudited (see eval/README.md).",
+        "With ~30 test positives, differences under ~0.15 F1 are not distinguishable.",
+        "phrases-v2 was written after reading these topics: its numbers are an upper bound.",
+        "phrases-v3 was selected on dev only (eval/build_lexicon_v3.py): report its test row.",
+        "nli-pair = cross-encoder on paper vs paper; nli-stance = cross-encoder on findings vs topic claim.",
+        "For externally labeled numbers see eval/scifact/results.md.",
         "",
         "| Detector | Input | Dev P/R/F1 | Test P/R/F1 |",
         "|---|---|---|---|",
     ]
     raw = {}
-    for name, pred in build_predictors().items():
+    for name, pred in build_predictors(with_llm="--llm" in sys.argv).items():
         for inp in ("snippet", "abstract", "findings"):
             if isinstance(pred, str):
                 lines.append(f"| {name} | {inp} | NOT EVALUATED | NOT EVALUATED ({pred}) |")

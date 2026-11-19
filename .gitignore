@@ -43,3 +43,7 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Downloaded external datasets & eval caches (SciFact is CC BY-NC 2.0)
+eval/scifact/data/
+eval/scifact/cache/

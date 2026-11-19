@@ -310,3 +310,43 @@ class TestFindingsAndStance:
         assert stances_oppose("SUPPORTS", "NULL") and stances_oppose("NULL", "SUPPORTS")
         assert not stances_oppose("SUPPORTS", "MIXED") and not stances_oppose("NULL", "NULL")
 
+    def test_phrase_stance_and_v3_lexicon(self):
+        from disagreement import make_phrase_stance_classifier, phrase_stance
+        assert phrase_stance("Our intervention significantly improved executive function.") == "SUPPORTS"
+        assert phrase_stance("We found no significant difference between groups.") == "NULL"
+        assert phrase_stance("This paper reviews the history of the field.", patterns="v3") == "UNCLEAR"
+        clf = make_phrase_stance_classifier("v3")
+        assert clf("any claim", "We found no significant difference between groups.") == "NULL"
+
+    def test_nli_stance_classifier_injected(self):
+        from disagreement import make_nli_stance_classifier
+        clf_ent = make_nli_stance_classifier(
+            predict_probs=lambda prem, hyp: {"entailment": 0.85, "contradiction": 0.05, "neutral": 0.10}
+        )
+        clf_con = make_nli_stance_classifier(
+            predict_probs=lambda prem, hyp: {"entailment": 0.05, "contradiction": 0.80, "neutral": 0.15}
+        )
+        clf_low = make_nli_stance_classifier(
+            predict_probs=lambda prem, hyp: {"entailment": 0.40, "contradiction": 0.35, "neutral": 0.25}
+        )
+        assert clf_ent("Claim X", "Findings Y") == "SUPPORTS"
+        assert clf_con("Claim X", "Findings Y") == "NULL"
+        assert clf_low("Claim X", "Findings Y") == "UNCLEAR"
+
+    def test_summarize_stances_and_split(self):
+        from disagreement import stance_split, summarize_stances
+        counts = summarize_stances(["SUPPORTS", "SUPPORTS", "NULL", "UNCLEAR"])
+        assert counts == {"SUPPORTS": 2, "NULL": 1, "MIXED": 0, "UNCLEAR": 1}
+        assert stance_split(counts) is True
+        only_sup = summarize_stances(["SUPPORTS", "UNCLEAR"])
+        assert stance_split(only_sup) is False
+
+    def test_export_includes_stance_column(self):
+        from langchain_core.documents import Document
+        docs = [Document(page_content="Snippet", metadata={"title": "Paper 1"})]
+        rows = docs_to_rows(docs, clusters=["C1"], cues=[([], [])], stances=["SUPPORTS"])
+        assert rows[0]["stance"] == "SUPPORTS"
+        csv_text = to_csv(rows)
+        assert "cluster,stance,title" in csv_text
+
+

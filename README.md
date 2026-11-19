@@ -223,16 +223,18 @@ serpapi-research-toolkit/
 ├── langchain_serpapi_provider/     # Core pip package (BaseRetriever, tools, cache, schema)
 ├── examples/
 │   └── research_agent/
-│       ├── app.py                  # Streamlit application (demo mode, exports, filters)
+│       ├── app.py                  # Streamlit application (stance counts, demo mode, exports)
 │       ├── analysis.py             # Clustering, embeddings, silhouette k selection
-│       ├── disagreement.py         # 3-tier detector (Phrases, NLI cross-encoder, LLM judge)
+│       ├── disagreement.py         # 3-tier stance & pair detector (Phrases V1-V3, NLI, LLM)
+│       ├── llm_backends.py         # OpenAI + zero-dependency local Ollama chat adapter
+│       ├── lexicon_v3.json         # Dev-only greedily selected phrase lexicon
 │       ├── enrichment.py           # OpenAlex & arXiv abstract enrichment service
 │       ├── demo_data.py            # Offline fixture replay loader
-│       ├── export.py               # CSV (injection-safe) and BibTeX generators
+│       ├── export.py               # CSV (injection-safe, with stance) and BibTeX generators
 │       ├── fixtures/               # Recorded SerpApi responses for offline demo
 │       └── requirements.txt        # Demo-only dependencies
-├── eval/                           # 120-pair AI-labeled benchmark, dev/test ablation, run_ablation.py
-└── tests/                          # 126 unit & integration tests (offline)
+├── eval/                           # SciFact external validation, 120-pair ablation, human audit sheets
+└── tests/                          # 130 unit & integration tests (offline)
 ```
 
 ### Launch the Demo in 2 Minutes (Zero API Key Needed!)
@@ -265,42 +267,42 @@ Check the **Demo mode** box in the sidebar: the entire pipeline (abstract enrich
 
 ---
 
-## 🧪 Disagreement Detection: Results (Mostly Negative)
+## 🧪 Stance & Disagreement Detection: External SciFact Validation + Internal Ablation
 
-The research agent flags clusters as a **possible disagreement for human review**. We built an evaluation to find out whether that signal is any good. **Short answer: it is weak, and the best detector misses about 3 in 4 contradictions.**
+Instead of only predicting noisy pairwise contradictions between papers, the research agent classifies each paper's **stance toward a stated hypothesis** (`supports`, `null / contrary`, `mixed`, `unclear`) and shows stance counts and top-cited papers under each stance per topic cluster.
 
-### Detectors
-- **Phrase matching (free):** directional cue lexicon. V1 was written before any evaluation. V2 was written after reading snippets from these same topics, so its numbers are **optimistic and not a clean held-out result**.
-- **NLI cross-encoder (CPU):** `cross-encoder/nli-deberta-v3-small`, threshold fixed at 0.5.
-- **LLM stance classifier:** classifies each paper as SUPPORTS / NULL / MIXED / UNCLEAR toward a shared claim, then flags SUPPORTS-vs-NULL pairs. Implemented and unit-tested with a fake LLM, but **NOT EVALUATED** because no API key was available. We make no claim about its accuracy.
+### 1. External Validation on SciFact (Human-Labeled Claims & Abstracts)
 
-### Dataset and its limits
-- 120 paper pairs, 10 topics, 42 contradict / 43 agree / 35 unrelated ([`eval/claim_pairs_labeled.json`](eval/claim_pairs_labeled.json)).
-- **Labels were written by an AI assistant in one pass, not by human experts, and were not audited.** Only some abstracts were read. There is no second labeler and no Cohen's kappa. Treat everything below as provisional.
-- Topic-level split: **dev** 36 pairs (12 contradict), **test** 84 pairs (30 contradict). 'Contradict vs unrelated' is subjective when study cohorts differ.
+To avoid grading only on our own labels, we evaluate the stance classifiers on the public **SciFact** dev benchmark (Wadden et al., EMNLP 2020; **340 human-annotated claim–abstract pairs** across 300 scientific claims; none of these topics were seen when building any phrase lexicon).
 
-### Ablation on the test split (precision / recall / F1)
+| Backend | n | Accuracy | Macro-F1 | CONTRADICT P [95% CI] | CONTRADICT R [95% CI] | CONTRADICT F1 | SUPPORT F1 |
+|:---|---:|---:|---:|:---:|:---:|---:|---:|
+| `majority` — always SUPPORT | 340 | 0.41 | 0.19 | 0.00 n/a | 0.00 [0.00, 0.05] | **0.00** | 0.58 |
+| `phrases-v1` — untuned phrase cues | 340 | 0.38 | 0.19 | 0.20 [0.04, 0.62] | 0.01 [0.00, 0.08] | **0.03** | 0.00 |
+| `phrases-v2` — expanded phrase cues | 340 | 0.41 | 0.30 | 0.23 [0.08, 0.50] | 0.04 [0.01, 0.12] | **0.07** | 0.30 |
+| `phrases-v3` — dev-selected phrase cues | 340 | 0.42 | 0.30 | 0.20 [0.04, 0.62] | 0.01 [0.00, 0.08] | **0.03** | 0.33 |
+| `nli` — `nli-deberta-v3-small` (claim as hypothesis) | 340 | **0.48** | **0.42** | **0.56** [0.43, 0.68] | **0.46** [0.35, 0.58] | **0.51** | 0.17 |
 
-| Detector | Snippet | Full abstract | Findings only (last sentences) |
+Full report and confusion matrices: [`eval/scifact/results.md`](eval/scifact/results.md). Reproduce with `python eval/scifact/run_scifact.py --backend nli`.
+
+- **Why NLI stance beats phrase cues on SciFact:** Phrase matching ignores the claim and only looks for positive/negative outcome wording, reaching **0.03–0.07 CONTRADICT F1**. Passing the paper's findings as premise and the explicit claim as hypothesis to `cross-encoder/nli-deberta-v3-small` reaches **0.51 CONTRADICT F1** (precision 0.56, recall 0.46, with 0/71 true `CONTRADICT` abstracts misclassified as `SUPPORT`).
+- **Why the UI shows per-cluster stance counts:** NLI is conservative on `SUPPORT` (precision 0.81, recall 0.09 — extra detail in multi-sentence findings often scores `neutral`). Showing per-cluster stance counts (`supports`, `null / contrary`, `mixed`, `unclear`) surfaces those high-precision detections directly, whereas requiring two papers in a pair to simultaneously cross `SUPPORTS` and `NULL` thresholds rarely fires.
+
+### 2. Internal 120-Pair Pairwise Ablation (Provisional / Unaudited Labels)
+
+We also include a 120-pair pairwise dataset across 10 topics ([`eval/claim_pairs_labeled.json`](eval/claim_pairs_labeled.json), split by topic into **dev** = 36 pairs / 12 contradict and **test** = 84 pairs / 30 contradict).
+- **Provenance warning:** Those 120 labels were drafted by an AI assistant in one pass and have **not yet been human-audited** (blind human-audit sheets and Cohen's $\kappa$ scorer are ready in [`eval/audit/`](eval/audit/make_audit_sheet.py)).
+- **Clean vs. contaminated lexicons:** `phrases-v2` was written after reading snippets from all 10 topics (upper bound). `phrases-v3` ([`eval/build_lexicon_v3.py`](eval/build_lexicon_v3.py)) was selected mechanically on the **dev split only**.
+
+| Detector | Snippet (Test P/R/F1) | Full abstract (Test P/R/F1) | Findings only (Test P/R/F1) |
 |---|:---:|:---:|:---:|
-| Phrases V1 | 0.00 / 0.00 / 0.00 | 0.50 / 0.03 / 0.06 | 0.00 / 0.00 / 0.00 |
-| Phrases V2 (tuned on these topics) | 0.80 / 0.27 / **0.40** | 0.33 / 0.13 / 0.19 | 0.17 / 0.03 / 0.06 |
-| NLI (DeBERTa) | 0.58 / 0.23 / 0.33 | 0.00 / 0.00 / 0.00 | 0.44 / 0.13 / 0.21 |
-| LLM stance | not evaluated | not evaluated | not evaluated |
+| `phrases-v1` (untuned) | 0.00 / 0.00 / 0.00 | 0.50 / 0.03 / 0.06 | 0.00 / 0.00 / 0.00 |
+| `phrases-v2` (tuned on same topics — upper bound) | 0.80 / 0.27 / **0.40** | 0.33 / 0.13 / 0.19 | 0.17 / 0.03 / 0.06 |
+| `phrases-v3` (selected on dev only) | 0.75 / 0.10 / **0.18** | 0.44 / 0.13 / **0.21** | 0.20 / 0.03 / 0.06 |
+| `nli-pair` (DeBERTa paper-vs-paper) | 0.58 / 0.23 / **0.33** | 0.00 / 0.00 / 0.00 | 0.44 / 0.13 / 0.21 |
+| `nli-stance` (DeBERTa opposing stances) | 0.00 / 0.00 / 0.00 | 0.00 / 0.00 / 0.00 | 0.00 / 0.00 / 0.00 |
 
-Full dev and test table with counts: [`eval/results.md`](eval/results.md). Reproduce with `python eval/run_ablation.py`.
-
-### What we found
-1. **Full abstracts did not reliably help; the effect is mixed and within noise.** On test, phrases V2 F1 fell (0.40 to 0.19) and NLI fell (0.33 to 0.00), but phrases V1 rose (0.00 to 0.06, from a single true positive). On dev, V2 rose (0.15 to 0.25) and NLI was flat. We cannot say enrichment helps or hurts detection.
-2. **Findings-only extraction shows no consistent gain.** NLI findings-only (0.21) beats NLI full-abstract (0.00), but that rests on 4 true positives out of 30, so it is not evidence of anything. It does not help phrase matching (0.19 to 0.06).
-3. **The headline number is the contaminated one.** Phrases V2 on snippets (F1 0.40) uses a lexicon written after reading these same topics, so it is **tuned on the same topics** and is an upper bound, not a held-out result.
-4. **With 30 test positives, one extra true positive moves recall by 0.03.** Rankings between close rows are not meaningful.
-5. **Best recall is 0.27**, so the detector is at most a triage hint.
-6. **The labels themselves are unverified** (AI-written, not checked against the abstracts the detectors read), so a "miss" may be a wrong label. Until a human audit exists, none of these numbers support a conclusion about detector quality. See `eval/audit/`.
-
-"Disagreement detection works" is **not** supported by this evidence.
-
-The next experiment that matters is the LLM stance classifier, evaluated on a human-relabeled subset.
+Full dev/test breakdown: [`eval/results.md`](eval/results.md). Reproduce with `python eval/run_ablation.py` (add `--llm` to evaluate Tier 3 via `OPENAI_API_KEY` or a local Ollama server).
 
 ---
 
@@ -315,7 +317,7 @@ The next experiment that matters is the LLM stance classifier, evaluated on a hu
 
 ## Running Tests & Verifiability
 
-All **126 unit and integration tests** run offline with **zero API credits** consumed:
+All **130 unit and integration tests** run offline with **zero API credits** consumed:
 
 ```bash
 # Install test dependencies

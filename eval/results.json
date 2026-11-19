@@ -59,7 +59,7 @@
       "f1": 0.0
     }
   },
-  "phrases-v2/snippet": {
+  "phrases-v2 (tuned on same topics)/snippet": {
     "dev": {
       "tp": 1,
       "fp": 0,
@@ -79,7 +79,7 @@
       "f1": 0.4
     }
   },
-  "phrases-v2/abstract": {
+  "phrases-v2 (tuned on same topics)/abstract": {
     "dev": {
       "tp": 2,
       "fp": 2,
@@ -99,7 +99,7 @@
       "f1": 0.19047619047619044
     }
   },
-  "phrases-v2/findings": {
+  "phrases-v2 (tuned on same topics)/findings": {
     "dev": {
       "tp": 1,
       "fp": 0,
@@ -119,7 +119,67 @@
       "f1": 0.05555555555555555
     }
   },
-  "nli/snippet": {
+  "phrases-v3 (selected on dev only)/snippet": {
+    "dev": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 11,
+      "tn": 24,
+      "precision": 1.0,
+      "recall": 0.08333333333333333,
+      "f1": 0.15384615384615385
+    },
+    "test": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 27,
+      "tn": 53,
+      "precision": 0.75,
+      "recall": 0.1,
+      "f1": 0.17647058823529416
+    }
+  },
+  "phrases-v3 (selected on dev only)/abstract": {
+    "dev": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 11,
+      "tn": 24,
+      "precision": 1.0,
+      "recall": 0.08333333333333333,
+      "f1": 0.15384615384615385
+    },
+    "test": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 26,
+      "tn": 49,
+      "precision": 0.4444444444444444,
+      "recall": 0.13333333333333333,
+      "f1": 0.20512820512820512
+    }
+  },
+  "phrases-v3 (selected on dev only)/findings": {
+    "dev": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 11,
+      "tn": 24,
+      "precision": 1.0,
+      "recall": 0.08333333333333333,
+      "f1": 0.15384615384615385
+    },
+    "test": {
+      "tp": 1,
+      "fp": 4,
+      "fn": 29,
+      "tn": 50,
+      "precision": 0.2,
+      "recall": 0.03333333333333333,
+      "f1": 0.05714285714285715
+    }
+  },
+  "nli-pair/snippet": {
     "dev": {
       "tp": 1,
       "fp": 3,
@@ -139,7 +199,7 @@
       "f1": 0.33333333333333337
     }
   },
-  "nli/abstract": {
+  "nli-pair/abstract": {
     "dev": {
       "tp": 1,
       "fp": 4,
@@ -159,7 +219,7 @@
       "f1": 0.0
     }
   },
-  "nli/findings": {
+  "nli-pair/findings": {
     "dev": {
       "tp": 1,
       "fp": 2,
@@ -177,6 +237,66 @@
       "precision": 0.4444444444444444,
       "recall": 0.13333333333333333,
       "f1": 0.20512820512820512
+    }
+  },
+  "nli-stance/snippet": {
+    "dev": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 11,
+      "tn": 23,
+      "precision": 0.5,
+      "recall": 0.08333333333333333,
+      "f1": 0.14285714285714285
+    },
+    "test": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 30,
+      "tn": 54,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "nli-stance/abstract": {
+    "dev": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 11,
+      "tn": 24,
+      "precision": 1.0,
+      "recall": 0.08333333333333333,
+      "f1": 0.15384615384615385
+    },
+    "test": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 30,
+      "tn": 53,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "nli-stance/findings": {
+    "dev": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 12,
+      "tn": 24,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "test": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 30,
+      "tn": 52,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
     }
   }
 }

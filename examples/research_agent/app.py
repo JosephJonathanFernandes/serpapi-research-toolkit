@@ -52,13 +52,19 @@ from analysis import (  # noqa: E402
 )
 from demo_data import demo_queries_available, load_fixture_docs  # noqa: E402
 from disagreement import (  # noqa: E402
-    BADGE_BODY,
-    BADGE_TITLE,
-    detect_possible_disagreement,
-    make_nli_judge,
+    SPLIT_BADGE_BODY,
+    SPLIT_BADGE_TITLE,
+    STANCE_DISPLAY,
+    STANCES,
+    make_nli_stance_classifier,
+    make_phrase_stance_classifier,
+    make_stance_classifier,
+    score_text,
+    stance_split,
+    summarize_stances,
 )
 from export import docs_to_rows, to_bibtex, to_csv  # noqa: E402
-from sample_queries import SAMPLE_QUERIES, normalize_query  # noqa: E402
+from sample_queries import SAMPLE_CLAIMS, SAMPLE_QUERIES, normalize_query  # noqa: E402
 from enrichment import enrich_documents  # noqa: E402
 
 load_dotenv()
@@ -190,6 +196,60 @@ html, body, [class*="css"] {
 .mode-demo { background: #1b4332; color: #74c69d; border: 1px solid #2d6a4f; }
 .mode-live { background: #1f2a44; color: #79c0ff; border: 1px solid #1f6feb55; }
 
+/* Claim & Stance UI */
+.claim-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin-top: 1rem;
+}
+.claim-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #8b949e; margin-bottom: 0.25rem; }
+.claim-text { font-size: 1.05rem; font-weight: 600; color: #e6edf3; margin-bottom: 0.75rem; }
+.claim-note { font-size: 0.78rem; color: #8b949e; margin-top: 0.5rem; }
+.stance-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #21262d;
+    margin-bottom: 0.45rem;
+}
+.seg-supports { background: #2ea043; }
+.seg-null { background: #da3633; }
+.seg-mixed { background: #d29922; }
+.seg-unclear { background: #484f58; }
+.stance-legend { font-size: 0.82rem; color: #c9d1d9; margin-bottom: 0.6rem; }
+.stance-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin: 0.75rem 0; }
+.stance-group { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.82rem; }
+.stance-group ul { margin: 0.35rem 0 0; padding-left: 1.1rem; color: #c9d1d9; }
+.stance-group li { margin-bottom: 0.25rem; }
+.stance-group .cites { color: #8b949e; font-size: 0.76rem; }
+.sg-title { font-weight: 600; color: #e6edf3; }
+.stance-pill {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+.pill-supports { background: #1b4332; color: #74c69d; border: 1px solid #2d6a4f; }
+.pill-null { background: #491c1c; color: #ffa198; border: 1px solid #8e2a2a; }
+.pill-mixed { background: #3d2e00; color: #f2cc60; border: 1px solid #6e5400; }
+.pill-unclear { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
+.enriched-pill {
+    background: rgba(31, 111, 235, 0.2);
+    color: #58a6ff;
+    border: 1px solid rgba(56, 139, 253, 0.4);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    vertical-align: middle;
+}
+details summary { cursor: pointer; color: #58a6ff; font-size: 0.85rem; margin: 0.5rem 0; }
+
 /* Input */
 .stTextArea textarea { background: #161b22 !important; border-color: #30363d !important; color: #e6edf3 !important; border-radius: 8px !important; }
 .stButton > button {
@@ -215,9 +275,9 @@ st.markdown(
     """
 <div class="hero">
   <h1>🔬 Research Agent</h1>
-  <p>Enter a research question — the agent retrieves academic papers via SerpApi,
-  clusters them by topic similarity, and flags <strong>possible disagreement</strong>
-  between snippets for human review.</p>
+  <p>Enter a research question and a hypothesis — the agent retrieves academic papers via SerpApi,
+  clusters them by topic similarity, and summarizes <strong>stance counts per cluster</strong>
+  (supports, null/contrary, mixed, unclear) with top-cited papers under each stance.</p>
 </div>
 """,
     unsafe_allow_html=True,
@@ -282,22 +342,25 @@ with st.sidebar:
     use_cache = st.checkbox("Enable disk cache (saves API credits)", value=True, disabled=demo_mode)
 
     enrich_abstracts = st.checkbox(
-        "Show full abstracts (OpenAlex / arXiv)",
+        "Use full abstracts (OpenAlex / arXiv)",
         value=False,
-        help="Replaces short snippets with full abstracts (free, no key). Off by default: in our "
-        "ablation, full abstracts lowered disagreement-detection scores for every detector tested. "
-        "Useful for reading, not (yet) for detection.",
+        help="Replaces short snippets with full abstracts (free, no key). The stance classifiers were "
+        "validated on full abstracts (SciFact); Scholar snippets often cut off the findings sentences. "
+        "Slower: one lookup per paper.",
     )
 
     backend = st.selectbox(
-        "Disagreement detector",
+        "Stance classifier",
         ["phrases", "nli", "llm"],
         format_func={
-            "phrases": "Tier 1: Phrase matching (fast, free)",
-            "nli": "Tier 2: Cross-Encoder NLI (DeBERTa, CPU)",
-            "llm": "Tier 3: LLM Judge (OpenAI / LangChain)",
+            "phrases": "Tier 1: Phrase cues (instant, free, weak)",
+            "nli": "Tier 2: NLI cross-encoder (CPU, recommended)",
+            "llm": "Tier 3: LLM (OpenAI key or local Ollama)",
         }.get,
-        help="Tier 1 uses directional phrase patterns. Tier 2 uses a local DeBERTa cross-encoder on CPU. Tier 3 uses an LLM judge.",
+        help="Each paper is classified as supporting the claim, null/contrary, mixed, or unclear. "
+        "Tier 1 ignores the claim and only looks at outcome wording. Tier 2 checks whether the "
+        "paper's findings entail or contradict the claim. Measured accuracy on SciFact (human "
+        "labels) is in eval/scifact/results.md.",
     )
 
     st.divider()
@@ -305,8 +368,8 @@ with st.sidebar:
     st.caption(
         "Powered by **langchain-serpapi-provider** + **OpenAlex / arXiv** + **spaCy / TF-IDF** + **KMeans**.\n\n"
         "• **Indexed Year:** Reflects the canonical edition/year indexed by Google Scholar.\n\n"
-        "• **Possible disagreement:** A weak signal comparing empirical outcomes. "
-        "Differences may reflect distinct cohorts or dosing rather than direct contradiction. Always check the papers."
+        "• **Stance counts:** automatic labels of what each paper's findings say about your claim. "
+        "Papers can differ in cohort, dose or outcome. Always check the papers."
     )
 
 
@@ -327,13 +390,12 @@ def load_spacy():
 
 
 @st.cache_resource
-def load_judge(backend_choice: str):
+def load_classifier(backend_choice: str):
     if backend_choice == "nli":
-        return make_nli_judge()
+        return make_nli_stance_classifier()
     if backend_choice == "llm":
-        from disagreement import make_llm_judge
-        return make_llm_judge()
-    return None
+        return make_stance_classifier()
+    return make_phrase_stance_classifier()
 
 
 def get_embeddings(texts: List[str]):
@@ -367,7 +429,7 @@ def fetch_docs(query: str) -> list:
     return docs
 
 
-def analyze(docs: list) -> Dict[str, Any]:
+def analyze(docs: list, claim: str) -> Dict[str, Any]:
     texts = [f"{d.metadata.get('title', '')} {d.page_content}" for d in docs]
     embeddings = get_embeddings(texts)
     if auto_k:
@@ -376,27 +438,39 @@ def analyze(docs: list) -> Dict[str, Any]:
         k, scores = min(num_clusters, len(docs)), {}
     labels = cluster_papers(embeddings, k)
 
-    judge = load_judge(backend) if backend in ("nli", "llm") else None
+    classify = load_classifier(backend)
+    stances = [classify(claim, t) for t in texts]
+    cues = [score_text(t) for t in texts]
+
     groups: Dict[int, List[int]] = defaultdict(list)
     for idx, label in enumerate(labels):
         groups[int(label)].append(idx)
 
     clusters = []
     for label, idxs in sorted(groups.items()):
-        result = detect_possible_disagreement(
-            [texts[i] for i in idxs], backend=backend, judge=judge
-        )
+        counts = summarize_stances([stances[i] for i in idxs])
         clusters.append(
             {
                 "indices": idxs,
                 "topic": extract_cluster_topics(texts, idxs),
-                "disagreement": result,
+                "counts": counts,
+                "split": stance_split(counts),
             }
         )
-    return {"docs": docs, "clusters": clusters, "k": k, "silhouette": scores, "demo": demo_mode}
+    return {
+        "docs": docs,
+        "clusters": clusters,
+        "k": k,
+        "silhouette": scores,
+        "demo": demo_mode,
+        "claim": claim,
+        "stances": stances,
+        "cues": cues,
+        "backend": backend,
+    }
 
 
-def run_research(query: str) -> None:
+def run_research(query: str, claim: str) -> None:
     try:
         with st.spinner("🔍 Loading papers…" if demo_mode else "🔍 Fetching papers from Google Scholar…"):
             docs = fetch_docs(query)
@@ -404,8 +478,8 @@ def run_research(query: str) -> None:
             st.error("No results returned. Try a different query or check your API key.")
             st.session_state.pop("result", None)
             return
-        with st.spinner("🧠 Embedding and clustering…"):
-            st.session_state["result"] = analyze(docs)
+        with st.spinner("🧠 Clustering and classifying stance…"):
+            st.session_state["result"] = analyze(docs, claim)
         st.session_state["result_query"] = query
     except FileNotFoundError as exc:
         st.session_state.pop("result", None)
@@ -425,9 +499,30 @@ def stat_box(value: Any, label: str) -> str:
     )
 
 
+def stance_bar(counts: Dict[str, int]) -> str:
+    """Proportional coloured bar + legend for one set of stance counts."""
+    total = sum(counts.values()) or 1
+    segs = "".join(
+        f'<div class="seg seg-{s.lower()}" style="width:{100 * counts[s] / total:.1f}%" '
+        f'title="{counts[s]} {STANCE_DISPLAY[s][1]}"></div>'
+        for s in STANCES
+        if counts[s]
+    )
+    legend = " &nbsp;·&nbsp; ".join(
+        f"{STANCE_DISPLAY[s][0]} <strong>{counts[s]}</strong> {STANCE_DISPLAY[s][1]}" for s in STANCES if counts[s]
+    )
+    return f'<div class="stance-bar">{segs}</div><div class="stance-legend">{legend}</div>'
+
+
+def stance_pill(stance: str) -> str:
+    icon, text = STANCE_DISPLAY.get(stance, STANCE_DISPLAY["UNCLEAR"])
+    return f'<span class="stance-pill pill-{stance.lower()}">{icon} {esc(text)}</span>'
+
+
 def render_result(result: Dict[str, Any]) -> None:
     docs = result["docs"]
     clusters = result["clusters"]
+    stances = result["stances"]
 
     pill = (
         '<span class="mode-pill mode-demo">DEMO MODE — recorded SerpApi results</span>'
@@ -447,21 +542,27 @@ def render_result(result: Dict[str, Any]) -> None:
         label = f"Topic Clusters (silhouette {sil:.2f})" if sil is not None else "Topic Clusters"
         st.markdown(stat_box(len(clusters), label), unsafe_allow_html=True)
 
-    # Cue lookup + export rows
+    # Overall stance summary toward the claim
+    overall = summarize_stances(stances)
+    tier = {"phrases": "Tier 1 phrase cues", "nli": "Tier 2 NLI", "llm": "Tier 3 LLM"}.get(result["backend"], result["backend"])
+    st.markdown(
+        f'<div class="claim-card"><div class="claim-label">Claim checked ({esc(tier)})</div>'
+        f'<div class="claim-text">“{esc(result["claim"])}”</div>{stance_bar(overall)}'
+        f'<div class="claim-note">Automatic labels of what each paper\'s text says about this claim. '
+        f"They can be wrong; open the papers before concluding anything.</div></div>",
+        unsafe_allow_html=True,
+    )
+
     cluster_names: List[str] = [""] * len(docs)
-    cues_by_doc: Dict[int, Any] = {}
     for c_no, cl in enumerate(clusters, 1):
-        name = f"Cluster {c_no}: {cl['topic']}"
-        for local, idx in enumerate(cl["indices"]):
-            cluster_names[idx] = name
-            cues_by_doc[idx] = cl["disagreement"].per_paper_cues[local]
-    export_cues = [cues_by_doc.get(i, ([], [])) for i in range(len(docs))]
+        for idx in cl["indices"]:
+            cluster_names[idx] = f"Cluster {c_no}: {cl['topic']}"
 
     st.write("")
     dl1, dl2, _ = st.columns([1, 1, 2])
     dl1.download_button(
         "⬇️ Export CSV",
-        data=to_csv(docs_to_rows(docs, cluster_names, export_cues)),
+        data=to_csv(docs_to_rows(docs, cluster_names, result["cues"], stances)),
         file_name="papers.csv",
         mime="text/csv",
         use_container_width=True,
@@ -479,28 +580,38 @@ def render_result(result: Dict[str, Any]) -> None:
     CLUSTER_ICONS = ["🔵", "🟣", "🟢", "🟡", "🟠", "🔴"]
     for c_no, cl in enumerate(clusters):
         icon = CLUSTER_ICONS[c_no % len(CLUSTER_ICONS)]
-        flagged = cl["disagreement"].flagged
-        cluster_docs = [docs[i] for i in cl["indices"]]
-        cue_map = {id(docs[i]): cl["disagreement"].per_paper_cues[n] for n, i in enumerate(cl["indices"])}
+        idxs = cl["indices"]
+        counts = cl["counts"]
 
         badge_html = ""
-        if flagged:
+        if cl["split"]:
             badge_html = (
                 '<div class="divergence-badge">⚠️ <span>'
-                f"<strong>{esc(BADGE_TITLE)}</strong> {esc(BADGE_BODY)}"
+                f"<strong>{esc(SPLIT_BADGE_TITLE)}</strong> {esc(SPLIT_BADGE_BODY)}"
                 "</span></div>"
             )
 
-        top = top_papers(cluster_docs, 3)
-        top_html = "<br>".join(
-            f"<strong>{esc(p.metadata.get('title', '(untitled)'))}</strong>"
-            + (f" ({p.metadata['citation_count']:,} cites)" if p.metadata.get("citation_count") is not None else "")
-            for p in top
-        )
+        # Most-cited papers under each stance (supports / null first: that's the comparison)
+        groups_html = ""
+        for s in ("SUPPORTS", "NULL", "MIXED"):
+            members = [docs[i] for i in idxs if stances[i] == s]
+            if not members:
+                continue
+            emoji, text = STANCE_DISPLAY[s]
+            items = "".join(
+                f"<li>{esc(p.metadata.get('title', '(untitled)'))}"
+                + (f" <span class='cites'>({p.metadata['citation_count']:,} cites)</span>" if p.metadata.get("citation_count") is not None else "")
+                + "</li>"
+                for p in top_papers(members, 3)
+            )
+            groups_html += f'<div class="stance-group"><div class="sg-title">{emoji} {esc(text)} ({len(members)})</div><ul>{items}</ul></div>'
+        if not groups_html:
+            groups_html = '<div class="top-papers">No paper in this cluster states findings about the claim (all unclear).</div>'
 
         papers_html = ""
-        for paper in sort_papers(cluster_docs, sort_by):
-            pos_cues, neg_cues = cue_map[id(paper)]
+        by_id = {id(docs[i]): i for i in idxs}
+        for paper in sort_papers([docs[i] for i in idxs], sort_by):
+            i = by_id[id(paper)]
             meta = paper.metadata
             title = meta.get("title", "(untitled)")
             url = safe_url(meta.get("url", ""))
@@ -522,58 +633,46 @@ def render_result(result: Dict[str, Any]) -> None:
                 meta_parts.append(f"📖 {esc(pub_info)}")
             meta_html = "".join(f"<span>{p}</span>" for p in meta_parts)
 
-            cues_html = ""
-            if flagged:
-                cue_items = []
-                if pos_cues:
-                    cue_items.append(f'<span style="background: #1b4332; color: #74c69d; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Affirmative cue: {esc(", ".join(pos_cues[:2]))}</span>')
-                if neg_cues:
-                    cue_items.append(f'<span style="background: #4a154b; color: #e0aaff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Cautionary / Null cue: {esc(", ".join(neg_cues[:2]))}</span>')
-                if cue_items:
-                    cues_html = f'<div style="margin-top: 6px; display: flex; gap: 8px;">{"".join(cue_items)}</div>'
-
             is_enriched = meta.get("is_enriched", False)
-            title_pill = (
-                ' <span style="background: rgba(31, 111, 235, 0.2); color: #58a6ff; '
-                'border: 1px solid rgba(56, 139, 253, 0.4); padding: 2px 8px; '
-                'border-radius: 12px; font-size: 0.72rem; vertical-align: middle;">Enriched Abstract</span>'
-                if is_enriched else ""
-            )
+            title_pill = ' <span class="enriched-pill">Full abstract</span>' if is_enriched else ""
             snippet_label = "Abstract" if is_enriched else "Snippet"
             shown = snippet[:400] + ("…" if len(snippet) > 400 else "")
             papers_html += (
                 f'<div class="paper-card">'
-                f'  <div class="paper-title">{esc(title)}{title_pill}</div>'
+                f'  <div class="paper-title">{stance_pill(stances[i])} {esc(title)}{title_pill}</div>'
                 f'  <div class="paper-snippet"><strong>{snippet_label}:</strong> {esc(shown)}</div>'
                 f'  <div class="paper-meta">{meta_html}</div>'
-                f"  {cues_html}"
                 f"  {url_html}"
                 f"</div>"
             )
 
-        n = len(cluster_docs)
+        n = len(idxs)
         st.markdown(
             f'<div class="cluster-card">'
             f'  <div class="cluster-title">{icon} Cluster {c_no + 1}: {esc(cl["topic"])} &mdash; {n} paper{"s" if n != 1 else ""}</div>'
-            f'  <div class="top-papers">Most-cited in this cluster (check the label against these):<br>{top_html}</div>'
+            f"  {stance_bar(counts)}"
             f"  {badge_html}"
-            f"  {papers_html}"
+            f'  <div class="stance-groups">{groups_html}</div>'
+            f'  <details><summary>All {n} papers in this cluster</summary>{papers_html}</details>'
             f"</div>",
             unsafe_allow_html=True,
         )
 
     with st.expander("⚠️ Limitations & Scientific Framing"):
         st.markdown(
-            "- **Abstract & Snippet Evidence:** Google Scholar snippets are short (100–250 chars) and often cut "
-            "mid-sentence. Full abstracts (optional) give more context for reading, but in our ablation they did "
-            "not improve, and usually reduced, disagreement-detection scores.\n"
-            "- **Weak detector:** the best free detector reached about 0.27 recall on an AI-labeled, unaudited "
-            "test set of 84 pairs. It misses most disagreements; see `eval/README.md`.\n"
-            "- **Possible Disagreement ≠ Proven Conflict:** Two papers can take opposing directional stances "
-            "because they examine different cohorts (e.g. children vs older adults) or different dosages. "
-            "The detector flags candidate disagreements for human verification; always read the full papers.\n"
-            "- **Detector Tiers:** Tier 1 (Phrase Matching) is fast and free. Tier 2 (Cross-Encoder NLI) evaluates "
-            "sentence entailment locally on CPU. Tier 3 uses an LLM judge for meta-analytic synthesis.\n"
+            "- **Stance toward a shared claim:** Instead of only predicting pairwise contradictions, each paper is "
+            "classified for its stance toward your stated hypothesis (`supports`, `null / contrary`, `mixed`, `unclear`) "
+            "and aggregated per topic cluster.\n"
+            "- **External Validation (SciFact):** On the human-labeled SciFact dev benchmark (340 claim–abstract pairs), "
+            "Tier 2 NLI stance classification (`cross-encoder/nli-deberta-v3-small`) reaches **0.51 CONTRADICT F1** "
+            "(precision 0.56, recall 0.46) and **0.42 Macro-F1**, compared to **0.03–0.07 CONTRADICT F1** for claim-agnostic "
+            "phrase cues; see `eval/scifact/results.md`.\n"
+            "- **Pairwise Benchmark Caveats:** On our internal 84-pair test split (AI-drafted, unaudited labels; "
+            "`eval/audit/` provides blind human-audit sheets), the dev-only selected phrase lexicon V3 reaches "
+            "**0.18 F1** (precision 0.75, recall 0.10), while lexicon V2 (tuned with exposure to the same topics) "
+            "reaches 0.40 F1 (an optimistic upper bound).\n"
+            "- **Split Findings ≠ Proven Conflict:** Two papers can report opposing stances because they examine "
+            "different cohorts, dosages, or endpoints. Always inspect the full papers.\n"
             "- **Small-N Clustering:** KMeans on 10–20 papers is noisy; optimal k is selected via silhouette score "
             "with a minimum cluster size constraint.\n"
             "- **SerpApi Credits:** Each live search uses one API credit. Repeat searches are served from disk cache "
@@ -590,17 +689,27 @@ sample_cols = st.columns(3)
 
 if "current_query" not in st.session_state:
     st.session_state.current_query = SAMPLE_QUERIES[0][1]
+if "current_claim" not in st.session_state:
+    st.session_state.current_claim = SAMPLE_CLAIMS.get(normalize_query(SAMPLE_QUERIES[0][1]), SAMPLE_QUERIES[0][1])
 
 for col, (label, sq) in zip(sample_cols, SAMPLE_QUERIES):
     if col.button(f"💡 {label}", help=sq, use_container_width=True):
         st.session_state.current_query = sq
+        st.session_state.current_claim = SAMPLE_CLAIMS.get(normalize_query(sq), sq)
         st.rerun()
 
 query = st.text_area(
-    "Research question",
+    "Research question (Google Scholar query)",
     value=st.session_state.current_query,
-    height=80,
-    label_visibility="collapsed",
+    height=68,
+    help="Search terms sent to Google Scholar via SerpApi.",
+)
+
+default_claim = SAMPLE_CLAIMS.get(normalize_query(query), st.session_state.current_claim or query)
+claim = st.text_input(
+    "Hypothesis / claim to test against retrieved papers",
+    value=default_claim,
+    help="Tier 2 (NLI) and Tier 3 (LLM) classify whether each paper's findings support or report null/contrary evidence for this claim.",
 )
 
 if st.button("🔬 Run Research Agent", use_container_width=True):
@@ -609,7 +718,7 @@ if st.button("🔬 Run Research Agent", use_container_width=True):
     elif not query.strip():
         st.warning("Please enter a research question.")
     else:
-        run_research(query.strip())
+        run_research(query.strip(), (claim.strip() or query.strip()))
 
 # Results live in session state so sorting / downloads don't wipe them on rerun.
 if "result" in st.session_state:
